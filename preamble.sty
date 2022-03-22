@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{rotating}
+%\usepackage{tilting}
+%\usepackage{pdfrender}
+%\usepackage[compat=1.1.0]{tikz-feynman}
+%\usepackage{pst-all}
+%\usepackage{showlabels}
+%\usepackage[nosort]{cite}
+%\usepackage{dsfont}
+%\usepackage{epic,eepic,pstricks}
+%\usepackage{calrsfs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, mathrsfs, wasysym, bbm, graphicx, epsfig, geometry}
+\usepackage{amsthm,amsfonts,amstext}
+\usepackage{psfrag}
+\usepackage{epigraph,grffile,wrapfig}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url,hyperref}
+\usepackage{caption,subcaption}
+\usepackage{bbold}
+\usepackage{xcolor}
+
+\usepackage{float}
+\usepackage{ytableau}
+\usepackage{braket}
+\usepackage{tikz}
+
+\usepackage{comment,verbatim,datetime}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{mathtools,latexsym,feynmp}
+\usepackage[sep=5pt, offset=1em]{simpler-wick}
+\usepackage[makeroom]{cancel}
+\usepackage[bottom]{footmisc}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!60!green},
+    citecolor={blue!50!blue},
+    urlcolor={blue!80!black}
+}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+
+\addtolength{\parskip}{1ex}
+%\setlength{\parindent}{0pt}
+%\counterwithin{equation}{enumi}
+
+\interfootnotelinepenalty=10000 %% Completely prevent breaking of footnotes
+
+%%%%%%%%%%%%%%% MACROS HERE %%%%%%%%%%%%%%%
+\newcommand{\bi}{\begin{enumerate}}
+\newcommand{\ei}{\end{enumerate}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{equation*}\begin{aligned}}
+\newcommand{\eea}{\end{aligned}\end{equation*}}
+\newcommand{\beq}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{eqnarray}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+
+% TODO STUFF
+\newcommand{\todo}[1]{{\em \small \textcolor{red}{#1}}\marginpar{$\Longleftarrow$}}
+\newcommand{\labell}[1]{\label{#1}\qquad_{#1}} %{\Label{#1}} %
+\newcommand{\bbibitem}[1]{\bibitem{#1}\marginpar{#1}}
+\newcommand{\llabel}[1]{\label{#1}\marginpar{#1}}
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+\newcommand{\secref}[1]{Sec. \ref{#1}}
+\newcommand{\tableref}[1]{Table \ref{#1}}
+\newcommand{\appref}[1]{Appendix \ref{#1}}
+\newcommand{\myeq}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\myal}[1]{\begin{align} #1 \end{align}}
+\newcommand{\OO}{\mathcal{O}}
+
+% LABEL STUFF
+\def\Label#1{\label{#1}%
+  \smash{\hbox to0pt{\raise1ex\hbox{\tiny[#1]}\hss}}}
+\def\noLabels{\let\Label=\label}
+\def\nobbibitem{\let\bbibitem=\bibitem}
+
+% SYMBOL
+\newcommand{\ols}[1]{\mskip.3\thinmuskip\overline{\mskip-.3\thinmuskip {#1} \mskip-.3\thinmuskip}\mskip.3\thinmuskip} % overline short
+\newcommand{\on}{\operatorname}
+\newcommand{\wcm}[1]{\tikzmarknode{#1}{#1}}
+\newcommand{\vev}[1]{{\left< {#1} \right>}}
+\newcommand{\at}[2][]{#1|_{#2}}
+\newcommand{\nord}[1]{:\mathrel{#1}:}
+
+\newcommand*{\hollowcolon}{%
+  \textpdfrender{
+  TextRenderingMode=FillStrokeClip,
+      LineWidth=.5pt,
+      FillColor=white,
+      StrokeColor=black,
+  }{:}%
+}
+\newcommand{\hnord}[1]{\hollowcolon\mathrel{#1}\hollowcolon}
+
+\newcommand{\lv}{\left\lvert}
+\newcommand{\rv}{\right\rvert}
+\newcommand{\lV}{\left\lVert}
+\newcommand{\rV}{\right\rVert}
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\lsb}{\left[}
+\newcommand{\rsb}{\right]}
+\newcommand{\lcb}{\left\{}
+\newcommand{\rcb}{\right\}}
+\newcommand{\lan}{\left\langle}
+\newcommand{\ran}{\right\rangle}
+\newcommand{\la}{\,\leftarrow\,}
+\newcommand{\ra}{\,\rightarrow\,}
+\newcommand{\LA}{\,\Leftarrow\,}
+\newcommand{\RA}{\,\Rightarrow\,}
+\newcommand{\lra}{\,\leftrightarrow\,}
+\newcommand{\LRA}{\,\Leftrightarrow\,}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\def\fl#1{\left\lfloor {#1} \right \rfloor}
+\def\ceil#1{\left\lceil {#1} \right \rceil}
+\def\nn{\nonumber}
+\def\hf{\frac{1}{2}}
+\def\p{\partial}
+\def\eps{\epsilon}
+\def\red{\color{red}}
+\def\bd{\bullet}
+
+\newcommand{\A}{{\alpha}}
+\newcommand{\B}{{\beta}}
+\newcommand{\C}{{\gamma}}
+\newcommand{\da}{{\dot\alpha}}
+\newcommand{\db}{{\dot\beta}}
+\newcommand{\dc}{{\dot\gamma}}
+\newcommand{\dd}{{\dot\delta}}
+\newcommand{\tphi}{{\tilde\phi}}
+\newcommand{\ads}{\text{AdS}}
+\newcommand{\ds}{\text{dS}}
+
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cC}{{\mathcal C}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cK}{{\mathcal K}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cM}{{\mathcal M}}
+\newcommand{\cN}{{\mathcal N}}
+\newcommand{\cO}{{\mathcal O}}
+\newcommand{\cP}{{\mathcal P}}
+\newcommand{\cQ}{{\mathcal Q}}
+\newcommand{\cS}{{\mathcal S}}
+\newcommand{\cT}{{\mathcal T}}
+\newcommand{\cW}{{\mathcal W}}
+\newcommand{\scri}{{\mathscr I}}
+\newcommand{\sO}{{\mathscr O}}
+\newcommand{\sE}{{\mathscr E}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+\newcommand\bigw{\scalebox{.95}[1]{$\bigwedge$}}
+
+\def\zb{{\bar z}}
+\def\hb{{\bar h}}
+\def\zzb{z, \zb}
+\def\wb{{\bar w}}
+\def\pb{{\bar \p}}
+\def\wbw{w, \wb}
+\def\eb{{\bar \epsilon}}
+\def\tr{\on{tr}}
+\def\Tr{\on{Tr}}
+
+\def\bC {\mathbb{C}}
+\def\CP {\mathbb{CP}}
+\def\bH {\mathbb{H}}
+\def\bI {\mathbb{I}}
+\def\bN {\mathbb{N}}
+\def\bQ {\mathbb{Q}}
+\def\bR {\mathbb{R}}
+\def\bZ {\mathbb{Z}}
+\def\bh {\mathbf{h}}
+\def\bx {\mathbf{x}}
+\def\sdelta{\slash\hspace{-6pt}\delta}
+
+%THEOREMS
+%\theoremstyle{plain}
+%\theoremstyle{definition}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}[section]
+\newtheorem{lem}{Lemma}%[thm]
+\newtheorem{cor}{Corollary}%[thm]
+\newtheorem{eg}{Example}[section]
+\newtheorem{prop}{Proposition}[section]
+
+%author's comment
+\newcommand{\KevinL}[1]{{\bf \color{blue}{\bf !} #1}}
