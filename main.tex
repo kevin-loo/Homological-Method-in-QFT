@@ -1,5 +1,4 @@
 \documentclass[11pt, oneside]{article} 
-%\pdfoutput=1 
 \usepackage{preamble}
 \usepackage{kpfonts}
 
@@ -10,21 +9,15 @@
 \date{Spring 2022\\ (Updated \today)}
 
 \begin{document}
-
 \maketitle
 \thispagestyle{empty}
 \tableofcontents
+
 \newpage
-%\vspace{.25in}
-
 \setcounter{page}{1}
-\section{Introduction}
-{\em Reference}: 
-S. Li, “Effective Batalin-Vilkovisky quantization and geometric applications” 
-[\href{https://arxiv.org/abs/1709.00669}{arXiv:1709.00669}]
-\vspace{.5cm}
 
-\noindent A physics system is always described by an action functional (if exist)
+\section{Introduction}\label{sec:intro}
+A physics system is always described by an action functional (if exist)
 \bea
 S: \sE \ra \bR,
 \eea
@@ -32,20 +25,21 @@ where $\sE$ is the {\em space of fields}. In classical physics the variation of 
 \bea
 \operatorname{Crit}(S)= \lcb \delta S=0\rcb / \sim,
 \eea
-which is a set of equivalence classes induced by arbitrary symmetry. In this lecture, we will focus on quantum physics. One of the useful approaches is the {\bf Feynman path integral}
+which is a set of equivalence classes induced by arbitrary symmetry. In this lecture, we will focus on quantum physics. One convenient way to approach quantum physics is by {\bf Feynman path integral}
 \bea
 \int_\sE e^{iS/\hbar}\ .
 \eea
 
-\begin{eg}
+\begin{eg} Here are some basic examples of quantum field theory that we will discuss
+throughout this lecture.
 \bi[(1)]
-\item \textbf{Scalar field theory}: the fields are smooth functions on a manifold $X$,
+\item \textbf{Scalar field theory}. The fields are smooth functions on a manifold $X$,
 $\sE=C^\infty(X)$.
 \bea
 S\lsb \phi\rsb = \int_X |d\phi|^2+m^2\phi^2, \qquad \phi\in C^\infty(X).
 \eea
 
-\item \textbf{Gauge theory}: the fields are connections on a vector bundle $V\ra X$,
+\item \textbf{Gauge theory}. The fields are connections on a vector bundle over $X$, $V\ra X$,
 $\sE=\lcb \text{connections on } V\ra X \rcb$.
 \bea
 \text{Yang-Mills:  } \operatorname{YM}[A] &=\int \Tr F\wedge \ast F, \qquad F=dA+\hf [A,A].\\
@@ -53,16 +47,18 @@ $\sE=\lcb \text{connections on } V\ra X \rcb$.
 \eea
 The Chern-Simons theory is described in 3-dimensions, $\operatorname{dim} X=3$.
 
-\item \textbf{Sigma model}: the fields are maps,
+\item \textbf{Sigma model}. The fields are maps between two manifolds,
 $\sE=\lcb \text{maps } \Sigma \mapsto X \rcb$.
 
-\item \textbf{Gravity}: the fields are metrics on a manifold $X$,
+\item \textbf{Gravity}. The fields are metrics on a manifold $X$,
 $\sE=\lcb \text{metrics on } X\rcb$.
 \ei
 \end{eg}
 
-From all the above examples, the space $\sE$ is BIG in which the integral is an infinite dimensional integral, $\int_\sE (\infty-\text{dim})$. 
-In light of this fact, there is (mathematically) no rigorous definition of the theory in general. 
+In all the above examples, the space $\sE$ is HUGE in which the integral is an infinite dimensional integral, $\int_\sE (\infty-\text{dim})$. 
+In light of this fact, there are (mathematically) no rigorous definitions of the theories in general.
+This causes a big trouble in mathematics
+to understand quantum physics.
 However, in a special region such as the $\hbar$-asymptotic region, a theory exists and is well established which gives rise to the \textbf{perturbative renormalization theory}. 
 
 \subsection*{Observables}
@@ -75,7 +71,6 @@ $\int_\sE$ leads to the usual calculus that we learnt in high school.
 
 \begin{figure}[!htpb]\centering
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
@@ -144,14 +139,10 @@ $\int_\sE$ leads to the usual calculus that we learnt in high school.
 \end{figure}
 \ei
 
-\vspace{1cm} Roughly speaking, 
-\bea
-\text{observables} &= \text{functions on fields}\\
-&=O(\sE) \ (\text{or certain homology})
-\eea
-\begin{eg}
-Linear observables = distributions.
-\end{eg}
+Roughly speaking, 
+observables are functions on fields, denoted as
+$O(\sE)$ (or certain homology). For example, 
+distributions are {\em linear observables}.
 
 The new structures come from the following fact:
 \begin{itemize}
@@ -160,7 +151,7 @@ The new structures come from the following fact:
 
 \begin{eg}
 $\sE=C^\infty(X),\ p\in X$. Consider 
-\bea \cO_1: \sE \ra \bR\eea
+\bea \cO_1: \sE \ra \bR,\eea
 where $\cO_1(f)=f(p)^m, \ \forall f\in \sE$. $\cO_1$ is an observable supported in any open neighborhood of $p$.
 \end{eg}
 
@@ -185,7 +176,7 @@ This, however, requires further {\em quantum corrections} in which fields in $U_
 
 \begin{eg}[Topological Quantum Mechanics]
 In topological QFT, $\operatorname{Obs}(U)$ only depends on the topology of U.
-Consider $\operatorname{dim} X=1$ and $\operatorname{Obs}(U)=A$ for a contractible open interval $U$. 
+Consider $\operatorname{dim} X=1$ and $\operatorname{Obs}(U)=A$ for a contractible open interval $U$. Now consider two open intervals $U_1$, $U_2$ on $X$ and embed them into a larger interval $V$.
 
 \begin{figure}[!htpb]\centering
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -223,7 +214,7 @@ Consider $\operatorname{dim} X=1$ and $\operatorname{Obs}(U)=A$ for a contractib
 \eea
 or equivalently,
 \bea
-A \otimes A \mapsto A
+A \otimes A \mapsto A.
 \eea
 \end{eg}
 \noindent We find an \textbf{associative algebra}!
@@ -364,7 +355,7 @@ These are developed in the works of:
         \item developed factorization algebra to formulate two-dimensional chiral conformal field theory (CFT)
         \item introduced the notion of {\em chiral homology} (generalize {\em Hodge homology} in one dimension)
     \end{itemize}
-    \item Costello-Guilliam
+    \item Costello-Gwilliam
     \begin{itemize}
         \item construction of factorization algebras from perturbative renormalization theory, in the \textbf{Batalin-Vilkovisky (BV) formalism} (generalize BRST formalism in gauge theory).
     \end{itemize}
@@ -379,29 +370,28 @@ These are developed in the works of:
     Let $M$ be a compact oriented manifold of $\operatorname{dim} M=n$. Many constructions of integration on manifolds can be understood from de Rham complex
     $\lb \Omega^\bd(M), d\rb$. Consider the integration map 
     \bea
-    \int_M: \Omega^\bd(M)&\ra \bR\\
-    \alpha\in \Omega^n(M) &\mapsto \int_M \alpha\eea
+    \int_M: \Omega^\bd(M) \ra \bR,\qquad
+    \alpha\in \Omega^n(M) \mapsto \int_M \alpha. \eea
     Observe that the $n$-th de Rham cohomology group
-    $H^n_{dR}(M) =\bR$
+    $H^n_{dR}(M) =\bR$. This implies that 
     \bea
-    \RA\ \int_M \ = \ H^n_{dR} \ \lb
-    \stackrel{n\ra\infty}{\leadsto}\ ? \text{ in QFT, interesting problem?}\rb\eea
+    \int_M \ = \ H^n_{dR}. \eea
     The integration map is now
     \bea
-    \Omega^n(M) &\ra H^n_{dR}(M)\\
-    \alpha &\mapsto [\alpha].
+    \Omega^n(M) \ra H^n_{dR}(M),\qquad
+    \alpha \mapsto [\alpha].
     \eea
-    This means that we can learn calculus by the algebraic structure on de Rham complex, even we do not know anything about measure theory.
+    This means that we can learn calculus by the algebraic structure on de Rham complex, even we do not know anything about measure theory. However, there is a problem of understanding $H^n_{dR}(M)$ when $n\ra\infty$ as in QFT.
     
     \item \underline{BV approach}\\
     Define \textbf{polyvector fields}
     \bea 
-    \operatorname{PV}^\bd(M) =\bigoplus_k \operatorname{PV}^k(M)= \bigoplus_k \Gamma \lb M,\ \bigw^k TM\rb.
+    \operatorname{PV}^\bd(M) =\bigoplus_k \operatorname{PV}^k(M)\coloneqq \bigoplus_k \Gamma \lb M,\ \bigw^k TM\rb.
      \eea
     Let $\Omega$ be a fixed volume form on $M$. We can naturally identify
     \bea
-    \operatorname{PV}^k(M) &\lra \Omega ^{n-k}(M)\\
-    \mu &\lra \mu \lrcorner \Omega
+    \operatorname{PV}^k(M) \lra \Omega ^{n-k}(M),\qquad
+    \mu\in \operatorname{PV}^k(M) \lra \mu \lrcorner \Omega.
     \eea
     Locally, if $\Omega=e^\varphi dx^1\wedge \cdots \wedge dx^n$, $\mu=\mu^{i_1\cdots i_k} \partial_{i_1}\wedge \cdots \wedge \partial_{i_k}$, then
     \bea \mu \lrcorner\Omega= \sum \pm \mu^{i_1\cdots i_k} e^\varphi dx^1 \wedge \cdots \wedge \widehat{dx^{i_1}}\wedge \cdots \wedge\widehat{dx^{i_k}} \wedge \cdots \wedge dx^n. \eea
@@ -476,25 +466,20 @@ These are developed in the works of:
 \end{figure}
 
 where
-$\Delta: \operatorname{PV}^k \ra \operatorname{PV}^{k-1}$ is a divergence operator with respect to $\Omega$ ($\Delta$ is called \textbf{BV operator}) and $\int_{\operatorname{BV}}$ is the BV integration.
-
-\begin{eg}
+$\Delta: \operatorname{PV}^k \ra \operatorname{PV}^{k-1}$ is a divergence operator with respect to $\Omega$. $\Delta$ is called the \textbf{BV operator}.
+For example, 
 $\Delta: \operatorname{PV}^1=\operatorname{Vect}(M) \ra \operatorname{PV}^0=C^\infty(M)$ is the usual divergence.
-\end{eg}
-
-The BV integration is a map:
-\bea \int_{\operatorname{BV}}: \operatorname{PV}^0 &\ra \bR\\
-f &\mapsto \int f\Omega
+$\int_{\operatorname{BV}}$ is the \textbf{BV integration}, which is a map:
+\bea \int_{\operatorname{BV}}: \operatorname{PV}^0 \ra \bR,\qquad 
+f \mapsto \int f\Omega.
 \eea
 
-Homologically $\int_{\operatorname{BV}}\cong H^0_{\operatorname{BV}}$.
-\begin{itemize}
-    \item Here ``dim. $M$'' does not appear
-    \item In $\infty$-dimensions, renormalization helps to construct $\Delta$ which leads to \textbf{homological integration }
-\end{itemize}
+Homologically $\int_{\operatorname{BV}}$ can be identified with $H^0_{\operatorname{BV}}$.
+Here ``$\operatorname{dim} (M)$'' does not appear. The problem of integration is transferred to construct $\Delta$, which has a convenient formulation at least in perturbative QFT.
+In $\infty$-dimensions (as in QFT), renormalization helps to construct $\Delta$ which leads to \textbf{homological integration}.
 
 \item \underline{Explicit form of $\Delta$}\\
-Locally in $U$, let $\lcb x_i\rcb$ be local coordinates, the volume form be $\Omega=e^{f(x)}dx^1\wedge \cdots \wedge dx^n$. Introduce the vector fields $\partial_i=\frac{\partial}{\partial x_i}$, then the polyvector field is \bea \operatorname{PV}(U)=C^\infty(U) [\partial_1, \cdots, \partial_n],\eea
+Locally in $U$, let $\lcb x_i\rcb_{i=1}^n$ be local coordinates, the volume form be $\Omega=e^{f(x)}dx^1\wedge \cdots \wedge dx^n$. Introduce the vector fields $\partial_i=\frac{\partial}{\partial x_i}$, then the polyvector field is \bea \operatorname{PV}(U)=C^\infty(U) [\partial_1, \cdots, \partial_n],\eea
 where $\partial_i$'s are anticommuting: $\partial_i \partial_j =- \partial_j \partial_i$. 
 Let us write $\theta_i=\partial_i$ (\textit{note}: this is a vector field, NOT an differential operator), then a local section $\mu\in \operatorname{PV}(X)$ can be written as a function of $x^i$, $\theta_i$:
 \bea
@@ -506,8 +491,8 @@ Let $\frac{\partial}{\partial x^i}$ be the derivative with respect to $x^i$  and
 \Delta = \sum_i \frac{\partial}{\partial x^i} \frac{\partial}{\partial \theta_i}
 +\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}
 \eea
-which looks like a second order operator. This is in contrast with de Rham differential $d$, which is a first order differential
-operator. Note that the first term looks like a Laplacian, but it is NOT. $\theta_i$ is an odd variable.
+which looks like a second order operator (it is easy to check that $\Delta^2=0$). This is in contrast with de Rham differential $d$, which is a first order differential
+operator. Note that the first term looks like a Laplacian, but it is NOT. $\theta_i$ is an odd variable. Hence, $\Delta$ is sometimes called an {\em odd Laplacian}.
 
 \begin{eg}[$\frac{\partial}{\partial \theta_i}$ operator]
 \bea\frac{\partial}{\partial \theta_1}(\theta_1\theta_2)=\theta_2,\\
@@ -516,40 +501,357 @@ operator. Note that the first term looks like a Laplacian, but it is NOT. $\thet
 \end{eg}
 
 \begin{eg}[Singularity theory]
-Consider the $n$-th dimensional complex space $\bC^n$. Let $f: \bC^n\ra \bC$ be a polynomial with an isolated critical pint at 0:
+Consider the $n$-th dimensional complex space $\bC^n$. Let $f: \bC^n\ra \bC$ be a polynomial in $n$ variables with an isolated critical pint at 0:
 \bea \operatorname{Crit}(f)=\lcb 0\rcb.\eea
 We consider holomorphic/polynomial polyvector fields
 \bea \cA =\bC[z^i, \theta_i], \quad
 \theta_i \theta_j =- \theta_j \theta_i.\eea
-Let
+Let the BV operator be
 \bea \Delta=\hbar \sum_{i=1}^n \frac{\partial}{\partial z^i} \frac{\partial}{\partial \theta_i}
 +\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}. \eea
-Then
 \begin{itemize}
-    \item Quantum observable $\operatorname{Obs}^q=H^\bd (\cA[[\hbar]],\Delta)\cong$ Brieskorn lattice.
+    \item The space of quantum observables $\operatorname{Obs}^q=H^\bd (\cA[[\hbar]],\Delta)$ is isomorphic to a formal completion of the Brieskorn lattice.
     \item 
-    $\hbar$-filtration = Hodge filtration.
-    \item BV-integration gives rise to evaluation map on observable $\lan \cO\ran=\int_{\mathscr{L}}\cO e^{f/\hbar}$ (an oscillatory integral) where $\mathscr{L}$ is Lefschetz timble.
+    The quantum observable (or Brieskorn lattice) plays an important role of Hodge filtration (which is related to $\hbar$-filtration) in singularity theory.
+    \item The BV-integration models the oscillatory integral 
+    \bea\lan \cO\ran=\int_{\mathscr{L}} d^n z\ \cO e^{f/\hbar},\eea where $\mathscr{L}$ is a Lefschetz thimble.
+\end{itemize}
+\end{eg}
 \end{itemize}
 
+\noindent{\em Reference}: \cite{Li:2017exk}
+
+\section{Perturbative theory and Feynman diagram}
+In classical physics, the path integral approach is 
+\bea \int e^{-S/\hbar}.\eea
+
+We will talk about asymptotic $\hbar$-expansion around the minima of $S$. This has very nice combinatorial expression --- Feynman diagrams, which also has physical interpretations. We present this result via the {\em BV idea}.
+
+As discussed in the \nameref{sec:intro}, given volume form
+\bea \Omega=e^{f(x)} dx^1\wedge \cdots \wedge dx^n,\eea
+we can consider the integration map 
+\bea
+\int: \ \cA
+\ra \bR,\eea
+where $\cA$ is a function on $\lcb x^i,\theta_i\rcb$, where $\theta_i$'s are anticommuting variables, $\theta_i \theta_j =- \theta_j \theta_i$. 
+
+If we integrate over $\bR^n$, $\int_{\bR^n}$ picks only the components without $\theta_i$'s (i.e. $\operatorname{PV}^0$-part) and
+\bea \int_{\bR^n}: f(x)\mapsto \int_{\bR^n} f(x)\Omega.\eea
+This integration is defined on $\Delta$-homology, where 
+$\Delta: \cA \ra \cA$ is the BV-operator given by
+\bea \Delta= \sum_{i=1}^n \frac{\partial}{\partial x^i} \frac{\partial}{\partial \theta_i}
++\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}. \eea
+
+\begin{eg}
+\bea\int_{\bR^n}\Delta(\varphi^i(x)\theta_i)\Omega=0.\eea
+Explicitly,
+\bea\int_{\bR^n} d^n x \lb \sum_i \partial_i\varphi^i+\sum_i \varphi^i\partial_i f\rb e^f =0 \eea
+is just integration by part.
 \end{eg}
 
+\subsection*{Gaussian integral}
+Consider the simplest example: a one-dimensional real space $\bR$ and a Gaussian form
+\bea \Omega= \frac{1}{\sqrt{2\pi}} e^{-\hf x^2} dx.\eea
+We study the integration map on polynomial functions:
+\bea\int: \ \bR[x]\ra \bC,\qquad g(x)\mapsto\int_\bR g(x)\Omega \eea
+or more generally,
+\bea\int: \ \bR[x,\theta]\ra \bC,\qquad g(x)+h(x)\theta \mapsto\int_\bR g(x)\Omega.\eea
+The BV operator reads
+\bea
+\Delta = \frac{\partial}{\partial x} \frac{\partial}{\partial \theta}
+-x \frac{\partial}{\partial \theta}.
+\eea
+Here $f= -\hf x^2$. Given any polynomial $g(x)\in \bR[x]$, we have
+\bea \Delta g=0\eea
+since $g$ has no $\theta$'s. Let $[g]_{\Delta}$ denote the $\Delta$-cohomology classes, in which
+\bea
+\lsb g_1\rsb_{\Delta}=\lsb g_2\rsb_{\Delta}\ \LRA \ g_1-g_2=\Delta \eta \ \text{for some } \eta\in \bR[x,\theta].
+\eea
+Then $\int$ is well-defined on $\Delta$-cohomology classes:
+\bea \int g_1\Omega= \int g_2\Omega \quad  \text{if } 
+\lsb g_1\rsb_{\Delta}=\lsb g_2\rsb_{\Delta}.\eea
+We also have the normalization
+\bea \int 1\Omega =1\eea
+by Gaussian integral.
 
+\begin{eg}
+\bea \Delta \lb x^{m-1}\theta\rb &=
+\lb\frac{\partial}{\partial x} \frac{\partial}{\partial \theta}
+-x \frac{\partial}{\partial \theta}\rb \lb x^{m-1}\theta\rb
+=(m-1)x^{m-2} -x^m\\
+\RA \lsb x^m\rsb_{\Delta} &= (m-1) \lsb x^{m-2}\rsb_{\Delta}\\
+\RA \lsb x^{2k}\rsb_{\Delta} &= (2k-1)!! \lsb 1\rsb_{\Delta}\\
+\RA \int_{\bR} x^{2k}\Omega &= 
+(2k-1)!! \int_{\bR}\Omega= 
+(2k-1)!!.\eea
+\end{eg}
 
+To organize the data, consider the following operator
+\bea \cU=e^{\hf \frac{\partial}{\partial x} \frac{\partial}{\partial x}}: \bR\lsb x,\theta\rsb \ra \bR\lsb x,\theta\rsb.\eea
+Explicitly, $\cU\lb g(x)+h(x)\theta\rb= 
+\lb \cU g(x)\rb+ \lb \cU h(x)\rb \theta,$ where $\cU$ acts via Taylor expansion
+\bea \cU=\sum_{k=0}^\infty \frac{1}{k!} \lb \hf \frac{\partial}{\partial x} \frac{\partial}{\partial x} \rb^k \eea
+which is well-defined on $\bR[x]$.
 
+\begin{lem}
+The BV operator is given by
+\bea \Delta= \cU^{-1}\lb -x\frac{\partial}{\partial\theta}\rb \cU\eea
+i.e. $\Delta$ is conjugate to the simple operation $-x\frac{\partial}{\partial\theta}$ via the operator $\cU$.
+\end{lem}
+\noindent The proof to this lemma is left as an exercise to the reader.
 
+As a result, we find a {\em cochain isomorphism} of complexes
+\bea \cU: \lb \bR\lsb x,\theta\rsb,\Delta\rb \ra \lb \bR\lsb x,\theta\rsb,-x\frac{\partial}{\partial\theta}\rb, \qquad 1\mapsto 1.
+\eea
+Cochain map means that
+\bea \cU \circ \Delta(\varphi)= \lb -x\frac{\partial}{\partial\theta}\rb\circ \cU(\varphi) \eea
+i.e. $\cU$ intertwines $\Delta$ with $-x\frac{\partial}{\partial\theta}$.
 
+Observe that
+\bea
+H^\bd \lb \bR\lsb x,\theta \rsb, 
+-x\frac{\partial}{\partial\theta}\rb
+=H^0 \lb \bR\lsb x,\theta \rsb, 
+-x\frac{\partial}{\partial\theta}\rb=\bR.
+\eea
+Let $\lsb -\rsb_{-x\partial_\theta}$ represent the $\lb -x\frac{\partial}{\partial\theta}\rb$-cohomology classes. Then for any $m>0$, $x^m=\lb -x\frac{\partial}{\partial\theta}\rb \lb-x^{m-1}\theta\rb$. Hence,
+\bea \lsb h(x)\rsb_{-x\partial_\theta}= \lsb h(0)\rsb_{-x\partial_\theta}.\eea
+Now for any $g(x)\in \bR\lsb x\rsb$,
 
+\begin{figure}[!htpb]\centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
+%Straight Lines [id:da7851604577852263] 
+\draw    (129,41) -- (170,41) ;
+\draw [shift={(172,41)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2533793961040385] 
+\draw    (172.33,87.67) -- (131.33,86.71) ;
+\draw [shift={(129.33,86.67)}, rotate = 1.33] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 
+% Text Node
+\draw (71,32.4) node [anchor=north west][inner sep=0.75pt]    {$[ g( x)]_{\Delta }$};
+% Text Node
+\draw (141,21.4) node [anchor=north west][inner sep=0.75pt]    {$\cU$};
+% Text Node
+\draw (184,32.4) node [anchor=north west][inner sep=0.75pt]    {$[ \cU( g( x))]_{-x\partial _{\theta }}$};
+% Text Node
+\draw (97.01,54.44) node [anchor=north west][inner sep=0.75pt]  [rotate=-89.57]  {$=$};
+% Text Node
+\draw (219.01,54.44) node [anchor=north west][inner sep=0.75pt]  [rotate=-89.57]  {$=$};
+% Text Node
+\draw (184,78.4) node [anchor=north west][inner sep=0.75pt]    {$[ \cU( g)( 0)]_{-x\partial _{\theta }}$};
+% Text Node
+\draw (41,77.4) node [anchor=north west][inner sep=0.75pt]    {$\cU( g)( 0)[ 1]_{\Delta }$};
+\end{tikzpicture}
+\end{figure}
+\noindent we find $[ g( x)]_{\Delta }= \cU( g)( 0)[ 1]_{\Delta }$. In other words, 
+\bea
+\int_{\bR} g(x)\Omega\ =\left. e^{\hf \partial_x^2} g(x)\right|_{x=0} \int_{\bR} 1\Omega \ =\left. e^{\hf \partial_x^2} g(x)\right|_{x=0}.
+\eea
 
+In general, we can introduce a new parameter $a$. 
+\begin{prop}
+\bea \int_\bR g(x+a)\Omega = e^{\hf \partial_a^2}g(a),\quad  \forall g\in \bR[x].\eea
+\end{prop}
+\noindent The shift by $a$ has the interpretation of effective fields as well as background fields, which will be discussed more later. The upshot now is that the integration $\int \lb\cdots \rb \Omega$ is fully described by the operator $\cU$.
 
+Now we consider a toy model:
+\bea
+\int_\bR \frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf x^2+\frac{\lambda}{3!}x^3\rb /\hbar}.
+\eea
+This integral is in fact divergent since $x^3$ blows up quickly at $\infty$. There are two ways out of this problem. 
+\bi[(1)]
+    \item Treat $x$ as a complex variable and change the integration cycle:
+    \bea \int_{\Gamma_i}\lb \cdots\rb\eea
+    for some integration cycles $\Gamma_i$. 
+    This becomes the Airy integral. 
+    
+    \item Treat the above integral as an asymptotic series in $\lambda$ via
+    \bea e^{\frac{\lambda}{3!}x^3/\hbar}= \sum_{n\geq 0} \frac{\lb \frac{\lambda}{3!}x^3/\hbar\rb^n}{n!}.\eea
+\ei
 
-
-
-
-
-
+Let's focus on method (2). This will give rise to the usual perturbative theory in QFT. We will also add the background parameter $a$ in our integral.
+\bea \int_\bR \frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf (x+a)^2+\frac{\lambda}{3!}(x+a)^3\rb /\hbar}
+\ =\ e^{\frac{\hbar}{2}\partial_a^2} e^{\frac{\lambda}{3!\hbar}a^3}
+\ =\ \sum_{k,m\geq 0} 
+\frac{\lb \frac{\hbar}{2}\partial_a^2\rb^k}{k!}
+\frac{\lb  \frac{\lambda}{3!\hbar}a^3\rb^m}{m!}.
+\eea
+We have used the fact that the integration $\int_\bR \frac{dx}{\sqrt{2\pi\hbar}} \lb\cdots \rb e^{-\frac{1}{2\hbar} x^2}$ is described by the operator $e^{\hf \hbar\partial_x^2}$. This infinite sum can be organized into graphs (Feynman diagrams). Here are some examples.
+\begin{itemize}
+    \item one term in $\lb \frac{\hbar}{2}\partial_a^2\rb^2
+    \lb \frac{\lambda}{3!\hbar}a^3\rb^2$ has
+    \bea
+    \begin{fmffile}{fd1}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(100,60)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{plain,tension=4}{i,v1}
+                \fmf{plain,tension=4}{v2,o}
+                \fmf{plain,left,label=$\frac{\hbar}{2}\partial_a\otimes\partial_a$,label.side=left,tension=1}{v1,v2,v1}
+                \fmfv{label=$\frac{\lambda}{\hbar}$,label.angle=120,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$\frac{\lambda}{\hbar}$,label.angle=60,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+                \fmflabel{$a$}{i}
+                \fmflabel{$a$}{o}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~~~~~~~ \sim\ a^2.
+    \eea
+    
+    \item one term in $\lb \frac{\hbar}{2}\partial_a^2\rb
+    \lb \frac{\lambda}{3!\hbar}a^3\rb^2$ has
+    \bea
+    \begin{fmffile}{fd2}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(100,60)
+                \fmfleft{i1,i2}
+                \fmfright{o1,o2}
+                \fmf{plain,tension=.5}{i1,v1}
+                \fmf{plain,tension=.5}{i2,v1}
+                \fmf{plain,tension=.5}{v2,o1}
+                \fmf{plain,tension=.5}{v2,o2}
+                \fmf{plain,label=$\hbar \partial_a\otimes\partial_a$,label.side=left,tension=.4}{v1,v2}
+                \fmfv{label=$\frac{\lambda}{\hbar}$,label.angle=180,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$\frac{\lambda}{\hbar}$,label.angle=0,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+                \fmflabel{$a$}{i1}
+                \fmflabel{$a$}{i2}
+                \fmflabel{$a$}{o1}
+                \fmflabel{$a$}{o2}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~~~~~~~ \sim\ \frac{1}{\hbar}a^4.
+    \eea
 \end{itemize}
 
+In general, given a graph $\Gamma$, let
+\bea
+D &=\text{number of external edges},\\
+E &=\text{number of internal edges},\\
+V &=\text{number of vertices}.\\
+\eea
+Define $W_{\Gamma}(a)=a^D\lambda^V \hbar^{E-V}$.
+For a connected graph $\Gamma$, we have
+\bea V-E= \chi(\Gamma)=1-\ell,\eea
+where $\chi$ is the Euler number of the graph $\Gamma$ and $\ell$ is the number of loops. Then
+\bea W_{\Gamma}(a)=a^D \lambda^V \hbar^{\ell-1}.\eea
+
+\begin{eg}
+\bea
+    \begin{fmffile}{fd3}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(80,40)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{plain,tension=4}{i,v1}
+                \fmf{plain,tension=4}{v2,o}
+                \fmf{plain,left,tension=1}{v1,v2,v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~~~~~~~ D=2, E=2, V=2 \RA \ell=1.
+    \\ \\ 
+    \begin{fmffile}{fd4}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(80,40)
+                \fmfleft{i1,i2}
+                \fmfright{o1,o2}
+                \fmf{plain,tension=.5}{i1,v1}
+                \fmf{plain,tension=.5}{i2,v1}
+                \fmf{plain,tension=.5}{v2,o1}
+                \fmf{plain,tension=.5}{v2,o2}
+                \fmf{plain,tension=.4}{v1,v2}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~~~~~~~ D=4, E=1, V=2 \RA \ell=0.
+    \eea
+\end{eg}
+
+\begin{prop}
+\bea \int_\bR \frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf (x+a)^2+\frac{\lambda}{3!}(x+a)^3\rb /\hbar}
+\ =\ e^{\frac{\hbar}{2}\partial_a^2} e^{\frac{\lambda}{3!\hbar}a^3}
+\ =\ \operatorname{exp}\lb \sum_{\Gamma:\text{ connected trivalent graph}} \frac{W_\Gamma(a)}{\left| \operatorname{Aut}(\Gamma)\right|}\rb.\eea
+Here $\operatorname{Aut}(\Gamma)$ is the automorphism group of $\Gamma$. 
+\end{prop}
+
+If we define
+\bea W(a) &=\hbar \sum_{\Gamma:\text{ connected trivalent graph}} \frac{W_\Gamma(a)}{\left| \operatorname{Aut}(\Gamma)\right|}\\
+&=\sum_{g\geq 0}W_g(a)\hbar^g \qquad (\text{expansion in } \hbar).\eea
+Here $\hbar W_\Gamma(a)\sim \hbar^{E-V+1}=\hbar^\ell.$ Then we can write the above formula as
+\bea
+e^{W(a)/\hbar}=\int_{\bR} \frac{dx}{\sqrt{2\pi\hbar}}\ e^{-\frac{1}{2\hbar}x^2} e^{I(x+a)/\hbar}
+\eea
+for $I(x)=\frac{\lambda x^3}{3!}$ is the cubic \textbf{interaction}. We can further write it as 
+\bea e^{W(a)/\hbar}=e^{\frac{\hbar}{2}\partial_a^2} e^{I(a)/\hbar}\eea
+and $e^{\frac{\hbar}{2}\partial_a^2}$ plays the role of \textbf{integration}. Now we give this operator a name --- \textbf{propagator}:
+\bea P\coloneqq \hf \partial_x^2.\eea
+Define a transformation on $I(x)$:
+\bea I\mapsto W(P,I)\eea
+by the equation
+\bea e^{W(P,I)/\hbar}\coloneqq e^{\hbar P}e^{I/\hbar}.\eea
+Similarly, we have a graph formula
+\bea
+W(P,I)=\hbar \sum_{\Gamma:\text{ connected trivalent graph}} \frac{W_\Gamma}{\left| \operatorname{Aut}(\Gamma)\right|}.\\
+\eea
+
+For example,
+\bea
+    \begin{fmffile}{fd5}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(80,40)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{plain,tension=4}{i,v1}
+                \fmf{plain,tension=4}{v2,o}
+                \fmf{plain,left,label.side=left,tension=2}{v1,v2,v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~ + ~~
+    \begin{fmffile}{fd6}
+    \begin{tabular}{c}
+        \begin{fmfgraph*}(80,40)
+                \fmfleft{i1,i2}
+                \fmfright{o1,o2}
+                \fmf{plain,tension=4}{i1,v1}
+                \fmf{plain,tension=4}{i2,v1}
+                \fmf{plain,tension=4}{v2,o1}
+               \fmf{plain,tension=4}{v2,o2} \fmf{plain,left,label.side=left,tension=2}{v1,v2,v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+        \end{fmfgraph*}
+        \end{tabular}
+    \end{fmffile}
+    ~~ + \cdots ~~
+\eea
+
+\begin{prop}
+$W(P,-)$ defines a transformation on
+\bea W(P,-): \bR[[x,\hbar]]^+ \ra \bR[[x,\hbar]]^+,\eea
+where $\bR[[x,\hbar]]^+\coloneqq x^3 \bR[[x]]\oplus \hbar \bR[[x,\hbar]]$ are the {\em terms at least cubic modulo $\hbar$}. $W(P,-)$ is also the renormalization group (RG) flow operator with respect to the propagator $P$.
+\end{prop}
+
+\noindent{\em References}:
+\cite{sili2015introqft}, \cite{costello2011renormalization} for the renormalization group flow operator,
+\cite{bessis1980quantum} for diagram techniques.
+
+
+
+
+
+
+
+\bibliographystyle{utphys}
+\bibliography{ref}
 \end{document}

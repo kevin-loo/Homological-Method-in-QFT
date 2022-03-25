@@ -23,31 +23,34 @@
 \usepackage{caption,subcaption}
 \usepackage{bbold}
 \usepackage{xcolor}
-
+\usepackage{comment,verbatim,datetime}
+\usepackage[nottoc]{tocbibind}
 \usepackage{float}
 \usepackage{ytableau}
 \usepackage{braket}
-\usepackage{tikz}
-
-\usepackage{comment,verbatim,datetime}
-\usepackage[nottoc]{tocbibind}
-
 \usepackage{mathtools,latexsym,feynmp}
 \usepackage[sep=5pt, offset=1em]{simpler-wick}
 \usepackage[makeroom]{cancel}
 \usepackage[bottom]{footmisc}
 
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,patterns,arrows.meta,calc}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
+
+\usepackage{feynmp-auto}
+\newcommand{\marrow}[5]{%
+    \fmfcmd{style_def marrow#1
+    expr p = drawarrow subpath (1/4, 3/4) of p shifted 6 #2 withpen pencircle scaled 0.4;
+    label.#3(btex #4 etex, point 0.5 of p shifted 6 #2);
+    enddef;}
+    \fmf{marrow#1,tension=0}{#5}}
+
 \hypersetup{
     colorlinks,
-    linkcolor={blue!60!green},
-    citecolor={blue!50!blue},
-    urlcolor={blue!80!black}
+    linkcolor={blue!50!red},
+    citecolor={blue!50!green},
+    urlcolor={blue!50!green}
 }
-
-\usetikzlibrary{decorations.pathmorphing,patterns}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{calc}
-\tikzset{>={Latex[width=2mm,length=2mm]}}
 
 \addtolength{\parskip}{1ex}
 %\setlength{\parindent}{0pt}
@@ -78,7 +81,6 @@
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\myeq}[1]{\begin{equation} #1 \end{equation}}
 \newcommand{\myal}[1]{\begin{align} #1 \end{align}}
-\newcommand{\OO}{\mathcal{O}}
 
 % LABEL STUFF
 \def\Label#1{\label{#1}%
@@ -91,8 +93,8 @@
 \newcommand{\on}{\operatorname}
 \newcommand{\wcm}[1]{\tikzmarknode{#1}{#1}}
 \newcommand{\vev}[1]{{\left< {#1} \right>}}
-\newcommand{\at}[2][]{#1|_{#2}}
 \newcommand{\nord}[1]{:\mathrel{#1}:}
+%\newcommand{\at}[2][]{#1|_{#2}}
 
 \newcommand*{\hollowcolon}{%
   \textpdfrender{
@@ -156,6 +158,7 @@
 \newcommand{\cQ}{{\mathcal Q}}
 \newcommand{\cS}{{\mathcal S}}
 \newcommand{\cT}{{\mathcal T}}
+\newcommand{\cU}{{\mathcal U}}
 \newcommand{\cW}{{\mathcal W}}
 \newcommand{\scri}{{\mathscr I}}
 \newcommand{\sO}{{\mathscr O}}
@@ -191,12 +194,12 @@
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{defn}{Definition}[section]
-\newtheorem{conv}{Convention}
 \newtheorem{rem}{Remark}[section]
-\newtheorem{lem}{Lemma}%[thm]
-\newtheorem{cor}{Corollary}%[thm]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
 \newtheorem{eg}{Example}[section]
 \newtheorem{prop}{Proposition}[section]
+\newtheorem{conv}{Convention}
 
 %author's comment
-\newcommand{\KevinL}[1]{{\bf \color{blue}{\bf !} #1}}
+\newcommand{\Kevin}[1]{{\bf \color{red}{\bf !} #1}}
