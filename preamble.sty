@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{rotating}
 %\usepackage{tilting}
@@ -15,6 +16,8 @@
 \usepackage[english]{babel}
 \usepackage{amsmath, amssymb, mathrsfs, wasysym, bbm, graphicx, epsfig, geometry}
 \usepackage{amsthm,amsfonts,amstext}
+\usepackage{xcolor}
+\usepackage{sectsty}
 \usepackage{psfrag}
 \usepackage{epigraph,grffile,wrapfig}
 \usepackage{enumerate}
@@ -22,7 +25,6 @@
 \usepackage{url,hyperref}
 \usepackage{caption,subcaption}
 \usepackage{bbold}
-\usepackage{xcolor}
 \usepackage{comment,verbatim,datetime}
 \usepackage[nottoc]{tocbibind}
 \usepackage{float}
@@ -34,6 +36,7 @@
 \usepackage[bottom]{footmisc}
 
 \usepackage{tikz}
+\usetikzlibrary{cd}
 \usetikzlibrary{decorations.pathmorphing,patterns,arrows.meta,calc}
 \tikzset{>={Latex[width=2mm,length=2mm]}}
 
@@ -47,10 +50,13 @@
 
 \hypersetup{
     colorlinks,
-    linkcolor={blue!50!red},
-    citecolor={blue!50!green},
-    urlcolor={blue!50!green}
+    linkcolor={blue!50!green},
+    citecolor={blue!50!red},
+    urlcolor={blue!50!red}
 }
+
+\sectionfont{\color{blue}}
+\subsectionfont{\color{blue!50!cyan}}
 
 \addtolength{\parskip}{1ex}
 %\setlength{\parindent}{0pt}
@@ -89,21 +95,20 @@
 \def\nobbibitem{\let\bbibitem=\bibitem}
 
 % SYMBOL
+%\newcommand{\at}[2][]{#1|_{#2}}
+\newcommand{\commutator}[3][.5em]{[ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} ]}
 \newcommand{\ols}[1]{\mskip.3\thinmuskip\overline{\mskip-.3\thinmuskip {#1} \mskip-.3\thinmuskip}\mskip.3\thinmuskip} % overline short
 \newcommand{\on}{\operatorname}
 \newcommand{\wcm}[1]{\tikzmarknode{#1}{#1}}
 \newcommand{\vev}[1]{{\left< {#1} \right>}}
 \newcommand{\nord}[1]{:\mathrel{#1}:}
-%\newcommand{\at}[2][]{#1|_{#2}}
-
-\newcommand*{\hollowcolon}{%
+\newcommand*{\hollowcolon}{
   \textpdfrender{
   TextRenderingMode=FillStrokeClip,
       LineWidth=.5pt,
       FillColor=white,
       StrokeColor=black,
-  }{:}%
-}
+  }{:}}
 \newcommand{\hnord}[1]{\hollowcolon\mathrel{#1}\hollowcolon}
 
 \newcommand{\lv}{\left\lvert}
@@ -125,30 +130,49 @@
 \newcommand{\lra}{\,\leftrightarrow\,}
 \newcommand{\LRA}{\,\Leftrightarrow\,}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+\newcommand\bigw{\scalebox{.95}[1]{$\bigwedge$}}
 
 \def\fl#1{\left\lfloor {#1} \right \rfloor}
 \def\ceil#1{\left\lceil {#1} \right \rceil}
+\def\bd{\bullet}
+\def\red{\color{red}}
 \def\nn{\nonumber}
 \def\hf{\frac{1}{2}}
-\def\p{\partial}
 \def\eps{\epsilon}
-\def\red{\color{red}}
-\def\bd{\bullet}
+\def\p{\partial}
+\def\hb{{\ols h}}
+\def\wb{{\ols w}}
+\def\zb{{\ols z}}
+\def\pb{{\ols \p}}
+\def\eb{{\ols \eps}}
+\def\zzb{z, \zb}
+\def\wbw{w, \wb}
+\def\tr{\on{tr}}
+\def\Tr{\on{Tr}}
+\def\sd {\slash\hspace{-6pt}\delta}
+\def\sp {\slashed{\p}}
+\def\smp {\slashed{p}}
+\def\smk {\slashed{k}}
+\def\sep {\slashed{\varepsilon}}
 
-\newcommand{\A}{{\alpha}}
-\newcommand{\B}{{\beta}}
-\newcommand{\C}{{\gamma}}
-\newcommand{\da}{{\dot\alpha}}
-\newcommand{\db}{{\dot\beta}}
-\newcommand{\dc}{{\dot\gamma}}
-\newcommand{\dd}{{\dot\delta}}
-\newcommand{\tphi}{{\tilde\phi}}
-\newcommand{\ads}{\text{AdS}}
-\newcommand{\ds}{\text{dS}}
+\def\bC{\mathbb{C}}
+\def\CP{\mathbb{CP}}
+\def\bH{\mathbb{H}}
+\def\bI{\mathbb{I}}
+\def\bN{\mathbb{N}}
+\def\bQ{\mathbb{Q}}
+\def\bR{\mathbb{R}}
+\def\bZ{\mathbb{Z}}
+
+\def\bh{\mathbf{h}}
+\def\bx{\mathbf{x}}
 
 \newcommand{\cA}{{\mathcal A}}
+\newcommand{\cB}{{\mathcal B}}
 \newcommand{\cC}{{\mathcal C}}
 \newcommand{\cD}{{\mathcal D}}
+\newcommand{\cE}{{\mathcal E}}
 \newcommand{\cK}{{\mathcal K}}
 \newcommand{\cL}{{\mathcal L}}
 \newcommand{\cM}{{\mathcal M}}
@@ -160,46 +184,52 @@
 \newcommand{\cT}{{\mathcal T}}
 \newcommand{\cU}{{\mathcal U}}
 \newcommand{\cW}{{\mathcal W}}
+
+\newcommand{\sE}{{\mathscr E}}
 \newcommand{\scri}{{\mathscr I}}
 \newcommand{\sO}{{\mathscr O}}
-\newcommand{\sE}{{\mathscr E}}
-\newcommand{\Cdot}{\boldsymbol{\cdot}}
-\newcommand\bigw{\scalebox{.95}[1]{$\bigwedge$}}
 
-\def\zb{{\bar z}}
-\def\hb{{\bar h}}
-\def\zzb{z, \zb}
-\def\wb{{\bar w}}
-\def\pb{{\bar \p}}
-\def\wbw{w, \wb}
-\def\eb{{\bar \epsilon}}
-\def\tr{\on{tr}}
-\def\Tr{\on{Tr}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fh}{{\mathfrak h}}
 
-\def\bC {\mathbb{C}}
-\def\CP {\mathbb{CP}}
-\def\bH {\mathbb{H}}
-\def\bI {\mathbb{I}}
-\def\bN {\mathbb{N}}
-\def\bQ {\mathbb{Q}}
-\def\bR {\mathbb{R}}
-\def\bZ {\mathbb{Z}}
-\def\bh {\mathbf{h}}
-\def\bx {\mathbf{x}}
-\def\sdelta{\slash\hspace{-6pt}\delta}
+\newcommand{\A}{{\alpha}}
+\newcommand{\B}{{\beta}}
+\newcommand{\C}{{\gamma}}
+\newcommand{\da}{{\dot\alpha}}
+\newcommand{\db}{{\dot\beta}}
+\newcommand{\dc}{{\dot\gamma}}
+\newcommand{\dd}{{\dot\delta}}
+\newcommand{\tphi}{{\tilde\phi}}
+\newcommand{\ds}{\text{dS}}
+\newcommand{\ads}{\text{AdS}}
 
 %THEOREMS
 %\theoremstyle{plain}
 %\theoremstyle{definition}
-
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{defn}{Definition}[section]
 \newtheorem{rem}{Remark}[section]
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{cor}{Corollary}[section]
-\newtheorem{eg}{Example}[section]
 \newtheorem{prop}{Proposition}[section]
+\newtheorem{clm}{Claim}[section]
 \newtheorem{conv}{Convention}
 
+\newtheorem{theorem}{Theorem}
+\newenvironment{theorem*}
+ {\pushQED{\qed}\theorem}
+ {\popQED\endtheorem}
+ 
+\newtheorem{egx}{Example}[section]
+\newenvironment{eg}
+  {\renewcommand{\qedsymbol}{$\blacktriangle$}%
+   \pushQED{\qed}\begin{egx}}
+  {\popQED\end{egx}}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{sproof}{%
+  \renewcommand{\proofname}{Sketch proof}\proof}{\endproof}
+  
 %author's comment
-\newcommand{\Kevin}[1]{{\bf \color{red}{\bf !} #1}}
+\newcommand{\KL}[1]{{\bf \color{red}{\bf !} #1}}
