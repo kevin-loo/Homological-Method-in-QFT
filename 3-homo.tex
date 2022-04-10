@@ -1,4 +1,4 @@
-\section{Homotopy Lie algebra and BRST}
+\section{Homotopy Lie algebra and BRST}\label{sec:hla}
 As we have seen in the \nameref{sec:ptfd}, asymptotic analysis of $\int e^{f/\hbar}$ leads to combinatorial formula via {\em graphs} (Feynman diagram expansion) such as
 
 propagator $P$: 
@@ -53,13 +53,13 @@ Our next goal is to find its connection with constructions in homological algebr
     \bi[(a)]
     \item (graded bracket) $\lsb \fg_\alpha, \fg_\beta\rsb \subset \fg_{\alpha+\beta}$,
     \item (graded skew-symmetry/anti-symmetry) $\lsb a,b\rsb=-(-1)^{\alpha\beta}\lsb b,a\rsb \ \text{for } a\in\fg_\alpha, b\in\fg_\beta$,
-    \item (Jacobi identity) for all $a\in\fg_\alpha$, $b\in\fg_\beta$, $c\in\fg_\gamma$,
+    \item (Jacobi identity) $\forall a\in\fg_\alpha$, $b\in\fg_\beta$, $c\in\fg_\gamma$,
     \bea \lsb a, \lsb b, c\rsb\rsb= \lsb \lsb a, b \rsb, c\rsb +(-1)^{\alpha\beta} \lsb b, \lsb a, c\rsb \rsb.\eea
     \ei
     \end{defn}
     
     \begin{defn}
-    A \textbf{differential graded Lie algebra (DGLA)} is a graded Lie algebra $\fg$ with a differential $d$ of degree, $\operatorname{deg}=1$ ($d: \fg_k \to\fg_{k+1}$), satisfying 
+    A \textbf{differential graded Lie algebra (DGLA)} is a graded Lie algebra $\fg$ with a differential $d$ of degree, $\on{deg}=1$ ($d: \fg_k \to\fg_{k+1}$), satisfying 
     \begin{itemize}
         \item $d^2=0$,
         \item $d\lsb a,b\rsb = \lsb da,b\rsb +(-1)^\alpha \lsb a, db\rsb$ for $a\in\fg_\alpha$, $b\in\fg_\beta$.
@@ -68,7 +68,7 @@ Our next goal is to find its connection with constructions in homological algebr
 
 \begin{eg}
 An ordinary Lie algebra is a DGLA where
-$\fg=\fg_0$ ($\fg$ is concentrated in $\operatorname{deg}=0$) 
+$\fg=\fg_0$ ($\fg$ is concentrated in $\on{deg}=0$) 
 and $d=0$.
 We see that DGLA is a natural generalization of Lie algebras.
 \end{eg}
@@ -78,7 +78,7 @@ Let $X$ be a manifold and $\fg$ be a Lie algebra. Let $\lb \Omega^\bd(X),\ d\rb$
 $\lb \Omega^\bd(X) \otimes \fg,\ d,\ \lsb -,-\rsb_\fg \rb$
 is a DGLA.
 \begin{itemize}
-    \item $\Omega^k \otimes \fg$ is a ($\operatorname{deg}=k$)-component,
+    \item $\Omega^k \otimes \fg$ is a ($\on{deg}=k$)-component,
     \item $d: \Omega^k \otimes \fg \to \Omega^{k+1} \otimes \fg$ is a de Rham differential, where
     \bea d(\alpha\otimes h)= d\alpha\otimes h \quad \text{for } \alpha\in\Omega^\bd, h\in\fg,\eea
     \item the bracket is induced from the Lie bracket $\lsb -,-\rsb_\fg$ on $\fg$, where
@@ -92,7 +92,7 @@ This example is related to Chern-Simons (CS) theory.
 \begin{eg}
 Let $X$ be a complex manifold. Let $\lb \Omega^{0,\bd}(X),\pb\rb$ be the Dolbeault complex. Let $T^{1,0}_X$ denote the bundle of $(1,0)$-vector fields. Then $\lb \Omega^{0,\bd}(X, T^{1,0}_X),\pb, \lsb -,-\rsb\rb$ is a DGLA.
 Explicitly, let $\lcb z^i\rcb$ be local holomorphic coordinates. 
-An element of $\operatorname{deg}=k$, $\alpha\in \Omega^{0,k}\lb X,T^{1,0}_X\rb$, can be written as 
+An element of $\on{deg}=k$, $\alpha\in \Omega^{0,k}\lb X,T^{1,0}_X\rb$, can be written as 
 \bea \alpha=\sum_{i,J} \alpha^i_{\ols J} d\zb^{\ols J}\otimes \p_{z^i}.\eea
 Here $J=\lcb j_1,<\cdots< j_k\rcb$ is a multi-index and 
 $d\zb^{\ols J}= d\zb^{j_1}\wedge\cdots\wedge d\zb^{j_k}$. Then the differential is 
@@ -104,41 +104,41 @@ Given two elements
 the bracket is given by
 \bea \lsb \alpha,\beta\rsb= \sum \lb \alpha^j_{\ols J} \p_j \beta^i_{\ols M} -\beta^j_{\ols M}\p_j \alpha^i_{\ols J} \rb d\zb^{\ols J} \wedge d\zb^{\ols M} \otimes \p_i. 
 \eea
-On $\operatorname{deg}=0$ components, this is just the usual Lie bracket on $(1,0)$-vector fields.
+On $\on{deg}=0$ components, this is just the usual Lie bracket on $(1,0)$-vector fields.
 As we will study later, this example is related to the deformation of complex strucures and also the so-called {\em Kodaira-Spencer gravity} (this is the B-twisted topological closed string field theory, also known as the B-model).
 \end{eg}
 
 \subsection*{Chevalley-Eilenberg (CE) and BRST}
 Let $\fg$ be a Lie algebra. Let $\fg^\vee$ be its linear dual. For simplicity, let us assume $\fg$ is finite dimensional.
 Consider 
-\bea C^\bd (\fg)= \bigoplus_k \bigw^k \fg^\vee.\eea
+\bea C^\bd (\fg)= \bigoplus_k \asym^k \fg^\vee.\eea
 This is a polynomial algebra in odd variables.
 If we choose basis $\lcb e_\alpha\rcb $ of $\fg$, and dual basis $\lcb c^\alpha\rcb$ of $\fg^\vee$, then we can write
 \bea C^\bd(\fg)= \bR\lsb c^\alpha\rsb,\eea
 where $c^\alpha c^\beta= -c^\beta c^\alpha$.
-Let $\lsb -,-\rsb: \bigw^2 \fg \to \fg$ be the Lie bracket. Taking the dual, we find
-$\lsb -,-\rsb^\vee: \fg^\vee \to \bigw^2 \fg^\vee$.
-This defines a \textbf{derivation} $d_{\operatorname{CE}}$ on $C^\bd (\fg)$:
-\bea d_{\operatorname{CE}}: C^\bd(\fg) \to C^\bd(\fg)\eea
+Let $\lsb -,-\rsb: \asym^2 \fg \to \fg$ be the Lie bracket. Taking the dual, we find
+$\lsb -,-\rsb^\vee: \fg^\vee \to \asym^2 \fg^\vee$.
+This defines a \textbf{derivation} $d_{\on{CE}}$ on $C^\bd (\fg)$:
+\bea d_{\on{CE}}: C^\bd(\fg) \to C^\bd(\fg)\eea
 which is determined by the following properties:
 \begin{itemize}
-    \item on generators: $d_{\operatorname{CE}}= \lsb -,-\rsb^\vee$ on $\fg^\vee$,
-    \item $d_{\operatorname{CE}}$ satisfies the graded Leibniz rule:
-    \bea d_{\operatorname{CE}}(a\wedge b)= \lb d_{\operatorname{CE}} a\rb\wedge b +(-1)^k a\wedge d_{\operatorname{CE}}(b) \quad \text{if } a\in C^k(g).\eea
+    \item on generators: $d_{\on{CE}}= \lsb -,-\rsb^\vee$ on $\fg^\vee$,
+    \item $d_{\on{CE}}$ satisfies the graded Leibniz rule:
+    \bea d_{\on{CE}}(a\wedge b)= \lb d_{\on{CE}} a\rb\wedge b +(-1)^k a\wedge d_{\on{CE}}(b) \quad \text{if } a\in C^k(g).\eea
 \end{itemize}
 
 \begin{prop}
-$d_{\operatorname{CE}}^2=0$.
+$d_{\on{CE}}^2=0$.
 \end{prop}
-So $\lb C^\bd(\fg),d_{\operatorname{CE}}\rb$ defines a complex, called the \textbf{Chevalley-Eilenberg (CE) complex}.
-In fact, $d_{\operatorname{CE}}^2=0$ is equivalent to Jacobi identity; this is a good exercise.
+So $\lb C^\bd(\fg),d_{\on{CE}}\rb$ defines a complex, called the \textbf{Chevalley-Eilenberg (CE) complex}.
+In fact, $d_{\on{CE}}^2=0$ is equivalent to Jacobi identity; this is a good exercise.
 In terms of the above chosen basis, let
 \bea \lsb e_\alpha, e_\beta \rsb= \sum_\gamma f^\gamma_{\alpha\beta} e_\gamma.\eea
 Here $f^\gamma_{\alpha\beta}$ is the {\em structure constant}. Then we have the explicit formula
-\bea d_{\operatorname{CE}}(c^\alpha)=\hf \sum_{\beta, \gamma} f^\alpha_{\beta \gamma} c^\beta c^\gamma.\eea
+\bea d_{\on{CE}}(c^\alpha)=\hf \sum_{\beta, \gamma} f^\alpha_{\beta \gamma} c^\beta c^\gamma.\eea
 This is used in physics to describe the BRST formalism for gauge theory with the correspondences:
 \bea c^\alpha &\lra \text{ghost field},\\
-d_{\operatorname{CE}} &\lra \text{BRST differential}.\eea
+d_{\on{CE}} &\lra \text{BRST differential}.\eea
 The above construction also generalizes to the case when we have a $\fg$-representation. Such $\fg$-representation is given by matter field in BRST formalism.
 
 \subsection*{Linear algebra for graded vector spaces}
@@ -150,22 +150,22 @@ Let us first fix some conventions for graded spaces.
     \item $W[n]$ denotes the $\bZ$-graded vector space with a degree shift by $n$ where
     \bea W[n]_m \coloneqq W_{n+m}.\eea
     \item $W^\vee$ denotes the linear dual with 
-    \bea W^\vee_m=\operatorname{Hom}(W_{-m},K) \quad \text{for base field } K. \eea
+    \bea W^\vee_m=\on{Hom}(W_{-m},K) \quad \text{for base field } K. \eea
     
     \item Given two $\bZ$-graded vector spaces $V$, $W$, with base field being implicit,
     \bea \lb V\otimes W\rb_n &=\bigoplus_{i+j=n} \lb V_i\otimes W_j\rb,\\
-    \operatorname{Hom}(V,W)_n
-    &= \bigoplus_i \operatorname{Hom}(V_i, W_{i+n}).\eea
+    \on{Hom}(V,W)_n
+    &= \bigoplus_i \on{Hom}(V_i, W_{i+n}).\eea
     
-    \item $\operatorname{Sym}^m(V)$ denotes a $m$-th graded symmetric tensor, which is $V^{\otimes m}/\sim$ where $a\otimes b\sim +(-1)^{|a||b|}b\otimes a$ (here $|a|$ is the parity of $a$).
+    \item $\sym^m(V)$ denotes a $m$-th graded symmetric tensor, which is $V^{\otimes m}/\sim$ where $a\otimes b\sim +(-1)^{|a||b|}b\otimes a$ (here $|a|$ is the parity of $a$).
     
-    \item $\bigw^m(V)$ denotes a $m$-th graded skew-symmetric tensor, which is $V^{\otimes m}/\sim$ where $a\otimes b\sim -(-1)^{|a||b|} b\otimes a$.
+    \item $\asym^m(V)$ denotes a $m$-th graded skew-symmetric tensor, which is $V^{\otimes m}/\sim$ where $a\otimes b\sim -(-1)^{|a||b|} b\otimes a$.
 
     \item We will write 
-    $\operatorname{Sym}(V)=\bigoplus_{m\geq 0} \operatorname{Sym}^m(V)$ as the (graded) polynomial ring generated by $V$ and  $\widehat{\operatorname{Sym}}(V)=\prod_{m\geq 0} \operatorname{Sym}^m(V)$ as the (graded) formal power series ring generated by $V$.
+    $\sym(V)=\bigoplus_{m\geq 0} \sym^m(V)$ as the (graded) polynomial ring generated by $V$ and  $\widehat{\sym}(V)=\prod_{m\geq 0} \sym^m(V)$ as the (graded) formal power series ring generated by $V$.
 \end{itemize}
 
-\begin{prop}We have $\bigw^k(V[1])\simeq \operatorname{Sym}^k(V)[k]$.
+\begin{prop}We have $\asym^k(V[1])\simeq \sym^k(V)[k]$.
 \end{prop}
 \begin{proof}
 A very helpful exercise for the reader.
@@ -174,16 +174,16 @@ A very helpful exercise for the reader.
 
 \subsection*{CE complex for DGLA}
 Let $(g,d,[-,-])$ be a DGLA. Let
-\bea C^\bd(\fg)\coloneqq \operatorname{Sym}^\bd(\fg^\vee[-1]).\eea
-Since $\fg^\vee[-1]= \lb \fg[1]\rb^\vee$, $\operatorname{Sym}^\bd \lb\fg^\vee[-1]\rb = \operatorname{Sym}^\bd\lb \fg[1]\rb^\vee$, we can think of $C^\bd(\fg)$ as a (polynomial) function on $\fg[1]$. 
+\bea C^\bd(\fg)\coloneqq \sym^\bd(\fg^\vee[-1]).\eea
+Since $\fg^\vee[-1]= \lb \fg[1]\rb^\vee$, $\sym^\bd \lb\fg^\vee[-1]\rb = \sym^\bd\lb \fg[1]\rb^\vee$, we can think of $C^\bd(\fg)$ as a (polynomial) function on $\fg[1]$. 
 When $\fg$ is a Lie algebra,
-\bea C^k(\fg)= \operatorname{Sym}^k\lb \fg^\vee[-1]\rb\simeq \bigw^k \fg^\vee[-k].\eea
-This is $\bigw^k \fg^\vee$ sitting at degree $k$. We get the usual CE.
+\bea C^k(\fg)= \sym^k\lb \fg^\vee[-1]\rb\simeq \asym^k \fg^\vee[-k].\eea
+This is $\asym^k \fg^\vee$ sitting at degree $k$. We get the usual CE.
 
 Let 
 \bea d_\fg: \fg^\vee[-1]\to \fg^\vee[-1]\eea
-be the dual of $d:\fg \to \fg$ and \bea d_{[-,-]}:\fg^\vee[-1]\to \operatorname{Sym}^2(\fg^\vee[-1])\simeq \bigw^2 \fg^\vee[-2]\eea
-be the dual of the bracket $[-,-]: \bigw^2 \fg \to\fg$. Note that both $d_\fg$ and $d_{[-,-]}$ have $\operatorname{deg}=1$ (check!).
+be the dual of $d:\fg \to \fg$ and \bea d_{[-,-]}:\fg^\vee[-1]\to \sym^2(\fg^\vee[-1])\simeq \asym^2 \fg^\vee[-2]\eea
+be the dual of the bracket $[-,-]: \asym^2 \fg \to\fg$. Note that both $d_\fg$ and $d_{[-,-]}$ have $\on{deg}=1$ (check!).
 
 Since $C^\bd(\fg)$ is freely generated by $\fg^\vee[-1]$, we can extend $d_\fg$ and $d_{[-,-]}$ to $C^\bd(\fg)$ by requiring them to
 \begin{itemize}
@@ -192,16 +192,16 @@ Since $C^\bd(\fg)$ is freely generated by $\fg^\vee[-1]$, we can extend $d_\fg$ 
 \end{itemize}
 
 Define the \textbf{CE differential}
-\bea d_{\operatorname{CE}} \coloneqq d_\fg +d_{[-,-]}.\eea
+\bea d_{\on{CE}} \coloneqq d_\fg +d_{[-,-]}.\eea
 
 \begin{clm}
-$d_{\operatorname{CE}}^2=0$.
+$d_{\on{CE}}^2=0$.
 \end{clm}
 \begin{sproof}
 We illustrate why this is true and leave the details to readers. In fact, if we represent
 
 \bea
-d_{\operatorname{CE}}: \begin{fmffile}{dce1a}
+d_{\on{CE}}: \begin{fmffile}{dce1a}
     \begin{tabular}{c}
         \begin{fmfgraph*}(100,60)
                 \fmfleft{i}
@@ -219,14 +219,14 @@ d_{\operatorname{CE}}: \begin{fmffile}{dce1a}
                 \fmf{fermion,tension=4}{i1,v}
                 \fmf{fermion,tension=4}{i2,v}
                 \fmf{fermion,tension=4}{v,o}
-                \fmfv{label=$\commutator{-}{-}$,l.angle=45,decor.shape=circle,decor.filled=full,decor.size=2thick}{v}
+                \fmfv{label=$[-,,-]$,l.angle=45,decor.shape=circle,decor.filled=full,decor.size=2thick}{v}
         \end{fmfgraph*}
         \end{tabular}
     \end{fmffile},
 \eea
 then
 \bea
-d_{\operatorname{CE}}^2: &
+d_{\on{CE}}^2: &
 \begin{fmffile}{dce2a}
     \begin{tabular}{c}
         \begin{fmfgraph*}(100,50)
@@ -276,7 +276,7 @@ d_{\operatorname{CE}}^2: &
         \end{tabular}
     \end{fmffile}
     \\ ~~~ & + ~~~
-    \sum\lb
+    \sum_{\text{permutations}} \lb
     \begin{fmffile}{dce2e}
     \begin{tabular}{c}
         \begin{fmfgraph*}(120,50)
@@ -287,52 +287,52 @@ d_{\operatorname{CE}}^2: &
                 \fmf{fermion,tension=1}{i3,v1}
                 \fmf{fermion,tension=2}{v1,v2}
                 \fmf{fermion,tension=2}{v2,o}
-                \fmfv{label=$\commutator{-}{-}$,l.angle=60,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
-                \fmfv{label=$\commutator{-}{-}$,l.angle=60,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+                \fmfv{label=$[-,,-]$,l.angle=65,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$[-,,-]$,l.angle=65,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
         \end{tabular}
     \end{fmffile}\rb.
 \eea
 
 We can ``see'' that 
-$d_{\operatorname{CE}}^2=0$ is equivalent to the defining properties of DGLA:
+$d_{\on{CE}}^2=0$ is equivalent to the defining properties of DGLA:
 \begin{itemize}
     \item $d^2=0$,
     \item Leibniz rule: $d\lsb-,-\rsb=\lsb d(-),-\rsb\pm \lsb -,d(-)\rsb$,
     \item Jacobi identity.
 \end{itemize}
-$\lb C^\bd(\fg),d_{\operatorname{CE}}\rb$ is called the \textbf{CE complex}.
+$\lb C^\bd(\fg),d_{\on{CE}}\rb$ is called the \textbf{CE complex}.
 \end{sproof}
 
 
 \subsection*{Homotopy Lie algebra ($L_\infty$-algebra)}
 Given a graded vector space $V$, we consider a (graded) derivation 
-on $\operatorname{Sym}(V)$:
-\bea \delta: \operatorname{Sym}(V) \to \operatorname{Sym}(V),\eea
+on $\sym(V)$:
+\bea \delta: \sym(V) \to \sym(V),\eea
 which satisfies the graded Leibniz rule
 \bea \delta(a\otimes b)=(\delta a)\otimes b \pm a\otimes \delta b.\eea 
 Such $\delta$ is completely determined by how $\delta$ acts on the generator
-\bea \delta: V\to \operatorname{Sym}(V).\eea
+\bea \delta: V\to \sym(V).\eea
 
 We can decompose
 \bea \delta=\delta_0+\delta_1+\delta_2+\cdots,\eea
-where $\delta_k:V\to \operatorname{Sym}^k(V).$
-For DGLA, we have $d_{\operatorname{CE}}$ acting on $C^\bd(\fg)=\operatorname{Sym}(\fg^\vee\lsb -1\rsb)$, where \bea d_{\operatorname{CE}}=d_\fg+d_{[-,-]} =\delta_1+\delta_2.\eea
+where $\delta_k:V\to \sym^k(V).$
+For DGLA, we have $d_{\on{CE}}$ acting on $C^\bd(\fg)=\sym(\fg^\vee\lsb -1\rsb)$, where \bea d_{\on{CE}}=d_\fg+d_{[-,-]} =\delta_1+\delta_2.\eea
 This is a derivation where only $\delta_1$, $\delta_2$ are nontrivial. It is natural to generalize this operator by encoding all possible components $\delta_k$. This leads to the {\em $L_\infty$-algebra}.
 
 
 \begin{defn}
 An \textbf{$L_\infty$-algebra} is a $\bZ$-graded vector space $\fg$ with a collection of multilinear maps
-\bea \ell_n: \bigw^n \fg \to \fg, \quad \operatorname{deg}(\ell_n)=2-n \quad (n\geq 1)\eea
+\bea \ell_n: \asym^n \fg \to \fg, \quad \on{deg}(\ell_n)=2-n \quad (n\geq 1)\eea
 satisfying the following $L_\infty$-relation
 \bea \sum_{k=1}^n \pm \ell_{n-k+1}\lb \ell_k\lb \cdots\rb, \cdots\rb=0 \quad \forall n.\eea
 \end{defn}
  
 The complicated $L_\infty$-relation can be understood as follows. Let
-\bea \delta_n: \fg^\vee\lsb-1\rsb \to \operatorname{Sym}^n\lb \fg^\vee\lsb-1\rsb\rb\simeq \bigw^n \fg^\vee \lsb-n\rsb\eea
-denotes the dual of $\ell_n:\bigw^n \fg\to\fg$. Note that
-\bea \operatorname{deg}(\ell_n)=2-n \ \LRA\ \operatorname{deg}(\delta_n)=1.\eea
-Let $\delta=\sum_{n\geq 1}\delta_n= \delta_1+\delta_2+\cdots$ defines a derivation on $C^\bd(\fg)=\widehat{\operatorname{Sym}}\lb \fg^\vee\lsb -1\rsb\rb$ via the graded Leibniz rule. (Here we use the (graded) formal power series ring $\widehat{\operatorname{Sym}}\lb \fg^\vee\lsb -1\rsb\rb$ so that $\delta$ is defined.) Then
+\bea \delta_n: \fg^\vee\lsb-1\rsb \to \sym^n\lb \fg^\vee\lsb-1\rsb\rb\simeq \asym^n \fg^\vee \lsb-n\rsb\eea
+denotes the dual of $\ell_n:\asym^n \fg\to\fg$. Note that
+\bea \on{deg}(\ell_n)=2-n \ \LRA\ \on{deg}(\delta_n)=1.\eea
+Let $\delta=\sum_{n\geq 1}\delta_n= \delta_1+\delta_2+\cdots$ defines a derivation on $C^\bd(\fg)=\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ via the graded Leibniz rule. (Here we use the (graded) formal power series ring $\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ so that $\delta$ is defined.) Then
 \bea L_\infty \text{-relations for } \lcb \ell_n\rcb_{n\geq 1}\ \LRA\ \delta^2=0.\eea
 $\lb C^\bd(\fg),\delta\rb$ is the CE complex for $\fg$.
 
@@ -362,7 +362,7 @@ n\lcb ~~~
     \right.,
 \eea
 then $\delta^2=0$ can be pictured as 
-\bea \sum\lb
+\bea \sum_{\text{permutations}}\lb
     \begin{fmffile}{dce4}
         \begin{tabular}{c}
         \begin{fmfgraph*}(180,120)

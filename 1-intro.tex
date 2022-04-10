@@ -3,14 +3,19 @@ A physics system is always described by an action functional (if exist)
 \bea
 S: \cE \to \bR,
 \eea
-where $\cE$ is the {\em space of fields}. In classical physics the variation of the action functional $S$ gives rise to the equations of motion, $\delta S=0$. These are described by the critical locus of the action functional:
+where $\cE$ is the {\em space of fields}. The classical physics is described by the critical locus of the action functional:
 \bea
-\operatorname{Crit}(S)= \lcb \delta S=0\rcb / \sim,
+\on{Crit}(S)= \lcb \delta S=0\rcb / \sim.
 \eea
-which is a set of equivalence classes induced by arbitrary symmetry. In this lecture, we will focus on quantum physics. One convenient way to approach quantum physics is by {\bf Feynman path integral}
+$\delta S=0$ is called the {\em equation of motion} which arises from the variation of the action functional $S$. 
+$\on{Crit}(S)$
+is essentially a set of equivalence classes induced by an arbitrary symmetry. In this lecture, we will focus on the quantum physics. One canonical way to approach the quantum physics is by the {\bf Feynman path integral}:
 \bea
-\int_\cE e^{iS/\hbar}\ .
+\int_\cE e^{iS/\hbar}.
 \eea
+When $\hbar$ is very small, the above integral
+is asymptotically approximated around the critical locus of $S$; this is a method
+called the {\em stationary phase approximation}. The classical limit is obtained by $\hbar\to 0$.
 
 \begin{eg} Here are some basic examples of quantum field theory that we will discuss
 throughout this lecture.
@@ -24,10 +29,10 @@ S\lsb \phi\rsb = \int_X |d\phi|^2+m^2\phi^2, \qquad \phi\in C^\infty(X).
 \item \textbf{Gauge theory}. The fields are connections on a vector bundle over $X$, $V\to X$,
 $\cE=\lcb \text{connections on } V\to X \rcb$.
 \bea
-\text{Yang-Mills:  } \operatorname{YM}[A] &=\int \Tr F\wedge \ast F, \qquad F=dA+\hf [A,A].\\
-\text{Chern-Simons:  } \operatorname{CS}[A] &=\hf\int \Tr A\wedge dA+\frac{1}{6}\int \Tr A\wedge [A,A].
+\text{Yang-Mills:  } \on{YM}[A] &=\int \Tr F\wedge \ast F, \qquad F=dA+\hf [A,A].\\
+\text{Chern-Simons:  } \on{CS}[A] &=\hf\int \Tr A\wedge dA+\frac{1}{6}\int \Tr A\wedge [A,A].
 \eea
-The Chern-Simons theory is described in 3-dimensions, $\operatorname{dim} X=3$.
+The Chern-Simons theory is described in 3 dimensions, $\on{dim} X=3$.
 
 \item \textbf{Sigma model}. The fields are maps between two manifolds,
 $\cE=\lcb \text{maps } \Sigma \mapsto X \rcb$.
@@ -41,7 +46,7 @@ In all the above examples, the space $\cE$ is HUGE in which the integral is an i
 In light of this fact, there are (mathematically) no rigorous definitions of the theories in general.
 This causes a big trouble in mathematics
 to understand quantum physics.
-However, in a special region such as the $\hbar$-asymptotic region, a theory exists and is well established which gives rise to the \textbf{perturbative renormalization theory}. 
+However, in a special region such as the $\hbar$-asymptotic region, a theory exists and is well established, giving rise to the \textbf{perturbative renormalization theory}. 
 
 \subsection*{Observables}
 Suppose we consider a quantum field theory (QFT) on a spacetime manifold $X$ and $\cE$ is the space of sections of a vector bundle $E$, $\cE=\Gamma(X,E)$. We want to understand the integral $\int_\cE$.
@@ -49,9 +54,8 @@ Suppose we consider a quantum field theory (QFT) on a spacetime manifold $X$ and
 \item $X=\text{a point},\ E=\text{vector space},\ \cE=\bR^n$.\\
 $\int_\cE$ leads to the usual calculus that we learnt in high school.
 
-\item $\operatorname{dim} X>0$ and there is a fiber $E_p$ (for example, a linear space) at each point $p\in X$. But $\cE\neq \coprod_{p\in X} E_p$; the topology of $X$ makes a difference! This leads to some new structures, known as the \textbf{observable algebras}.
-
-\begin{figure}[!htpb]\centering
+\item $\on{dim} X>0$ and there is a fiber $E_p$ (for example, a linear space) at each point $p\in X$. But $\cE\neq \coprod_{p\in X} E_p$; the topology of $X$ makes a difference! This leads to some new structures, known as the \textbf{observable algebras}.
+\bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
@@ -109,27 +113,23 @@ $\int_\cE$ leads to the usual calculus that we learnt in high school.
 %Straight Lines [id:da7675951895008961] 
 \draw    (153.34,144.38) -- (157.1,140.63) ;
 
-
-
 % Text Node
 \draw (163.62,96.13) node [anchor=north west][inner sep=0.75pt]   [align=left] {$X$};
 % Text Node
 \draw (136.7,66.07) node [anchor=north west][inner sep=0.75pt]   [align=left] {$E$};
-
-
 \end{tikzpicture}
-\end{figure}
+\eea
 \ei
 
 Roughly speaking, 
 observables are functions on fields, denoted as
-$O(\cE)$ (or certain homology). For example, 
+$\cO(\cE)$ (or certain homology). For example, 
 distributions are {\em linear observables}.
 
 The new structures come from the following fact:
 \begin{itemize}
 \item Given an open subset $U\subset X$, we can talk about
-\bea \operatorname{Obs}(U)= \text{observables supported in U}.\eea
+\bea \on{Obs}(U)= \text{observables supported in U}.\eea
 
 \begin{eg}
 $\cE=C^\infty(X),\ p\in X$. Consider 
@@ -139,28 +139,26 @@ where $\cO_1(f)=f(p)^m, \ \forall f\in \cE$. $\cO_1$ is an observable supported 
 
 \item Let $\cE(U)=\Gamma(U,E)$. Then 
 \bea
-\operatorname{Obs}(U)=\text{functions on }  \cE(U).
+\on{Obs}(U)=\text{functions on }  \cE(U).
 \eea
 
 \item The new structure is the \textbf{factorization product / operator product expansion (OPE)}. Given disjoint open subsets $U_i \subset V$, their disjoint union $\coprod_i U_i \subset V$, we have a map (factorization product):
 \bea
-\bigotimes_i \operatorname{Obs}(U_i)\mapsto \operatorname{Obs}(V).
+\bigotimes_i \on{Obs}(U_i)\mapsto \on{Obs}(V).
 \eea
 
 \item Intuitively, if $\cE(U)$ is restricted to $\cE(U_i)$, then dually $O(\cE(U_i))\mapsto O(\cE(U))$.
 Naively, we can {\em multiply} those {\em functions}, then we get
 \bea
-\bigotimes_i \operatorname{Obs}(U_i)\mapsto \operatorname{Obs}(V).
+\bigotimes_i \on{Obs}(U_i)\mapsto \on{Obs}(V).
 \eea
 This, however, requires further {\em quantum corrections} in which fields in $U_i$'s may {\em talk} to each other.
 
 \begin{eg}[Topological Quantum Mechanics]
-In topological QFT, $\operatorname{Obs}(U)$ only depends on the topology of U.
-Consider $\operatorname{dim} X=1$ and $\operatorname{Obs}(U)=A$ for a contractible open interval $U$. Now consider two open intervals $U_1$, $U_2$ on $X$ and embed them into a larger interval $V$.
-
-\begin{figure}[!htpb]\centering
+In topological QFT, $\on{Obs}(U)$ only depends on the topology of U.
+Consider $\on{dim} X=1$ and $\on{Obs}(U)=A$ for a contractible open interval $U$. Now consider two open intervals $U_1$, $U_2$ on $X$ and embed them into a larger interval $V$.
+\bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
@@ -173,24 +171,23 @@ Consider $\operatorname{dim} X=1$ and $\operatorname{Obs}(U)=A$ for a contractib
 \draw [shift={(469.7,166.09)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 
 % Text Node
-\draw (434.14,108.24) node   [align=left] {{\Large ( \ \ \ \ \ \ \ )}};
+\draw (434.14,108.24) node   [align=left] {{$\Large \lb \ \ \ \ \ \ \ \rb$}};
 % Text Node
-\draw (495.55,108.24) node   [align=left] {{\Large ( \ \ \ \ \ \ \ )}};
+\draw (495.55,108.24) node   [align=left] {{$\Large \lb \ \ \ \ \ \ \ \rb$}};
 % Text Node
-\draw (469.6,196.37) node   [align=left] {{\Large ( \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}};
+\draw (469.6,196.37) node   [align=left] {{$\Large \lb \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \rb$}};
 % Text Node
 \draw (426.75,78.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
 % Text Node
 \draw (487.25,78.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
 % Text Node
 \draw (463.53,171.38) node [anchor=north west][inner sep=0.75pt]   [align=left] {$V$};
-
 \end{tikzpicture}
-\end{figure}
+\eea
 
 We have a topological quantum mechanics (QM) with maps
 \bea
-\operatorname{Obs}(U_1)\otimes \operatorname{Obs}(U_2) \mapsto \operatorname{Obs}(V)
+\on{Obs}(U_1)\otimes \on{Obs}(U_2) \mapsto \on{Obs}(V)
 \eea
 or equivalently,
 \bea
@@ -210,9 +207,8 @@ H_{\bd} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{\text{Left}} \oplus \bZ_{\te
 which leads to left and right multiplications.
 
 {\em Associativity} comes from further consistency:
-\begin{figure}[!htpb]\centering
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
+\bea
+& \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
@@ -238,71 +234,66 @@ which leads to left and right multiplications.
 \draw [shift={(261.66,171.48)}, rotate = 328.09] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 
 % Text Node
-\draw (155.46,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (155.46,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (200.5,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (200.5,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (244.68,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (244.68,26.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (170.16,15.27) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
+\draw (168.16,15.27) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
 % Text Node
-\draw (214.35,14.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
+\draw (212.35,14.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
 % Text Node
-\draw (258.53,14.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
+\draw (256.53,14.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
 % Text Node
-\draw (25.46,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (25.46,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (70.49,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (70.49,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (114.68,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (114.68,103.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (40.16,92.59) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
+\draw (38.16,92.59) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
 % Text Node
-\draw (84.34,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
+\draw (82.34,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
 % Text Node
-\draw (128.53,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
+\draw (126.53,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
 % Text Node
-\draw (264.22,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (264.22,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (309.26,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (309.26,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (353.44,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (353.44,102.79) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (278.92,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
+\draw (276.92,91.74) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
 % Text Node
-\draw (323.11,90.89) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
+\draw (321.11,90.89) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
 % Text Node
-\draw (367.29,90.89) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
+\draw (365.29,90.89) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
 % Text Node
-\draw (150.37,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (150.37,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (195.4,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (195.4,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (239.58,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {( \ \ \ \ \ \ \ )};
+\draw (239.58,188.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\lb \ \ \ \ \ \ \ \rb$};
 % Text Node
-\draw (165.06,177.56) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
+\draw (163.06,177.56) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_1$};
 % Text Node
-\draw (209.25,176.71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
+\draw (207.25,176.71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_2$};
 % Text Node
-\draw (253.43,176.71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
+\draw (251.43,176.71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
 % Text Node
-\draw (21.2,96.76) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge ( \ \ \ \ \ \ \ \ \ \ )}};
+\draw (21.2,98.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
 % Text Node
-\draw (304.9,96.76) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge ( \ \ \ \ \ \ \ \ \ \ )}};
+\draw (304.9,98.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
 % Text Node
-\draw (144.88,182.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge ( \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}};
-\end{tikzpicture}
-\end{figure}
-\bea
-\RA (a\cdot b)\cdot c= a\cdot (b\cdot c).
+\draw (143.88,183.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \rb$}};
+\end{tikzpicture} \\
+&\RA (a\cdot b)\cdot c= a\cdot (b\cdot c).
 \eea
 
-\begin{eg}[Chiral QFT] $\operatorname{dim }X=2$ (a plane). 
-\begin{figure}[!htpb]\centering
-
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
+\begin{eg}[Chiral QFT] $\on{dim }X=2$ (a plane). 
+\bea
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt    
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
@@ -320,14 +311,13 @@ which leads to left and right multiplications.
 % Text Node
 \draw (144,73) node [anchor=north west][inner sep=0.75pt]   [align=left] {$X$};
 \end{tikzpicture}
-
-\end{figure}
+\eea
 
 \noindent In holomorphic coordinates, when an operator approach (wind around) the other on $X$, the winding number can be kept track in terms of their Laurent modes:
 \bea 
 A(z)B(w)=\sum_{m\in \bZ}\frac{\lb A_{(m)}B\rb (w)}{(z-w)^{m+1}}.
 \eea
-We find $\infty$-many ``product'' (binary operation) $\lcb A_{(m)}B \rcb$. Observable algebras then give rise to \textbf{vertex algebras}.
+We find $\infty$-ly many ``product'' (binary operation) $\lcb A_{(m)}B \rcb$. Observable algebras then give rise to \textbf{vertex algebras}.
 \end{eg}
 
 Observable algebras are developed in the works of:
@@ -348,7 +338,7 @@ Observable algebras are developed in the works of:
 \subsection*{BV formalism and homological integration}
     \bea \int \ =\ \text{homology}\eea
 \paragraph{Calculus revisited.}
-    Let $M$ be a compact oriented manifold of $\operatorname{dim} M=n$. Many constructions of integration on manifolds can be understood from de Rham complex
+    Let $M$ be a compact oriented manifold of $\on{dim} M=n$. Many constructions of integration on manifolds can be understood from de Rham complex
     $\lb \Omega^\bd(M), d\rb$. Consider the integration map 
     \bea
     \int_M: \Omega^\bd(M) \to \bR,\qquad
@@ -367,12 +357,12 @@ Observable algebras are developed in the works of:
 \paragraph{BV approach.}
     Define \textbf{polyvector fields}
     \bea 
-    \operatorname{PV}^\bd(M) =\bigoplus_k \operatorname{PV}^k(M)\coloneqq \bigoplus_k \Gamma \lb M,\ \bigw^k TM\rb.
+    \on{PV}^\bd(M) =\bigoplus_k \on{PV}^k(M)\coloneqq \bigoplus_k \Gamma \lb M,\ \asym^k TM\rb.
      \eea
     Let $\Omega$ be a fixed volume form on $M$. We can naturally identify
     \bea
-    \operatorname{PV}^k(M) \lra \Omega ^{n-k}(M),\qquad
-    \mu\in \operatorname{PV}^k(M) \lra \mu \lrcorner \Omega.
+    \on{PV}^k(M) \lra \Omega ^{n-k}(M),\qquad
+    \mu\in \on{PV}^k(M) \lra \mu \lrcorner \Omega.
     \eea
     Locally, if $\Omega=e^\varphi dx^1\wedge \cdots \wedge dx^n$, $\mu=\mu^{i_1\cdots i_k} \partial_{i_1}\wedge \cdots \wedge \partial_{i_k}$, then
     \bea \mu \lrcorner\Omega= \sum \pm \mu^{i_1\cdots i_k} e^\varphi dx^1 \wedge \cdots \wedge \widehat{dx^{i_1}}\wedge \cdots \wedge\widehat{dx^{i_k}} \wedge \cdots \wedge dx^n. \eea
@@ -387,26 +377,26 @@ Observable algebras are developed in the works of:
      & & & & \bR \\
     PV^{n} \ar[r, "\Delta"]
     & PV^{n-1} \ar[r, "\Delta"]
-    & \cdots \ar[r, "\Delta"] & PV^{0} \ar[ur, "\int_{\operatorname{BV}}"] & 
+    & \cdots \ar[r, "\Delta"] & PV^{0} \ar[ur, "\int_{\on{BV}}"] & 
     \end{tikzcd}
     \eea
 where
-$\Delta: \operatorname{PV}^k \to \operatorname{PV}^{k-1}$ is a divergence operator with respect to $\Omega$. $\Delta$ is called the \textbf{BV operator}.
+$\Delta: \on{PV}^k \to \on{PV}^{k-1}$ is a divergence operator with respect to $\Omega$. $\Delta$ is called the \textbf{BV operator}.
 For example, 
-$\Delta: \operatorname{PV}^1=\operatorname{Vect}(M) \to \operatorname{PV}^0=C^\infty(M)$ is the usual divergence.
+$\Delta: \on{PV}^1=\on{Vect}(M) \to \on{PV}^0=C^\infty(M)$ is the usual divergence.
 
-$\int_{\operatorname{BV}}$ is the \textbf{BV integration}, which is a map:
-\bea \int_{\operatorname{BV}}: \operatorname{PV}^0 \to \bR,\qquad 
+$\int_{\on{BV}}$ is the \textbf{BV integration}, which is a map:
+\bea \int_{\on{BV}}: \on{PV}^0 \to \bR,\qquad 
 f \mapsto \int f\Omega.
 \eea
-Homologically $\int_{\operatorname{BV}}$ can be identified with $H^0_{\operatorname{BV}}$.
-Here ``$\operatorname{dim} (M)$'' does not appear. The problem of integration is transferred to construct $\Delta$, which has a convenient formulation at least in perturbative QFT.
+Homologically $\int_{\on{BV}}$ can be identified with $H^0_{\on{BV}}$.
+Here ``$\on{dim} (M)$'' does not appear. The problem of integration is transferred to construct $\Delta$, which has a convenient formulation at least in perturbative QFT.
 In $\infty$-dimensions (as in QFT), renormalization helps to construct $\Delta$ which leads to \textbf{homological integration}.
 
 \paragraph{Explicit form of $\Delta$.}
-Locally in $U$, let $\lcb x_i\rcb_{i=1}^n$ be local coordinates, the volume form be $\Omega=e^{f(x)}dx^1\wedge \cdots \wedge dx^n$. Introduce the vector fields $\partial_i=\frac{\partial}{\partial x_i}$, then the polyvector field is \bea \operatorname{PV}(U)=C^\infty(U) [\partial_1, \cdots, \partial_n],\eea
+Locally in $U$, let $\lcb x_i\rcb_{i=1}^n$ be local coordinates and $\Omega=e^{f(x)}dx^1\wedge \cdots \wedge dx^n$ be the volume form. Introduce the vector fields $\partial_i=\frac{\partial}{\partial x_i}$, then the polyvector field is \bea \on{PV}(U)=C^\infty(U) [\partial_1, \cdots, \partial_n],\eea
 where $\partial_i$'s are anticommuting: $\partial_i \partial_j =- \partial_j \partial_i$. 
-Let us write $\theta_i=\partial_i$ (\textit{note}: this is a vector field, NOT an differential operator), then a local section $\mu\in \operatorname{PV}(X)$ can be written as a function of $x^i$, $\theta_i$:
+Let us write $\theta_i=\partial_i$ (\textit{note}: this is a vector field, NOT an differential operator), then a local section $\mu\in \on{PV}(X)$ can be written as a function of $x^i$, $\theta_i$:
 \bea
 \mu=\mu (x^i, \theta_i)
 \eea
@@ -427,7 +417,7 @@ operator. Note that the first term looks like a Laplacian, but it is NOT. $\thet
 
 \begin{eg}[Singularity theory]
 Consider the $n$-th dimensional complex space $\bC^n$. Let $f: \bC^n\to \bC$ be a polynomial in $n$ variables with an isolated critical pint at 0:
-\bea \operatorname{Crit}(f)=\lcb 0\rcb.\eea
+\bea \on{Crit}(f)=\lcb 0\rcb.\eea
 We consider holomorphic/polynomial polyvector fields
 \bea \cA =\bC[z^i, \theta_i], \quad
 \theta_i \theta_j =- \theta_j \theta_i.\eea
@@ -435,7 +425,7 @@ Let the BV operator be
 \bea \Delta=\hbar \sum_{i=1}^n \frac{\partial}{\partial z^i} \frac{\partial}{\partial \theta_i}
 +\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}. \eea
 \begin{itemize}
-    \item The space of quantum observables $\operatorname{Obs}^q=H^\bd (\cA[[\hbar]],\Delta)$ is isomorphic to a formal completion of the Brieskorn lattice.
+    \item The space of quantum observables $\on{Obs}^q=H^\bd (\cA \llb  \hbar\rrb,\Delta)$ is isomorphic to a formal completion of the Brieskorn lattice.
     \item 
     The quantum observable (or Brieskorn lattice) plays an important role of Hodge filtration (which is related to $\hbar$-filtration) in singularity theory.
     \item The BV-integration models the oscillatory integral 
@@ -443,4 +433,4 @@ Let the BV operator be
 \end{itemize}
 \end{eg}
 
-\noindent \textbf{Reference}: \cite{li2017effective}.
+\noindent \textbf{Reference}: \cite{Li:2017exk}.

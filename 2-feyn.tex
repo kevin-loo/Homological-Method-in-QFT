@@ -8,7 +8,7 @@ we can consider the integration map
 \int: \ \cA
 \to \bR,\eea
 where $\cA$ is a function on $\lcb x^i,\theta_i\rcb$, where $\theta_i$'s are anticommuting variables, $\theta_i \theta_j =- \theta_j \theta_i$. 
-If we integrate over $\bR^n$, $\int_{\bR^n}$ picks only the components without $\theta_i$'s (i.e. the $\operatorname{PV}^0$-part) and
+If we integrate over $\bR^n$, $\int_{\bR^n}$ picks only the components without $\theta_i$'s (i.e. the $\on{PV}^0$-part) and
 \bea \int_{\bR^n}: f(x)\mapsto \int_{\bR^n} f(x)\Omega.\eea
 This integration is defined on BV homology ($\Delta$-homology), where 
 $\Delta: \cA \to \cA$ is the BV-operator given by
@@ -17,7 +17,7 @@ $\Delta: \cA \to \cA$ is the BV-operator given by
 
 \begin{eg} An integral over a $\Delta$-exact term vanishes, i.e.
 \bea\int_{\bR^n}\Delta(\varphi^i(x)\theta_i)\Omega=0.\eea
-This looks like Stokes' theorem.
+This looks like the Stokes' theorem.
 Explicitly,
 \bea\int_{\bR^n} d^n x \lb \sum_i \partial_i\varphi^i+\sum_i \varphi^i\partial_i f\rb e^f =0. \eea
 It vanishes after the integration by part is performed.
@@ -59,6 +59,7 @@ We also have the normalization of the Gaussian integral:
 (2k-1)!!.\eea
 \end{eg}
 
+\subsection*{Conjugation}
 To organize the data, consider the following operator
 \bea \cU=e^{\hf \frac{\partial}{\partial x} \frac{\partial}{\partial x}}: \bR\lsb x,\theta\rsb \to \bR\lsb x,\theta\rsb.\eea
 Explicitly, $\cU\lb g(x)+h(x)\theta\rb= 
@@ -72,7 +73,7 @@ The BV operator is given by
 i.e. $\Delta$ is conjugate to the simple operation $-x\frac{\partial}{\partial\theta}$ via the operator $\cU$.
 \end{lem}
 \begin{proof}
-Exercise for the reader.
+Exercise.
 \end{proof}
 
 
@@ -124,8 +125,8 @@ This integral is in fact divergent since $x^3$ blows up quickly at $\infty$. The
     \item Treat $x$ as a complex variable and change the integration cycle from $\bR$ (i.e. $\Re(x)$) to some integration cycles $\Gamma_i\in \bC$:
     \bea \int_{\Gamma_i}\frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf x^2+\frac{\lambda}{3!}x^3\rb /\hbar}, \quad x\in\bC,\ \lambda\in\bR.\eea
     
-    \bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\bea
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt    
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
@@ -223,11 +224,13 @@ D &=\text{number of external edges},\\
 E &=\text{number of internal edges},\\
 V &=\text{number of vertices}.\\
 \eea
-Define a weight function \bea W_{\Gamma}(a) \coloneqq a^D\lambda^V \hbar^{E-V}.\eea
+Define a \textbf{weight function} 
+\bea W_{\Gamma}(a) \coloneqq a^D\lambda^V \hbar^{E-V}.\eea
 For a connected graph $\Gamma$, we have
 \bea V-E= \chi(\Gamma)=1-\ell,\eea
 where $\chi$ is the Euler characteristic of the graph $\Gamma$ and $\ell$ is the number of loops. Then
-\bea W_{\Gamma}(a)=a^D \lambda^V \hbar^{\ell-1}.\eea
+\bea
+W_{\Gamma}(a)=a^D \lambda^V \hbar^{\ell-1}.\eea
 
 \begin{eg}
 \bea
@@ -238,7 +241,7 @@ where $\chi$ is the Euler characteristic of the graph $\Gamma$ and $\ell$ is the
                 \fmfright{o}
                 \fmf{plain,tension=4}{i,v1}
                 \fmf{plain,tension=4}{v2,o}
-                \fmf{plain,left,tension=1}{v1,v2,v1}
+                \fmf{plain,left,tension=2}{v1,v2,v1}
                 \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
                 \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
@@ -268,12 +271,12 @@ where $\chi$ is the Euler characteristic of the graph $\Gamma$ and $\ell$ is the
 \begin{prop}[Feynman diagram expansion formula]
 \bea \int_\bR \frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf x^2+\frac{\lambda}{3!}(x+a)^3\rb /\hbar}
 \ =\ e^{\frac{\hbar}{2}\partial_a^2} e^{\frac{\lambda}{3!\hbar}a^3}
-\ =\ \operatorname{exp}\lb \sum_{\Gamma:\text{ connected trivalent graph}} \frac{W_\Gamma(a)}{\left| \operatorname{Aut}(\Gamma)\right|}\rb.\eea
-Here $\operatorname{Aut}(\Gamma)$ is the automorphism group of $\Gamma$. 
+\ =\ \on{exp}\lb \sum_{\Gamma:\text{ connected trivalent graph}} \frac{W_\Gamma(a)}{\left| \on{Aut}(\Gamma)\right|}\rb.\eea
+Here $\on{Aut}(\Gamma)$ is the automorphism group of $\Gamma$. 
 \end{prop}
 
 If we define
-\bea W(a) &=\hbar \sum_{\Gamma:\text{ connected graph}} \frac{W_\Gamma(a)}{\left| \operatorname{Aut}(\Gamma)\right|}\\
+\bea W(a) &=\hbar \sum_{\Gamma:\text{ connected graph}} \frac{W_\Gamma(a)}{\left| \on{Aut}(\Gamma)\right|}\\
 &=\sum_{g\geq 0}W_g(a)\hbar^g \qquad (\text{expansion in } \hbar).\eea
 Here $\hbar W_\Gamma(a)\sim \hbar^{E-V+1}=\hbar^\ell.$ Then we can write the above formula as
 \bea
@@ -289,7 +292,7 @@ by the equation
 \bea e^{W(P,I)/\hbar}\coloneqq e^{\hbar P}e^{I/\hbar}.\eea
 Similarly, we have a graph formula
 \bea
-W(P,I)=\hbar \sum_{\Gamma:\text{ connected graph}} \frac{W_\Gamma}{\left| \operatorname{Aut}(\Gamma)\right|}.\\
+W(P,I)=\hbar \sum_{\Gamma:\text{ connected graph}} \frac{W_\Gamma}{\left| \on{Aut}(\Gamma)\right|}.\\
 \eea
 In general, $I(x)$ involves higher power interaction terms. For example, we have 
 \bea
@@ -315,7 +318,7 @@ In general, $I(x)$ involves higher power interaction terms. For example, we have
                 \fmf{plain,tension=4}{i1,v1}
                 \fmf{plain,tension=4}{i2,v1}
                 \fmf{plain,tension=4}{v2,o1}
-               \fmf{plain,tension=4}{v2,o2} \fmf{plain,left,label.side=left,tension=2}{v1,v2,v1}
+               \fmf{plain,tension=4}{v2,o2} \fmf{plain,left,label.side=left,tension=3}{v1,v2,v1}
                 \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
                 \fmfv{decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
@@ -326,8 +329,8 @@ In general, $I(x)$ involves higher power interaction terms. For example, we have
 
 \begin{prop}
 $W(P,-)$ defines a transformation on
-\bea W(P,-): \bR[[x,\hbar]]^+ \to \bR[[x,\hbar]]^+,\eea
-where $\bR[[x,\hbar]]^+\coloneqq x^3 \bR[[x]]\oplus \hbar \bR[[x,\hbar]]$ are the {\em terms at least cubic modulo $\hbar$}. $W(P,-)$ is also the renormalization group (RG) flow operator with respect to the propagator $P$.
+\bea W(P,-): \bR\llb x,\hbar\rrb^+ \to \bR\llb x,\hbar\rrb^+,\eea
+where $\bR\llb  x,\hbar\rrb ^+\coloneqq x^3 \bR\llb x\rrb \oplus \hbar \bR\llb x,\hbar\rrb $ are the {\em terms at least cubic modulo $\hbar$}. $W(P,-)$ is also the renormalization group (RG) flow operator with respect to the propagator $P$.
 \end{prop}
 
 \noindent \textbf{References}:
