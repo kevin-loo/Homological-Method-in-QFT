@@ -74,23 +74,23 @@ We see that DGLA is a natural generalization of Lie algebras.
 \end{eg}
 
 \begin{eg}
-Let $X$ be a manifold and $\fg$ be a Lie algebra. Let $\lb \Omega^\bd(X),\ d\rb$ be the de Rham complex. Then 
-$\lb \Omega^\bd(X) \otimes \fg,\ d,\ \lsb -,-\rsb_\fg \rb$
+Let $X$ be a manifold and $\fg$ be a Lie algebra. Let $\lb \Omega^\blt(X),\ d\rb$ be the de Rham complex. Then 
+$\lb \Omega^\blt(X) \otimes \fg,\ d,\ \lsb -,-\rsb_\fg \rb$
 is a DGLA.
 \begin{itemize}
     \item $\Omega^k \otimes \fg$ is a ($\on{deg}=k$)-component,
     \item $d: \Omega^k \otimes \fg \to \Omega^{k+1} \otimes \fg$ is a de Rham differential, where
-    \bea d(\alpha\otimes h)= d\alpha\otimes h \quad \text{for } \alpha\in\Omega^\bd, h\in\fg,\eea
+    \bea d(\alpha\otimes h)= d\alpha\otimes h \quad \text{for } \alpha\in\Omega^\blt, h\in\fg,\eea
     \item the bracket is induced from the Lie bracket $\lsb -,-\rsb_\fg$ on $\fg$, where
     \bea \lsb \alpha_1\otimes h_1, \alpha_2\otimes h_2\rsb
-    =(\alpha_1\wedge \alpha_2)\otimes \lsb h_1,h_2\rsb_\fg \quad \text{for any } \alpha_1,\alpha_2\in \Omega^\bd,\ h_1,h_2\in\fg.\eea
+    =(\alpha_1\wedge \alpha_2)\otimes \lsb h_1,h_2\rsb_\fg \quad \text{for any } \alpha_1,\alpha_2\in \Omega^\blt,\ h_1,h_2\in\fg.\eea
 \end{itemize}
 This example is related to Chern-Simons (CS) theory.
 \end{eg}
 
 
 \begin{eg}
-Let $X$ be a complex manifold. Let $\lb \Omega^{0,\bd}(X),\pb\rb$ be the Dolbeault complex. Let $T^{1,0}_X$ denote the bundle of $(1,0)$-vector fields. Then $\lb \Omega^{0,\bd}(X, T^{1,0}_X),\pb, \lsb -,-\rsb\rb$ is a DGLA.
+Let $X$ be a complex manifold. Let $\lb \Omega^{0,\blt}(X),\pb\rb$ be the Dolbeault complex. Let $T^{1,0}_X$ denote the bundle of $(1,0)$-vector fields. Then $\lb \Omega^{0,\blt}(X, T^{1,0}_X),\pb, \lsb -,-\rsb\rb$ is a DGLA.
 Explicitly, let $\lcb z^i\rcb$ be local holomorphic coordinates. 
 An element of $\on{deg}=k$, $\alpha\in \Omega^{0,k}\lb X,T^{1,0}_X\rb$, can be written as 
 \bea \alpha=\sum_{i,J} \alpha^i_{\ols J} d\zb^{\ols J}\otimes \p_{z^i}.\eea
@@ -99,10 +99,10 @@ $d\zb^{\ols J}= d\zb^{j_1}\wedge\cdots\wedge d\zb^{j_k}$. Then the differential 
 \bea \pb \alpha = \sum_{i,J} \pb (\alpha^i_{\ols J}) \wedge d\zb^{\ols J} \otimes \p_{z^i}
 = \sum_{i,J} \lb \pb_\ell \alpha^i_{\ols J}\rb d\zb^\ell \wedge d\zb^{\ols J} \otimes \p_{z^i}.\eea
 Given two elements
-\bea \alpha= \sum \alpha^i_{\ols J} d\zb^{\ols J} \otimes \p_{i}, \quad 
-\beta= \sum \beta^i_{\ols M} d\zb^{\ols M} \otimes \p_{i},\eea
+\bea \alpha= \sum_{i,J} \alpha^i_{\ols J} d\zb^{\ols J} \otimes \p_{i}, \quad 
+\beta= \sum_{i,M} \beta^i_{\ols M} d\zb^{\ols M} \otimes \p_{i},\eea
 the bracket is given by
-\bea \lsb \alpha,\beta\rsb= \sum \lb \alpha^j_{\ols J} \p_j \beta^i_{\ols M} -\beta^j_{\ols M}\p_j \alpha^i_{\ols J} \rb d\zb^{\ols J} \wedge d\zb^{\ols M} \otimes \p_i. 
+\bea \lsb \alpha,\beta\rsb= \sum_{i,j,J,M} \lb \alpha^j_{\ols J} \p_j \beta^i_{\ols M} -\beta^j_{\ols M}\p_j \alpha^i_{\ols J} \rb d\zb^{\ols J} \wedge d\zb^{\ols M} \otimes \p_i. 
 \eea
 On $\on{deg}=0$ components, this is just the usual Lie bracket on $(1,0)$-vector fields.
 As we will study later, this example is related to the deformation of complex strucures and also the so-called {\em Kodaira-Spencer gravity} (this is the B-twisted topological closed string field theory, also known as the B-model).
@@ -111,15 +111,15 @@ As we will study later, this example is related to the deformation of complex st
 \subsection*{Chevalley-Eilenberg (CE) and BRST}
 Let $\fg$ be a Lie algebra. Let $\fg^\vee$ be its linear dual. For simplicity, let us assume $\fg$ is finite dimensional.
 Consider 
-\bea C^\bd (\fg)= \bigoplus_k \asym^k \fg^\vee.\eea
+\bea C^\blt (\fg)= \bigoplus_k \asym^k \fg^\vee.\eea
 This is a polynomial algebra in odd variables.
 If we choose basis $\lcb e_\alpha\rcb $ of $\fg$, and dual basis $\lcb c^\alpha\rcb$ of $\fg^\vee$, then we can write
-\bea C^\bd(\fg)= \bR\lsb c^\alpha\rsb,\eea
+\bea C^\blt(\fg)= \bR\lsb c^\alpha\rsb,\eea
 where $c^\alpha c^\beta= -c^\beta c^\alpha$.
 Let $\lsb -,-\rsb: \asym^2 \fg \to \fg$ be the Lie bracket. Taking the dual, we find
 $\lsb -,-\rsb^\vee: \fg^\vee \to \asym^2 \fg^\vee$.
-This defines a \textbf{derivation} $d_{\on{CE}}$ on $C^\bd (\fg)$:
-\bea d_{\on{CE}}: C^\bd(\fg) \to C^\bd(\fg)\eea
+This defines a \textbf{derivation} $d_{\on{CE}}$ on $C^\blt (\fg)$:
+\bea d_{\on{CE}}: C^\blt(\fg) \to C^\blt(\fg)\eea
 which is determined by the following properties:
 \begin{itemize}
     \item on generators: $d_{\on{CE}}= \lsb -,-\rsb^\vee$ on $\fg^\vee$,
@@ -130,7 +130,7 @@ which is determined by the following properties:
 \begin{prop}
 $d_{\on{CE}}^2=0$.
 \end{prop}
-So $\lb C^\bd(\fg),d_{\on{CE}}\rb$ defines a complex, called the \textbf{Chevalley-Eilenberg (CE) complex}.
+So $\lb C^\blt(\fg),d_{\on{CE}}\rb$ defines a complex, called the \textbf{Chevalley-Eilenberg (CE) complex}.
 In fact, $d_{\on{CE}}^2=0$ is equivalent to Jacobi identity; this is a good exercise.
 In terms of the above chosen basis, let
 \bea \lsb e_\alpha, e_\beta \rsb= \sum_\gamma f^\gamma_{\alpha\beta} e_\gamma.\eea
@@ -174,8 +174,8 @@ A very helpful exercise for the reader.
 
 \subsection*{CE complex for DGLA}
 Let $(g,d,[-,-])$ be a DGLA. Let
-\bea C^\bd(\fg)\coloneqq \sym^\bd(\fg^\vee[-1]).\eea
-Since $\fg^\vee[-1]= \lb \fg[1]\rb^\vee$, $\sym^\bd \lb\fg^\vee[-1]\rb = \sym^\bd\lb \fg[1]\rb^\vee$, we can think of $C^\bd(\fg)$ as a (polynomial) function on $\fg[1]$. 
+\bea C^\blt(\fg)\coloneqq \sym^\blt(\fg^\vee[-1]).\eea
+Since $\fg^\vee[-1]= \lb \fg[1]\rb^\vee$, $\sym^\blt \lb\fg^\vee[-1]\rb = \sym^\blt\lb \fg[1]\rb^\vee$, we can think of $C^\blt(\fg)$ as a (polynomial) function on $\fg[1]$. 
 When $\fg$ is a Lie algebra,
 \bea C^k(\fg)= \sym^k\lb \fg^\vee[-1]\rb\simeq \asym^k \fg^\vee[-k].\eea
 This is $\asym^k \fg^\vee$ sitting at degree $k$. We get the usual CE.
@@ -185,7 +185,7 @@ Let
 be the dual of $d:\fg \to \fg$ and \bea d_{[-,-]}:\fg^\vee[-1]\to \sym^2(\fg^\vee[-1])\simeq \asym^2 \fg^\vee[-2]\eea
 be the dual of the bracket $[-,-]: \asym^2 \fg \to\fg$. Note that both $d_\fg$ and $d_{[-,-]}$ have $\on{deg}=1$ (check!).
 
-Since $C^\bd(\fg)$ is freely generated by $\fg^\vee[-1]$, we can extend $d_\fg$ and $d_{[-,-]}$ to $C^\bd(\fg)$ by requiring them to
+Since $C^\blt(\fg)$ is freely generated by $\fg^\vee[-1]$, we can extend $d_\fg$ and $d_{[-,-]}$ to $C^\blt(\fg)$ by requiring them to
 \begin{itemize}
     \item act on the generator $\fg^\vee[-1]$, as defined above,
     \item satisfy the graded Leibniz rule.
@@ -301,7 +301,7 @@ $d_{\on{CE}}^2=0$ is equivalent to the defining properties of DGLA:
     \item Leibniz rule: $d\lsb-,-\rsb=\lsb d(-),-\rsb\pm \lsb -,d(-)\rsb$,
     \item Jacobi identity.
 \end{itemize}
-$\lb C^\bd(\fg),d_{\on{CE}}\rb$ is called the \textbf{CE complex}.
+$\lb C^\blt(\fg),d_{\on{CE}}\rb$ is called the \textbf{CE complex}.
 \end{sproof}
 
 
@@ -317,7 +317,7 @@ Such $\delta$ is completely determined by how $\delta$ acts on the generator
 We can decompose
 \bea \delta=\delta_0+\delta_1+\delta_2+\cdots,\eea
 where $\delta_k:V\to \sym^k(V).$
-For DGLA, we have $d_{\on{CE}}$ acting on $C^\bd(\fg)=\sym(\fg^\vee\lsb -1\rsb)$, where \bea d_{\on{CE}}=d_\fg+d_{[-,-]} =\delta_1+\delta_2.\eea
+For DGLA, we have $d_{\on{CE}}$ acting on $C^\blt(\fg)=\sym(\fg^\vee\lsb -1\rsb)$, where \bea d_{\on{CE}}=d_\fg+d_{[-,-]} =\delta_1+\delta_2.\eea
 This is a derivation where only $\delta_1$, $\delta_2$ are nontrivial. It is natural to generalize this operator by encoding all possible components $\delta_k$. This leads to the {\em $L_\infty$-algebra}.
 
 
@@ -332,9 +332,9 @@ The complicated $L_\infty$-relation can be understood as follows. Let
 \bea \delta_n: \fg^\vee\lsb-1\rsb \to \sym^n\lb \fg^\vee\lsb-1\rsb\rb\simeq \asym^n \fg^\vee \lsb-n\rsb\eea
 denotes the dual of $\ell_n:\asym^n \fg\to\fg$. Note that
 \bea \on{deg}(\ell_n)=2-n \ \LRA\ \on{deg}(\delta_n)=1.\eea
-Let $\delta=\sum_{n\geq 1}\delta_n= \delta_1+\delta_2+\cdots$ defines a derivation on $C^\bd(\fg)=\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ via the graded Leibniz rule. (Here we use the (graded) formal power series ring $\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ so that $\delta$ is defined.) Then
+Let $\delta=\sum_{n\geq 1}\delta_n= \delta_1+\delta_2+\cdots$ defines a derivation on $C^\blt(\fg)=\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ via the graded Leibniz rule. (Here we use the (graded) formal power series ring $\widehat{\sym}\lb \fg^\vee\lsb -1\rsb\rb$ so that $\delta$ is defined.) Then
 \bea L_\infty \text{-relations for } \lcb \ell_n\rcb_{n\geq 1}\ \LRA\ \delta^2=0.\eea
-$\lb C^\bd(\fg),\delta\rb$ is the CE complex for $\fg$.
+$\lb C^\blt(\fg),\delta\rb$ is the CE complex for $\fg$.
 
 If we represent each $\delta_n$ as a graph
 \bea
@@ -404,6 +404,6 @@ then $\delta^2=0$ can be pictured as
 
 As we will see, this has a natural interpretation via Feynman diagram technique.
 
-\noindent \textbf{References}:
+\noindent \textsc{References}:
 \cite{Lada:2021vvm} and its references for a nice review on $L_\infty$-algebra and its relation in QFT,
 \cite{Li:2018rnc} for a self-contained review on $L_\infty$-algebra which we are following in this lecture.
