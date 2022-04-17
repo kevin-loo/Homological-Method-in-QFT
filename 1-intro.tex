@@ -202,7 +202,7 @@ We find an \textbf{associative algebra}!
 \subsection*{Algebraic structure}
 Consider two operators are placed at two different points on a line. When one operator approaches closely the other, the algebraic structure of the topology of the line comes from the homology group
 \bea
-H_{\bd} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{\text{Left}} \oplus \bZ_{\text{Right}}
+H_{\blt} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{\text{Left}} \oplus \bZ_{\text{Right}}
 \eea
 which leads to left and right multiplications.
 
@@ -291,7 +291,7 @@ which leads to left and right multiplications.
 &\RA (a\cdot b)\cdot c= a\cdot (b\cdot c).
 \eea
 
-\begin{eg}[Chiral QFT] $\on{dim }X=2$ (a plane). 
+\begin{eg}[Chiral QFT] Let $\on{dim }X=2$ (i.e. $X$ is a plane). 
 \bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt    
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -333,15 +333,15 @@ Observable algebras are developed in the works of:
     \end{itemize}
 \end{itemize}
 
-%\begin{rem} The geometrical study of QFT are related to index theory: 1-dim. (Atiyah-Singer index theory), 2-dim. (chiral index theory on loop space). (see later) \end{rem}
+%\begin{rmk} The geometrical study of QFT are related to index theory: 1-dim. (Atiyah-Singer index theory), 2-dim. (chiral index theory on loop space). (see later) \end{rmk}
 
 \subsection*{BV formalism and homological integration}
     \bea \int \ =\ \text{homology}\eea
 \paragraph{Calculus revisited.}
     Let $M$ be a compact oriented manifold of $\on{dim} M=n$. Many constructions of integration on manifolds can be understood from de Rham complex
-    $\lb \Omega^\bd(M), d\rb$. Consider the integration map 
+    $\lb \Omega^\blt(M), d\rb$. Consider the integration map 
     \bea
-    \int_M: \Omega^\bd(M) \to \bR,\qquad
+    \int_M: \Omega^\blt(M) \to \bR,\qquad
     \alpha\in \Omega^n(M) \mapsto \int_M \alpha. \eea
     Observe that the $n$-th de Rham cohomology group
     $H^n_{dR}(M) =\bR$. This implies that 
@@ -357,7 +357,7 @@ Observable algebras are developed in the works of:
 \paragraph{BV approach.}
     Define \textbf{polyvector fields}
     \bea 
-    \on{PV}^\bd(M) =\bigoplus_k \on{PV}^k(M)\coloneqq \bigoplus_k \Gamma \lb M,\ \asym^k TM\rb.
+    \on{PV}^\blt(M) =\bigoplus_k \on{PV}^k(M)\coloneqq \bigoplus_k \Gamma \lb M,\ \asym^k TM\rb.
      \eea
     Let $\Omega$ be a fixed volume form on $M$. We can naturally identify
     \bea
@@ -425,7 +425,7 @@ Let the BV operator be
 \bea \Delta=\hbar \sum_{i=1}^n \frac{\partial}{\partial z^i} \frac{\partial}{\partial \theta_i}
 +\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}. \eea
 \begin{itemize}
-    \item The space of quantum observables $\on{Obs}^q=H^\bd (\cA \llb  \hbar\rrb,\Delta)$ is isomorphic to a formal completion of the Brieskorn lattice.
+    \item The space of quantum observables $\on{Obs}^q=H^\blt (\cA \llb  \hbar\rrb,\Delta)$ is isomorphic to a formal completion of the Brieskorn lattice.
     \item 
     The quantum observable (or Brieskorn lattice) plays an important role of Hodge filtration (which is related to $\hbar$-filtration) in singularity theory.
     \item The BV-integration models the oscillatory integral 
@@ -433,4 +433,4 @@ Let the BV operator be
 \end{itemize}
 \end{eg}
 
-\noindent \textbf{Reference}: \cite{Li:2017exk}.
+\noindent \textsc{Reference}: \cite{Li:2017exk}.

@@ -34,7 +34,7 @@ which indicates the failure of $\Delta$ being a derivation. Then $\lcb -,-\rcb: 
 
 \begin{eg}
 Let $X$ be a smooth manifold and $\Omega$ be a volume form on $X$. Then we have the 
-$\lb \on{PV}^\bd (X),\Delta_\Omega\rb$ complex, where $\Delta_\Omega: \on{PV}^{k}\to \on{PV}^{k-1}$ is the BV operator (or the divergence operator with respect to $\Omega$). Define $\lcb \alpha,\beta\rcb\coloneqq \Delta_\Omega\lb \alpha\beta\rb- \lb\Delta_\Omega \alpha\rb \beta-(-1)^{|\alpha|}\alpha\Delta_\Omega\beta$. Then $\lcb -,-\rcb$ is the \textbf{Schouten-Nijenhuis bracket} (up to a sign).
+$\lb \on{PV}^\blt (X),\Delta_\Omega\rb$ complex, where $\Delta_\Omega: \on{PV}^{k}\to \on{PV}^{k-1}$ is the BV operator (or the divergence operator with respect to $\Omega$). Define $\lcb \alpha,\beta\rcb\coloneqq \Delta_\Omega\lb \alpha\beta\rb- \lb\Delta_\Omega \alpha\rb \beta-(-1)^{|\alpha|}\alpha\Delta_\Omega\beta$. Then $\lcb -,-\rcb$ is the \textbf{Schouten-Nijenhuis bracket} (up to a sign).
 \end{eg}
 
 \begin{fact}
@@ -48,12 +48,12 @@ the Dolbeault differential operator is
 \bea \pb: \on{PV}^{k,l}\to \on{PV}^{k,l+1},\eea
 the BV operator (i.e. the divergence operator with respect to $\Omega$) is
 \bea \Delta: \on{PV}^{k,l}\to \on{PV}^{k-1,l}.\eea
-Then $\lb \on{PV}^{-\bd,\bd}(X), \pb, \Delta\rb$ is a DGBV.
+Then $\lb \on{PV}^{-\blt,\blt}(X), \pb, \Delta\rb$ is a DGBV.
 \end{eg}
 
-\begin{rem}
+\begin{rmk}
 The existence of such structure implies that the local moduli of complex structure of the Calabi-Yau manifold $X$ is smooth. This follows from the Bogomolov-Tian-Todorov (BTT) lemma.
-\end{rem}
+\end{rmk}
 
 \begin{defn}
 Let $\lb \cA,Q,\Delta\rb$ be a DGBV. Suppose an element $I_0\in \cA_0$, where $\on{deg}(I_0)=0$. $I_0$ is said to satisfy \textbf{classical master equation (CME)} if  
@@ -120,8 +120,8 @@ Then $\delta=\lcb S_0,-\rcb$ defines a vector field on $V$ with $\on{deg} \delta
 \subsection*{Field theory via BV formalism}
 A classical field theory can be usually organized into an $\infty$-dimensional $(-1)$-symplectic geometry $(\cE,Q,\omega)$ where
 \bi[(1)]
-\item $\cE=\Gamma\lb X,E^\bd\rb$ is the space of fields (or space of sections), where $E^\bd$ is the graded vector bundle,
-\item $(\cE,Q)$ is an elliptic complex, which defines naturally a differential $Q$ as follows.
+\item $\cE=\Gamma\lb X,E^\blt\rb$ is the space of fields (or space of sections), where $E^\blt$ is the graded vector bundle,
+\item $(\cE,Q)$ is an elliptic complex, in which the differential $Q$ is naturally defined as follows.
 \bea \cdots \longrightarrow \cE^{-1}\xrightarrow{\ Q\ }\cE^0 \xrightarrow{\ Q\ }\cE^1 \longrightarrow\cdots.\eea
 $Q$ is an elliptic operator. For example, $Q$ can be the de Rham differential $d$ or the Dolbeault differential $\pb$.
 \item $\omega$ is the local $(-1)$-symplectic pairing, where
@@ -138,7 +138,8 @@ To describe the quantization, we perform the {\em toy model}.
 so $\sym^n(\cE^\vee)$ is defined.
 Let us form 
 \bea \cO(\cE)\coloneqq \prod_{n\geq 0}\sym^n(\cE^\vee).\eea
-Let $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$ be a space of \textbf{local functionals}, which contains the set $\lcb \int_X \cL\ \left|\ \cL \text{ is the Lagrangian density}\right. \rcb$.
+Let $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$ be a space of \textbf{local functionals}, which contains the set 
+\bea\lcb \left. \int_X \cL\ \right|\ \cL \text{ is the Lagrangian density} \rcb.\eea
 Then $K=\omega^{-1}$ is a $\delta$-function distribution such that $f(x)=\int dy f(y) \delta_{x,y}$. $K$ is a \textbf{distributional section} of $\sym^2(\cE)$.
 
 However, there is one problem. The action of $\Delta_K$ on $\cO(\cE)$ is ill-defined since it is a pairing of two distributions, each of which is in infinite-dimensional space, leading to $\infty$. This is the famous \textbf{ultraviolet problem}.
@@ -174,11 +175,11 @@ The term $\hbar \Delta I$ is problematic and can be solved by the renormalizatio
 \begin{eg}[Chern-Simons (CS) theory]
 Let $X$ be a 3-manifold, $\fg$ be the Lie algebra, and $\Tr$ be the Killing pairing on $\fg$.
 \begin{itemize}
-    \item $\cE=\Omega^\bd\lb X,\fg[1]\rb$ where\\
+    \item $\cE=\Omega^\blt\lb X,\fg[1]\rb$ where\\
         \begin{table}[!htpb]
             \centering
             \begin{tabular}{c|c|c|c|c}
-            $\mathbf{\Omega^\bd}$ & $\Omega^0(X,\fg)$ & $\Omega^1(X,\fg)$ & $\Omega^2(X,\fg)$ & $\Omega^3(X,\fg)$\\ \hline
+            $\mathbf{\Omega^\blt}$ & $\Omega^0(X,\fg)$ & $\Omega^1(X,\fg)$ & $\Omega^2(X,\fg)$ & $\Omega^3(X,\fg)$\\ \hline
             \textbf{deg} & -1 & 0 & 1 & 2\\ \hline
             \textbf{name} & ghost & field (connection) & anti-field & anti-ghost
             \end{tabular}\end{table}
@@ -196,7 +197,7 @@ $\on{CS}[\cA]$ satisfies the CME: $\lcb \on{CS}, \on{CS}\rcb=0$.
 \end{clm}
 If we write $\on{CS}=\text{free}+I$ as above, then $\lcb \text{free},-\rcb=d$. Hence,
 $\text{CME}\LRA dI+\hf \lcb I,I\rcb=0$.
-One way to see this is that $\Omega^\bd(X,\fg)$ is a DGLA $\RA$ CME.
+One way to see this is that $\Omega^\blt(X,\fg)$ is a DGLA $\RA$ CME.
 \end{eg}
 
 \subsection*{Costello's homotopic renormalization}
@@ -253,10 +254,10 @@ As we have seen before, this can be expressed by the Feynman diagrams:
 \eea
 
 \paragraph{Back to QFT.}
-Consider the $\infty$-dimensional $(-1)$-symplectic geometry $(\cE=\Gamma(X,E^\bd),Q,\omega)$ with the $\delta$-function distribution $K_0=\omega^{-1}$ and $Q(K_0)=0$.
+Consider the $\infty$-dimensional $(-1)$-symplectic geometry $(\cE=\Gamma(X,E^\blt),Q,\omega)$ with the $\delta$-function distribution $K_0=\omega^{-1}$ and $Q(K_0)=0$.
 
 \noindent{\em Costello's approach}: use the elliptic regularity:
-\bea H^\bd(\text{distribution}, Q)=H^\bd(\text{smooth}, Q).\eea 
+\bea H^\blt(\text{distribution}, Q)=H^\blt(\text{smooth}, Q).\eea 
 We can write $K_0=K_r+QP_r$, where $K_r$ is smooth and $P_r$ is singular, called the {\em parametrix}. $\Delta_r:\cO(\cE)\to \cO(\cE)$ is the BV operator contracting with $K_r$, which is well-defined since $K_r$ is smooth. Hence $\lb \cO(\cE),Q,\Delta_r\rb$ is the ``effective'' DGBV.
 
 Let $r'$ be another regularization such that
@@ -293,5 +294,5 @@ An effective solution of perturbative BV quantization of $I_0$ (which solves CME
 \end{itemize}
 \end{defn}
 
-\noindent \textbf{References}:
+\noindent \textsc{References}:
 \cite{costello2011renormalization} for Costello's homotopy renormalization theory, \cite{Li:2016gcb} for the style of the lecture.
