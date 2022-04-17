@@ -1,11 +1,16 @@
-name: CI
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:      
-      - uses: actions/checkout@v3
-      - name: Run tex2html
-        run: ./tex2html/compile_srcf.py [main.tex] [kevin-loo.github.io/HMQFT.html]
+name: CI 
+on: [push] 
+jobs: 
+  build: 
+   runs-on: ubuntu-latest 
+   steps: 
+   - uses: actions/checkout@v3
+   - name: Run make4ht 
+     uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+     env: 
+       command: "make4ht -u -d out main.tex" 
+   - name: Publish the web pages 
+     uses:  peaceiris/actions-gh-pages@v3 
+     with: 
+       github_token: ${{ secrets.GITHUB_TOKEN }} 
+       publish_dir: ./out
