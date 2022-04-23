@@ -1,5 +1,5 @@
 \section{Homotopy Lie algebra and BRST}\label{sec:hla}
-As we have seen in the \nameref{sec:ptfd}, asymptotic analysis of $\int e^{f/\hbar}$ leads to combinatorial formula via {\em graphs} (Feynman diagram expansion) such as
+As we have seen in the \nameref{sec:ptfd}, asymptotic analysis of $\int e^{f/\hbar}$ leads to combinatorial formula via \emph{graphs} (Feynman diagram expansion) such as
 
 propagator $P$: 
 \( \begin{fmffile}{fde1}
@@ -16,7 +16,7 @@ propagator $P$:
 vertex: 
 \( \begin{fmffile}{fde2}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(80,40)
+        \begin{fmfgraph*}(100,50)
                 \fmfleft{i1,i2}
                 \fmfright{o}
                 \fmf{plain,tension=4}{i1,v}
@@ -29,7 +29,7 @@ vertex:
     , ~~~~~~~~ 
     \begin{fmffile}{fde3}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(80,40)
+        \begin{fmfgraph*}(100,50)
                 \fmfleft{i1,i2}
                 \fmfright{o1,o2}
                 \fmf{plain,tension=4}{i1,v}
@@ -105,7 +105,7 @@ the bracket is given by
 \bea \lsb \alpha,\beta\rsb= \sum_{i,j,J,M} \lb \alpha^j_{\ols J} \p_j \beta^i_{\ols M} -\beta^j_{\ols M}\p_j \alpha^i_{\ols J} \rb d\zb^{\ols J} \wedge d\zb^{\ols M} \otimes \p_i. 
 \eea
 On $\on{deg}=0$ components, this is just the usual Lie bracket on $(1,0)$-vector fields.
-As we will study later, this example is related to the deformation of complex strucures and also the so-called {\em Kodaira-Spencer gravity} (this is the B-twisted topological closed string field theory, also known as the B-model).
+As we will study later, this example is related to the deformation of complex strucures and also the so-called \emph{Kodaira-Spencer gravity} (this is the B-twisted topological closed string field theory, also known as the B-model).
 \end{eg}
 
 \subsection*{Chevalley-Eilenberg (CE) and BRST}
@@ -134,7 +134,7 @@ So $\lb C^\blt(\fg),d_{\on{CE}}\rb$ defines a complex, called the \textbf{Cheval
 In fact, $d_{\on{CE}}^2=0$ is equivalent to Jacobi identity; this is a good exercise.
 In terms of the above chosen basis, let
 \bea \lsb e_\alpha, e_\beta \rsb= \sum_\gamma f^\gamma_{\alpha\beta} e_\gamma.\eea
-Here $f^\gamma_{\alpha\beta}$ is the {\em structure constant}. Then we have the explicit formula
+Here $f^\gamma_{\alpha\beta}$ is the \emph{structure constant}. Then we have the explicit formula
 \bea d_{\on{CE}}(c^\alpha)=\hf \sum_{\beta, \gamma} f^\alpha_{\beta \gamma} c^\beta c^\gamma.\eea
 This is used in physics to describe the BRST formalism for gauge theory with the correspondences:
 \bea c^\alpha &\lra \text{ghost field},\\
@@ -147,10 +147,64 @@ We will generalize the above construction to DGLA, and eventually to homotopic L
 Let us first fix some conventions for graded spaces.
 \begin{itemize}
     \item $W=\bigoplus_{n\in\bZ} W_n$ denotes a $\bZ$-graded vector space.
+    
     \item $W[n]$ denotes the $\bZ$-graded vector space with a degree shift by $n$ where
     \bea W[n]_m \coloneqq W_{n+m}.\eea
+    
+\begin{figure}[!htpb]\centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Square [id:dp0812615772659322] 
+\draw   (130.67,41.72) -- (160.17,41.72) -- (160.17,71.22) -- (130.67,71.22) -- cycle ;
+%Shape: Square [id:dp9156482978414704] 
+\draw   (160.17,41.72) -- (189.67,41.72) -- (189.67,71.22) -- (160.17,71.22) -- cycle ;
+%Shape: Square [id:dp8589697057894725] 
+\draw   (189.67,41.72) -- (219.17,41.72) -- (219.17,71.22) -- (189.67,71.22) -- cycle ;
+%Shape: Square [id:dp5527310059356019] 
+\draw   (219.17,41.72) -- (248.67,41.72) -- (248.67,71.22) -- (219.17,71.22) -- cycle ;
+%Shape: Square [id:dp3340966716018581] 
+\draw   (248.67,41.72) -- (278.17,41.72) -- (278.17,71.22) -- (248.67,71.22) -- cycle ;
+%Shape: Square [id:dp1473977553017456] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (278.17,41.72) -- (307.67,41.72) -- (307.67,71.22) -- (278.17,71.22) -- cycle ;
+%Shape: Square [id:dp06348149501159495] 
+\draw   (307.67,41.72) -- (337.17,41.72) -- (337.17,71.22) -- (307.67,71.22) -- cycle ;
+%Shape: Square [id:dp4355149690645379] 
+\draw   (130.67,112.22) -- (160.17,112.22) -- (160.17,141.72) -- (130.67,141.72) -- cycle ;
+%Shape: Square [id:dp24955859820800752] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (160.17,112.22) -- (189.67,112.22) -- (189.67,141.72) -- (160.17,141.72) -- cycle ;
+%Shape: Square [id:dp7712136013152768] 
+\draw   (189.67,112.22) -- (219.17,112.22) -- (219.17,141.72) -- (189.67,141.72) -- cycle ;
+%Shape: Square [id:dp13940177538276122] 
+\draw   (219.17,112.22) -- (248.67,112.22) -- (248.67,141.72) -- (219.17,141.72) -- cycle ;
+%Shape: Square [id:dp4166608510635037] 
+\draw   (248.67,112.22) -- (278.17,112.22) -- (278.17,141.72) -- (248.67,141.72) -- cycle ;
+%Shape: Square [id:dp6958291315519955] 
+\draw   (278.17,112.22) -- (307.67,112.22) -- (307.67,141.72) -- (278.17,141.72) -- cycle ;
+%Shape: Square [id:dp3744108591086348] 
+\draw   (307.67,112.22) -- (337.17,112.22) -- (337.17,141.72) -- (307.67,141.72) -- cycle ;
+%Straight Lines [id:da8996678375365978] 
+\draw    (299,99) -- (188,99) ;
+\draw [shift={(186,99)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (101.33,49.62) node [anchor=north west][inner sep=0.75pt]    {$W$};
+% Text Node
+\draw (87.33,119.62) node [anchor=north west][inner sep=0.75pt]    {$W[n]$};
+% Text Node
+\draw (170,96.5) node [anchor=north west][inner sep=0.75pt]    {$n$};
+% Text Node
+\draw (225,53.5) node [anchor=north west][inner sep=0.75pt]  [rotate=-359.39]  {$\cdots $};
+% Text Node
+\draw (225,125.5) node [anchor=north west][inner sep=0.75pt]    {$\cdots $};
+
+\end{tikzpicture}
+\end{figure}
+    
     \item $W^\vee$ denotes the linear dual with 
-    \bea W^\vee_m=\on{Hom}(W_{-m},K) \quad \text{for base field } K. \eea
+    \bea W^\vee_m=\on{Hom}(W_{-m},\mathbf{k}) \quad \text{for base field } \mathbf{k}. \eea
     
     \item Given two $\bZ$-graded vector spaces $V$, $W$, with base field being implicit,
     \bea \lb V\otimes W\rb_n &=\bigoplus_{i+j=n} \lb V_i\otimes W_j\rb,\\
@@ -239,7 +293,7 @@ d_{\on{CE}}^2: &
     \\ ~~~ & + ~~~
     \begin{fmffile}{dce2b}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(100,50)
+        \begin{fmfgraph*}(100,60)
                 \fmfleft{i1,i2}
                 \fmfright{o}
                 \fmf{fermion,label=$d$,l.side=left,tension=4}{i2,v}
@@ -252,7 +306,7 @@ d_{\on{CE}}^2: &
     ~~~ + ~~~
     \begin{fmffile}{dce2c}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(100,50)
+        \begin{fmfgraph*}(100,60)
                 \fmfleft{i1,i2}
                 \fmfright{o}
                 \fmf{fermion,tension=4}{i2,v}
@@ -265,7 +319,7 @@ d_{\on{CE}}^2: &
     ~~~ + ~~~
     \begin{fmffile}{dce2d}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(100,50)
+        \begin{fmfgraph*}(100,60)
                 \fmfleft{i1,i2}
                 \fmfright{o}
                 \fmf{fermion,tension=4}{i1,v}
@@ -279,7 +333,7 @@ d_{\on{CE}}^2: &
     \sum_{\text{permutations}} \lb
     \begin{fmffile}{dce2e}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(120,50)
+        \begin{fmfgraph*}(120,80)
                 \fmfleft{i1,i2,i3}
                 \fmfright{o}
                 \fmf{fermion,tension=1}{i1,v2}
@@ -318,7 +372,7 @@ We can decompose
 \bea \delta=\delta_0+\delta_1+\delta_2+\cdots,\eea
 where $\delta_k:V\to \sym^k(V).$
 For DGLA, we have $d_{\on{CE}}$ acting on $C^\blt(\fg)=\sym(\fg^\vee\lsb -1\rsb)$, where \bea d_{\on{CE}}=d_\fg+d_{[-,-]} =\delta_1+\delta_2.\eea
-This is a derivation where only $\delta_1$, $\delta_2$ are nontrivial. It is natural to generalize this operator by encoding all possible components $\delta_k$. This leads to the {\em $L_\infty$-algebra}.
+This is a derivation where only $\delta_1$, $\delta_2$ are nontrivial. It is natural to generalize this operator by encoding all possible components $\delta_k$. This leads to the \emph{$L_\infty$-algebra}.
 
 
 \begin{defn}
@@ -341,7 +395,7 @@ If we represent each $\delta_n$ as a graph
 n\lcb ~~~
     \begin{fmffile}{dce3}
     \begin{tabular}{c}
-        \begin{fmfgraph*}(80,80)
+        \begin{fmfgraph*}(150,120)
                 \fmfleft{i1,i2,i3,i4,i5,i6,i7,i8,i9,i10}
                 \fmfright{o}
                 \fmf{fermion,tension=1}{i10,v}
@@ -365,7 +419,7 @@ then $\delta^2=0$ can be pictured as
 \bea \sum_{\text{permutations}}\lb
     \begin{fmffile}{dce4}
         \begin{tabular}{c}
-        \begin{fmfgraph*}(180,120)
+        \begin{fmfgraph*}(200,150)
                 \fmfleft{h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12}
                 \fmfright{o}
                 \fmf{fermion,tension=1}{i12,v}

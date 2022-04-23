@@ -2,7 +2,12 @@
 \usepackage{preamble}
 \usepackage{kpfonts}
 
-\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin=.75in}
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.85in, rmargin=.85in}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
 
 \title{\bf HOMOLOGICAL METHOD IN QUANTUM FIELD THEORY}
 \author{SI LI \\ (\textit{Typeset by KEVIN LOO})}
@@ -21,8 +26,9 @@
 \include{3-homo}
 \include{4-bv}
 \include{5-qo}
+\include{6-dqai}
 
 \newpage
-\bibliographystyle{amsalpha}
+\bibliographystyle{utcaps}
 \bibliography{ref}
 \end{document}

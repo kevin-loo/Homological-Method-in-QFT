@@ -6,6 +6,7 @@
 %\usepackage{dsfont}
 %\usepackage{epic,eepic,pstricks}
 %\usepackage{calrsfs}
+%\usepackage[nottoc]{tocbibind}
 
 %\addtolength{\parskip}{1ex}
 %\setlength{\parindent}{0pt}
@@ -15,19 +16,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{geometry}
+\usepackage{fancyhdr}
 \usepackage{mathtools,mathrsfs}
 \usepackage{latexsym,wasysym,bbm}
 \usepackage{graphicx,epsfig,wrapfig,epigraph,grffile}
 \usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
+\usepackage{bbold}
 \usepackage{stmaryrd}
 \usepackage{psfrag}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{url,hyperref}
 \usepackage{caption,subcaption}
-\usepackage{bbold}
+\usepackage{booktabs}
 \usepackage{comment,verbatim,datetime}
-\usepackage[nottoc]{tocbibind}
 \usepackage{float}
 \usepackage{ytableau}
 \usepackage{braket}
@@ -40,16 +42,17 @@
 \usepackage{sectsty}
 \hypersetup{
     colorlinks,
-    linkcolor={blue!50!green},
-    citecolor={blue!50!purple},
-    urlcolor={blue!50!purple} 
+    linkcolor={blue!40!green},
+    citecolor={blue!60!green},
+    urlcolor={blue!80!green} 
 }
 \sectionfont{\color{blue}} %color of section title
 \subsectionfont{\color{blue!50!cyan}} %color of subsection title
 
 \usepackage{tikz}
 \usetikzlibrary{cd}
-\usetikzlibrary{decorations.pathmorphing,patterns,arrows.meta,calc}
+
+\usetikzlibrary{decorations.pathmorphing,patterns,patterns.meta,arrows.meta,calc}
 \tikzset{>={Latex[width=2mm,length=2mm]}}
 
 \usepackage{feynmp-auto}
@@ -59,7 +62,7 @@
     label.#3(btex #4 etex, point 0.5 of p shifted 6 #2);
     enddef;}
     \fmf{marrow#1,tension=0}{#5}}
-    
+
 \interfootnotelinepenalty=10000 %% Completely prevent breaking of footnotes
 
 %%%%%%%%%%%%%%% MACROS %%%%%%%%%%%%%%%
@@ -181,6 +184,7 @@
 \newcommand{\cC}{{\mathcal C}}
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cE}{{\mathcal E}}
+\newcommand{\cH}{{\mathcal H}}
 \newcommand{\cK}{{\mathcal K}}
 \newcommand{\cL}{{\mathcal L}}
 \newcommand{\cM}{{\mathcal M}}
