@@ -23,7 +23,7 @@ A \textbf{differential graded Batalin-Vilkovisky (DGBV) algebra} is a triple $\l
 \item $\lsb Q,\Delta\rsb=Q\Delta+\Delta Q=0.$
 \ei
 \end{defn}
-Here $\Delta$ being {\em second-order} means the following. Define the \textbf{BV bracket}
+Here $\Delta$ being \emph{second-order} means the following. Define the \textbf{BV bracket}
 \bea \lcb a,b\rcb\coloneqq \Delta(ab)-(\Delta a)b-(-1)^{|a|} a\Delta b\quad \forall a,b\in \cA,\eea
 which indicates the failure of $\Delta$ being a derivation. Then $\lcb -,-\rcb: \cA\otimes \cA\to \cA$ is a $\on{deg}=1$ operator satisfying
 \bi[(1)]
@@ -91,7 +91,7 @@ Let $(V, Q,\omega)$ be a finite dimensional differential graded symplectic space
     \item $\omega: \asym^2 V\to \bR$ or $\bC$ is a non-degenerate pairing of $\on{deg}=-1$, or explicitly $\omega(a,b)=0$ unless $|a|+|b|=1$,
     \item $Q(\omega)=0$, or explicitly  $\omega(Q(a),b)+(-1)^a\omega(a, Q(b))=0$.
 \end{itemize}
-The {\em non-degeneracy} of $\omega$ implies an isomorphism
+The \emph{non-degeneracy} of $\omega$ implies an isomorphism
 \bea \omega: V^\vee \xrightarrow{\ \sim\ } V\lsb 1\rsb. \eea
 This allows us to identify
 \bea \asym^2 V^\vee \xleftrightarrow{\ \sim\ } \asym^2 \lb V[1]\rb \simeq \sym^2(V)[2], \qquad \omega\in \asym^2 V^\vee \xleftrightarrow{\ \sim\ } K[2],\eea
@@ -102,7 +102,7 @@ We obtain a DGBV $\lb \cA,Q,\Delta_K\rb$ as follows.
     \item $Q:\cA\to\cA$ is the differential induced from $Q:V\to V$,
     \item $\Delta_K: \sym^m (V^\vee)\to \sym^{m-2} (V^\vee)$ is the contraction with the Poisson kernel $K\in \sym^2(V)$. Explicitly, for $\alpha_i\in V^\vee$, 
     \bea \Delta_K(\alpha_1\otimes\cdots \otimes\alpha_m)=\sum_{i<j}\pm \lan K,\alpha_i\otimes \alpha_j\ran \alpha_1\otimes \cdots \otimes \widehat{\alpha_i} \otimes \cdots \otimes \widehat{\alpha_j} \otimes \cdots \otimes \alpha_m.\eea
-    Here $\pm$ is the {\em Koszul sign} by permuting graded objects.
+    Here $\pm$ is the \emph{Koszul sign} by permuting graded objects.
 \end{itemize}
 
 \begin{prop}
@@ -130,7 +130,7 @@ and is compatible with $Q$:
 \bea \omega(Q(\alpha),\beta)+(-1)^\alpha \omega(\alpha,Q(\beta))=0.\eea
 \ei
 
-To describe the quantization, we perform the {\em toy model}.
+To describe the quantization, we perform the \emph{toy model}, in which we define
 \begin{itemize}
     \item $\cE^\vee \coloneqq\on{Hom}_X(\cE,\bR)$ is a distribution on $X$,
     \item $(\cE^\vee)^{\otimes n}=\on{Hom}_{X^n}(\cE^{\otimes n},\bR)$ is a distribution on $X^n$,
@@ -138,11 +138,11 @@ To describe the quantization, we perform the {\em toy model}.
 so $\sym^n(\cE^\vee)$ is defined.
 Let us form 
 \bea \cO(\cE)\coloneqq \prod_{n\geq 0}\sym^n(\cE^\vee).\eea
-Let $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$ be a space of \textbf{local functionals}, which contains the set 
+Let $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$ be a \textbf{space of local functionals}, which contains the set 
 \bea\lcb \left. \int_X \cL\ \right|\ \cL \text{ is the Lagrangian density} \rcb.\eea
-Then $K=\omega^{-1}$ is a $\delta$-function distribution such that $f(x)=\int dy f(y) \delta_{x,y}$. $K$ is a \textbf{distributional section} of $\sym^2(\cE)$.
+The Poisson kernel is $K=\omega^{-1}=$``$\lb \int_X \lan \alpha,\beta\ran\rb^{-1}$'', which is a $\delta$-function distribution as in $f(x)=\int dy \delta_{x,y} f(y) $. $K$ is a \textbf{distributional section} of $\sym^2(\cE)$.
 
-However, there is one problem. The action of $\Delta_K$ on $\cO(\cE)$ is ill-defined since it is a pairing of two distributions, each of which is in infinite-dimensional space, leading to $\infty$. This is the famous \textbf{ultraviolet problem}.
+However, there is one problem. The action of $\Delta_K$ on $\cO(\cE)$ ($\Delta_K \curvearrowright\cO(\cE)$) is ill-defined since it is a pairing of two distributions, each of which is in infinite-dimensional space, leading to $\infty$. This is the famous \textbf{ultraviolet problem}.
 
 \begin{eg}
 In classical sense, the corresponding BV bracket $\lcb -,-\rcb$ is well-defined on local functionals $\cO_{\text{loc}}(\cE)$:
@@ -175,13 +175,13 @@ The term $\hbar \Delta I$ is problematic and can be solved by the renormalizatio
 \begin{eg}[Chern-Simons (CS) theory]
 Let $X$ be a 3-manifold, $\fg$ be the Lie algebra, and $\Tr$ be the Killing pairing on $\fg$.
 \begin{itemize}
-    \item $\cE=\Omega^\blt\lb X,\fg[1]\rb$ where\\
+    \item $\cE=\Omega^\blt\lb X,\fg[1]\rb$ where
         \begin{table}[!htpb]
             \centering
-            \begin{tabular}{c|c|c|c|c}
+            \begin{tabular}{l|cccc}\toprule
             $\mathbf{\Omega^\blt}$ & $\Omega^0(X,\fg)$ & $\Omega^1(X,\fg)$ & $\Omega^2(X,\fg)$ & $\Omega^3(X,\fg)$\\ \hline
             \textbf{deg} & -1 & 0 & 1 & 2\\ \hline
-            \textbf{name} & ghost & field (connection) & anti-field & anti-ghost
+            \textbf{name} & ghost & field (connection) & anti-field & anti-ghost\\ \bottomrule
             \end{tabular}\end{table}
         
     \item $\omega(\alpha,\beta)=\pm \int_X \Tr \lan \alpha,\beta\ran, \quad \on{deg}\omega=-1$,
@@ -205,10 +205,10 @@ We have seen that the action
 \bea
 \Delta_K \curvearrowright \cO(\cE)
 \eea
-is ill-defined naively, where $K=\omega^{-1}$ is singular.
+is ill-defined naively, in which $K=\omega^{-1}$ is singular.
 
 \paragraph{Toy model.} 
-Let $(V,Q)$ be a finite dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \cO(V)\to \cO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the chain homotopy for BV kernel:
+Let $(V,Q)$ be a finite dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \cO(V)\to \cO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the \emph{chain homotopy} for BV kernel:
 \bea K_P=K_0+Q(P)=K_0+(Q\otimes 1+1\otimes Q)P,\eea
 then $\on{deg}(K_P)=1$, $Q(K_P)=QK_0+Q^2(P)=0$. We can consider a new BV operator
 $\Delta_P$, which is a contraction with $K_P$.
@@ -218,7 +218,6 @@ $\lb Q+\hbar \Delta_P\rb e^{\hbar\p_P}=e^{\hbar\p_P}\lb Q+\hbar \Delta_0\rb$.
 \end{prop}
 Here $\p_P$ is the second order operator of contracting with $P\in \sym^2(V)$:
 \bea \p_P: \sym^n(V^\vee)\to \sym^{n-2}(V^\vee).\eea
-
 Then we have the commutative diagram
 \bea
 \begin{tikzcd}
@@ -256,9 +255,9 @@ As we have seen before, this can be expressed by the Feynman diagrams:
 \paragraph{Back to QFT.}
 Consider the $\infty$-dimensional $(-1)$-symplectic geometry $(\cE=\Gamma(X,E^\blt),Q,\omega)$ with the $\delta$-function distribution $K_0=\omega^{-1}$ and $Q(K_0)=0$.
 
-\noindent{\em Costello's approach}: use the elliptic regularity:
+\noindent\emph{Costello's approach}: use the elliptic regularity:
 \bea H^\blt(\text{distribution}, Q)=H^\blt(\text{smooth}, Q).\eea 
-We can write $K_0=K_r+QP_r$, where $K_r$ is smooth and $P_r$ is singular, called the {\em parametrix}. $\Delta_r:\cO(\cE)\to \cO(\cE)$ is the BV operator contracting with $K_r$, which is well-defined since $K_r$ is smooth. Hence $\lb \cO(\cE),Q,\Delta_r\rb$ is the ``effective'' DGBV.
+We can write $K_0=K_r+QP_r$, where $K_r$ is smooth and $P_r$ is singular, called the \emph{parametrix}. $\Delta_r:\cO(\cE)\to \cO(\cE)$ is the BV operator contracting with $K_r$, which is well-defined since $K_r$ is smooth. Hence $\lb \cO(\cE),Q,\Delta_r\rb$ is the ``effective'' DGBV.
 
 Let $r'$ be another regularization such that
 \bea K_0=K_{r'}+QP_{r'}.\eea
@@ -284,7 +283,7 @@ An effective solution of perturbative BV quantization of $I_0$ (which solves CME
                 \fmf{plain,tension=4}{v2,o1}
                 \fmf{plain,tension=4}{v2,o2}
                 \fmf{plain,left,label=$P$,label.side=left,tension=3}{v1,v2,v1}
-                \fmfv{label=$I[r]$,label.angle=170,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$I[r]\ $,label.angle=170,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
                 \fmfv{label=$I[r]$,label.angle=10,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
         \end{tabular}

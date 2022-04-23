@@ -3,11 +3,11 @@ A physics system is always described by an action functional (if exist)
 \bea
 S: \cE \to \bR,
 \eea
-where $\cE$ is the {\em space of fields}. The classical physics is described by the critical locus of the action functional:
+where $\cE$ is the \emph{space of fields}. The classical physics is described by the critical locus of the action functional:
 \bea
 \on{Crit}(S)= \lcb \delta S=0\rcb / \sim.
 \eea
-$\delta S=0$ is called the {\em equation of motion} which arises from the variation of the action functional $S$. 
+$\delta S=0$ is called the \emph{equation of motion} which arises from the variation of the action functional $S$. 
 $\on{Crit}(S)$
 is essentially a set of equivalence classes induced by an arbitrary symmetry. In this lecture, we will focus on the quantum physics. One canonical way to approach the quantum physics is by the {\bf Feynman path integral}:
 \bea
@@ -15,29 +15,28 @@ is essentially a set of equivalence classes induced by an arbitrary symmetry. In
 \eea
 When $\hbar$ is very small, the above integral
 is asymptotically approximated around the critical locus of $S$; this is a method
-called the {\em stationary phase approximation}. The classical limit is obtained by $\hbar\to 0$.
+called the \emph{stationary phase approximation}. The classical limit is obtained by $\hbar\to 0$.
 
 \begin{eg} Here are some basic examples of quantum field theory that we will discuss
 throughout this lecture.
 \bi[(1)]
-\item \textbf{Scalar field theory}. The fields are smooth functions on a manifold $X$,
+\item \textbf{Scalar field theory}. The fields are smooth functions on a manifold $X$.
 $\cE=C^\infty(X)$.
 \bea
 S\lsb \phi\rsb = \int_X |d\phi|^2+m^2\phi^2, \qquad \phi\in C^\infty(X).
 \eea
 
-\item \textbf{Gauge theory}. The fields are connections on a vector bundle over $X$, $V\to X$,
-$\cE=\lcb \text{connections on } V\to X \rcb$.
+\item \textbf{Gauge theory}. The fields are connections on a vector bundle over $X$, $V\to X$. $\cE=\lcb \text{connections on } V\to X \rcb$.
 \bea
 \text{Yang-Mills:  } \on{YM}[A] &=\int \Tr F\wedge \ast F, \qquad F=dA+\hf [A,A].\\
 \text{Chern-Simons:  } \on{CS}[A] &=\hf\int \Tr A\wedge dA+\frac{1}{6}\int \Tr A\wedge [A,A].
 \eea
 The Chern-Simons theory is described in 3 dimensions, $\on{dim} X=3$.
 
-\item \textbf{Sigma model}. The fields are maps between two manifolds,
+\item \textbf{Sigma model}. The fields are maps between two manifolds.
 $\cE=\lcb \text{maps } \Sigma \mapsto X \rcb$.
 
-\item \textbf{Gravity}. The fields are metrics on a manifold $X$,
+\item \textbf{Gravity}. The fields are metrics on a manifold $X$.
 $\cE=\lcb \text{metrics on } X\rcb$.
 \ei
 \end{eg}
@@ -51,10 +50,10 @@ However, in a special region such as the $\hbar$-asymptotic region, a theory exi
 \subsection*{Observables}
 Suppose we consider a quantum field theory (QFT) on a spacetime manifold $X$ and $\cE$ is the space of sections of a vector bundle $E$, $\cE=\Gamma(X,E)$. We want to understand the integral $\int_\cE$.
 \bi[(1)]
-\item $X=\text{a point},\ E=\text{vector space},\ \cE=\bR^n$.\\
+\item $X=\text{a point}$, $E=$ vector space, say, $\bR^n$, $\cE=\bR^n$. Hence,
 $\int_\cE$ leads to the usual calculus that we learnt in high school.
 
-\item $\on{dim} X>0$ and there is a fiber $E_p$ (for example, a linear space) at each point $p\in X$. But $\cE\neq \coprod_{p\in X} E_p$; the topology of $X$ makes a difference! This leads to some new structures, known as the \textbf{observable algebras}.
+\item $\on{dim} X>0$ (i.e. $X$ is not a point) and there is a fiber $E_p$ (for example, a linear space) at each point $p\in X$. But $\cE\neq \coprod_{p\in X} E_p$; the topology of $X$ makes a difference! This leads to some new structures, known as the \textbf{observable algebras}.
 \bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -124,7 +123,7 @@ $\int_\cE$ leads to the usual calculus that we learnt in high school.
 Roughly speaking, 
 observables are functions on fields, denoted as
 $\cO(\cE)$ (or certain homology). For example, 
-distributions are {\em linear observables}.
+distributions are \emph{linear observables}.
 
 The new structures come from the following fact:
 \begin{itemize}
@@ -148,11 +147,11 @@ where $\cO_1(f)=f(p)^m, \ \forall f\in \cE$. $\cO_1$ is an observable supported 
 \eea
 
 \item Intuitively, if $\cE(U)$ is restricted to $\cE(U_i)$, then dually $O(\cE(U_i))\mapsto O(\cE(U))$.
-Naively, we can {\em multiply} those {\em functions}, then we get
+Naively, we can \emph{multiply} those \emph{functions}, then we get
 \bea
 \bigotimes_i \on{Obs}(U_i)\mapsto \on{Obs}(V).
 \eea
-This, however, requires further {\em quantum corrections} in which fields in $U_i$'s may {\em talk} to each other.
+This, however, requires further \emph{quantum corrections} in which fields in $U_i$'s may \emph{talk} to each other.
 
 \begin{eg}[Topological Quantum Mechanics]
 In topological QFT, $\on{Obs}(U)$ only depends on the topology of U.
@@ -200,13 +199,13 @@ We find an \textbf{associative algebra}!
 
 
 \subsection*{Algebraic structure}
-Consider two operators are placed at two different points on a line. When one operator approaches closely the other, the algebraic structure of the topology of the line comes from the homology group
+Consider two operators being placed at two different points on a line. When one operator approaches closely the other, the algebraic structure of the topology of the line comes from the homology group
 \bea
 H_{\blt} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{\text{Left}} \oplus \bZ_{\text{Right}}
 \eea
 which leads to left and right multiplications.
 
-{\em Associativity} comes from further consistency:
+\emph{Associativity} comes from further consistency:
 \bea
 & \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -282,9 +281,9 @@ which leads to left and right multiplications.
 % Text Node
 \draw (251.43,176.71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$U_3$};
 % Text Node
-\draw (21.2,98.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
+\draw (21.2,96.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
 % Text Node
-\draw (304.9,98.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
+\draw (304.9,96.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \rb$}};
 % Text Node
 \draw (143.88,183.61) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\huge $\lb \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \rb$}};
 \end{tikzpicture} \\
@@ -325,11 +324,11 @@ Observable algebras are developed in the works of:
     \item Beilinson-Drinfeld
     \begin{itemize}
         \item developed factorization algebra to formulate two-dimensional chiral conformal field theory (CFT)
-        \item introduced the notion of {\em chiral homology} (generalize {\em Hodge homology} in one dimension)
+        \item introduced the notion of \emph{chiral homology} (generalize \emph{Hodge homology} in one dimension)
     \end{itemize}
     \item Costello-Gwilliam
     \begin{itemize}
-        \item constructed factorization algebras from perturbative renormalization theory, in the \textbf{Batalin-Vilkovisky (BV) formalism} (generalize {\em BRST formalism} in gauge theory).
+        \item constructed factorization algebras from perturbative renormalization theory, in the \textbf{Batalin-Vilkovisky (BV) formalism} (generalize \emph{BRST formalism} in gauge theory).
     \end{itemize}
 \end{itemize}
 
@@ -407,7 +406,7 @@ Let $\frac{\partial}{\partial x^i}$ be the derivative with respect to $x^i$  and
 +\sum_i (\partial_i f) \frac{\partial}{\partial \theta_i}
 \eea
 which looks like a second order operator (it is easy to check that $\Delta^2=0$). This is in contrast with de Rham differential $d$, which is a first order differential
-operator. Note that the first term looks like a Laplacian, but it is NOT. $\theta_i$ is an odd variable. Hence, $\Delta$ is sometimes called an {\em odd Laplacian}.
+operator. Note that the first term looks like a Laplacian, but it is NOT. $\theta_i$ is an odd variable. Hence, $\Delta$ is sometimes called an \emph{odd Laplacian}.
 
 \begin{eg}[$\frac{\partial}{\partial \theta_i}$ operator]
 \bea\frac{\partial}{\partial \theta_1}(\theta_1\theta_2) &=\theta_2,\\
