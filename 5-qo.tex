@@ -1,8 +1,8 @@
 \section{Quantization and obstruction}\label{sec:qo}
 In the \nameref{sec:bv}, we had the data of an $\infty$-dimensional $(-1)$-symplectic geometry $(\cE,Q,\omega)$ that describe the QFT.
-Recall the classical data: the space of \textbf{local functionals}, $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$, in which the classical interaction $I_0=\int_X \cL$ is an element of $\cO_{\text{loc}}(\cE)$. $I_0$ solves the CME: $QI_0+\hf \lcb I_0,I_0\rcb_0=0$. Here $\lcb -,-\rcb_0$ is the BV bracket with respect to the BV kernel $K_0=\omega^{-1}$ and is well-defined on $\cO_{\text{loc}}(\cE)$. However the BV operator $\Delta_0$ is ill-defined on $\cO_{\text{loc}}(\cE)$ and $\cO(\cE)$, implying that the naive QME $QI_0+\hbar \Delta_0 I_0+\hf \lcb I_0,I_0\rcb=0$ does not make sense.
+Recall the classical data: the space of \textbf{local functionals}, $\sO_{loc}(\cE)\subset \sO(\cE)$, in which the classical interaction $I_0=\int_X \cL$ is an element of $\sO_{loc}(\cE)$. $I_0$ solves the CME: $QI_0+\hf \lcb I_0,I_0\rcb_0=0$. Here $\lcb -,-\rcb_0$ is the BV bracket with respect to the BV kernel $K_0=\omega^{-1}$ and is well-defined on $\sO_{loc}(\cE)$. However the BV operator $\Delta_0$ is ill-defined on $\sO_{loc}(\cE)$ and $\sO(\cE)$, implying that the naive QME $QI_0+\hbar \Delta_0 I_0+\hf \lcb I_0,I_0\rcb=0$ does not make sense.
 
-One way out of this problem is to use regularization to define an effective QME. We defined the Poisson kernel $K_0=K_r+QP_r$, where $K_r$ is smooth, leading to a well-defined BV operator $\Delta_r$ on $\cO(\cE)$. For each $r$, we have constructed $I[r]\in \cO(\cE)$ solving the effective QME:
+One way out of this problem is to use regularization to define an effective QME. We defined the Poisson kernel $K_0=K_r+QP_r$, where $K_r$ is smooth, leading to a well-defined BV operator $\Delta_r$ on $\sO(\cE)$. For each $r$, we have constructed $I[r]\in \sO(\cE)$ solving the effective QME:
 \bea \lb Q+\hbar\Delta_r\rb e^{I[r]/\hbar}=0.\eea
 Different regularizations are related by the homotopy RG (HRG) flow:
 \bea e^{I[r']/\hbar}=\exp{\lb \hbar \p_{P^{r'}_r}\rb} e^{I[r]/\hbar}.\eea
@@ -30,9 +30,9 @@ We have seen that the effective QME and the HRG are compatible.
 \draw    (109.59,120.79) -- (116.85,113.53) ;
 
 %Curve Lines [id:da21026083909699889] 
-\draw (78.71,53.37) .. controls (106.69,33.96) and (129.65,42.23) .. (147.47,52.37) ;
-\draw [shift={(149.95,53.81)}, rotate = 210.62] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
-\draw [shift={(75.98,55.34)}, rotate = 323.13] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+\draw [color={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=1 ] (78.71,53.37) .. controls (106.69,33.96) and (129.65,42.23) .. (147.47,52.37) ;
+\draw [shift={(149.95,53.81)}, rotate = 210.62] [fill={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=0][line width=0.08] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+\draw [shift={(75.98,55.34)}, rotate = 323.13] [fill={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=0][line width=0.08] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
 
 % Text Node
 \draw (68.07,86.16) node [anchor=north west][inner sep=0.75pt]    {$r_{1}$};
@@ -86,13 +86,13 @@ or
 where $P^L_\vep= \int_\vep^L dt \lb Q^\dagger \otimes 1\rb K_t$ is called the \emph{regularized propagator}. 
 Now we can use $P^L_\vep$ to connect the effective QME at $\vep$ with the effective QME at $L$ via the homotopy RG, $\exp{\lb \hbar\p_{P_\vep^L}\rb}$.
 \begin{rmk}
-$P_0^\infty= \int_0^\infty dt \lb Q^\dagger \otimes 1\rb K_t$ is the \emph{full propagator}. At $t=0$, one will encounter the ultraviolet (UV) divergence since there exists a singularity for the full propagator. At $t=\infty$, one will encounter the infrared (IR) divergence if the manifold is non-compact.
+$P_0^\infty= \int_0^\infty dt \lb Q^\dagger \otimes 1\rb K_t$ is the \emph{full propagator}. At $t=0$, one will encounter ultraviolet (UV) divergence since there exists a singularity for the full propagator. On a non-compact manifold, one will encounter infrared (IR) divergence at $t=\infty$.
 \end{rmk}
 
 
 \subsection*{Constructing effective BV quantization using heat kernel regularization}
 \paragraph{Step 1: The method of counter-term.}
-Let $I_0\in \cO_{\text{loc}}(\cE)$ be the classical interaction. Since $P_0^L$ is singular, the limit $\lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{I_0/\hbar}$ does not exist. Pictorially, all the loop diagrams:
+Let $I_0\in \sO_{loc}(\cE)$ be the classical interaction. Since $P_0^L$ is singular, the limit $\lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{I_0/\hbar}$ does not exist. Pictorially, all the loop diagrams:
 \bea 
     \begin{fmffile}{fddlim}
     \begin{tabular}{c}
@@ -118,16 +118,16 @@ Let $I_0\in \cO_{\text{loc}}(\cE)$ be the classical interaction. Since $P_0^L$ i
 \eea
 are divergent as $\vep\to 0$.
 
-To cancel the divergence, one can find the \emph{counter-terms}, $I^\eps\in \hbar \cO_{\text{loc}}(\cE)\llb \hbar\rrb$, which are $\vep$-dependent and singular as $\vep\to 0$ such that
-\bea \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{\lb I_0+I^\eps\rb/\hbar}\coloneqq e^{I[L]^{\text{naive}}/\hbar}\eea exists. 
-Such defined $I[L]^{\text{naive}}$ has the following advantage: for $0<L_1<L_2$, 
-\bea e^{I[L_2]^{\text{naive}}/\hbar}
+To cancel the divergences, one can find the \emph{counter-terms}, $I^\eps\in \hbar \sO_{loc}(\cE)\llb \hbar\rrb$, which are $\vep$-dependent and singular as $\vep\to 0$ such that
+\bea \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{\lb I_0+I^\eps\rb/\hbar}\coloneqq e^{I[L]^{naive}/\hbar}\eea exists. 
+Such defined $I[L]^{naive}$ has the following advantage: for $0<L_1<L_2$, 
+\bea e^{I[L_2]^{naive}/\hbar}
 &= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L_2}}\rb} e^{\lb I_0+I^\eps\rb/\hbar}\\
 &= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \exp{\lb \hbar\p_{P_\vep^{L_1}}\rb} e^{\lb I_0+I^\eps\rb/\hbar} \quad \text{using } P_\vep^{L_2}=P_{L_1}^{L_2}+P_\vep^{L_1}\\
 &= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L_1}}\rb} e^{\lb I_0+I^\eps\rb/\hbar} \quad \text{since } P_{L_1}^{L_2} \text{ is smooth}\\
-&= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} e^{I[L_1]^{\text{naive}}/\hbar}.
+&= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} e^{I[L_1]^{naive}/\hbar}.
 \eea
-In other words, the family $\lcb I[L]^{\text{naive}}\rcb_{L>0}$ satisfies the homotopy RG (HRG) flow.
+In other words, the family $\lcb I[L]^{naive}\rcb_{L>0}$ satisfies the homotopy RG (HRG) flow.
 \bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -151,14 +151,14 @@ In other words, the family $\lcb I[L]^{\text{naive}}\rcb_{L>0}$ satisfies the ho
 % Text Node
 \draw (245.5,93.07) node [anchor=north west][inner sep=0.75pt]    {$L$};
 % Text Node
-\draw (40.5,108.07) node [anchor=north west][inner sep=0.75pt]    {$I[L_{1}]^{\text{naive}}$};
+\draw (40.5,108.07) node [anchor=north west][inner sep=0.75pt]    {$I[L_{1}]^{naive}$};
 % Text Node
-\draw (152.5,108.07) node [anchor=north west][inner sep=0.75pt]    {$I[L_{2}]^{\text{naive}}$};
+\draw (152.5,108.07) node [anchor=north west][inner sep=0.75pt]    {$I[L_{2}]^{naive}$};
 % Text Node
 \draw (110,106.57) node [anchor=north west][inner sep=0.75pt]    {$\overset{\text{HRG}}{\leadsto}$};
 \end{tikzpicture}
 \eea
-However, $\lcb I[L]^{\text{naive}}\rcb_{L>0}$ may NOT satisfy the QME!
+However, $\lcb I[L]^{naive}\rcb_{L>0}$ may NOT satisfy the QME!
 
 \paragraph{Step 2: Further corrections.}
 Adjust $I^\eps$ to $\Tilde{I}^\eps$ by finding further corrections such that
@@ -175,7 +175,7 @@ Step 2 is NOT always possible; it might have \emph{obstructions}, in physics thi
 There are cases where $\vep$-dependent counter-terms are not required in the sense that the limit 
 \bea e^{I[L]/\hbar}
 &= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L}}\rb} e^{I/\hbar}\eea
-exists for a large class of local functionals $I\in \cO_{\text{loc}}(\cE)\llb\hbar\rrb$. Such a theory is called \textbf{ultraviolet (UV)-finite}. Then we can explore the meaning of the effective QME: $\lb Q=\hbar \Delta_L\rb e^{I[L]/\hbar}=0$ or $QI[L]+\hbar \Delta_L I[L]+\hf \lcb I[L],I[L]\rcb_L=0$. The upshot is that $L\to 0$ has a meaning in which the effective QME is reduced to $QI+\hf \lsb I,I\rsb=0$, where $\lsb-,-\rsb$ is the \emph{quantum deformed bracket}.
+exists for a large class of local functionals $I\in \sO_{loc}(\cE)\llb\hbar\rrb$. Such a theory is called \textbf{ultraviolet (UV)-finite}. Then we can explore the meaning of the effective QME: $\lb Q=\hbar \Delta_L\rb e^{I[L]/\hbar}=0$ or $QI[L]+\hbar \Delta_L I[L]+\hf \lcb I[L],I[L]\rcb_L=0$. The upshot is that $L\to 0$ has a meaning in which the effective QME is reduced to $QI+\hf \lsb I,I\rsb=0$, where $\lsb-,-\rsb$ is the \emph{quantum deformed bracket}.
 \end{rmk}
 
 We will explain two main UV-finite examples:
@@ -254,14 +254,14 @@ solving the QME: $QI+\hbar\Delta I+\hf \lcb I,I \rcb=0$.
 \end{itemize}
 
 \subsection*{Effective QME}
-In the QFT case, things are more complicated since we need to deal with regularization. However, the good thing is that the analogue of deformation-obstruction theory still exists. The relevant complex is $\lb \cO_{\text{loc}}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$. Note that $Q+\lcb I_0,-\rcb$ is well-defined on local functionals and CME implies that $\lb \cO_{\text{loc}}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$ indeed forms a complex.
+In the QFT case, things are more complicated since we need to deal with regularization. However, the good thing is that the analogue of deformation-obstruction theory still exists. The relevant complex is $\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$. Note that $Q+\lcb I_0,-\rcb$ is well-defined on local functionals and CME implies that $\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$ indeed forms a complex.
 
 Similar to the above discussion, we have 
 \begin{thm}\label{thm5.2}
 The obstruction space for effective BV quantization of $I_0$ is given by
-\bea H^1\lb \cO_{\text{loc}}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb.\eea
+\bea H^1\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb.\eea
 The tangent space (deformation space) is
-\bea H^0\lb \cO_{\text{loc}}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb.\eea
+\bea H^0\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb.\eea
 \end{thm}
 
 \begin{rmk}

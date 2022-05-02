@@ -1,13 +1,15 @@
-\documentclass[11pt]{article} 
+\documentclass[11pt,twoside]{article} 
 \usepackage{preamble}
 \usepackage{kpfonts}
 
-\geometry{tmargin=.75in, bmargin=.75in, lmargin=.85in, rmargin=.85in}
-\setlength{\headheight}{14pt}
+\geometry{tmargin=.85in, bmargin=.65in, lmargin=.75in, rmargin=.75in}
+\setlength{\headheight}{20pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\leftmark}
-\fancyfoot[C]{\thepage}
+\fancyhead[C]{\emph{\nouppercase \leftmark}}
+\fancyhead[LE,RO]{\thepage}
+
+\setlength{\parindent}{1em}
 
 \title{\bf HOMOLOGICAL METHOD IN QUANTUM FIELD THEORY}
 \author{SI LI \\ (\textit{Typeset by KEVIN LOO})}
@@ -27,6 +29,7 @@
 \include{4-bv}
 \include{5-qo}
 \include{6-dqai}
+\include{7-tqm1}
 
 \newpage
 \bibliographystyle{utcaps}

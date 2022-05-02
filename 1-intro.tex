@@ -1,15 +1,14 @@
 \section{Introduction}\label{sec:intro}
-A physics system is always described by an action functional (if exist)
+A physics system is always described by an action functional (if exist), possibly with some gauge symmetry,
 \bea
 S: \cE \to \bR,
 \eea
-where $\cE$ is the \emph{space of fields}. The classical physics is described by the critical locus of the action functional:
+where $\cE$ is the \emph{space of fields}. The classical physics is described by the critical locus of the action functional, modulo gauge:
 \bea
 \on{Crit}(S)= \lcb \delta S=0\rcb / \sim.
 \eea
 $\delta S=0$ is called the \emph{equation of motion} which arises from the variation of the action functional $S$. 
-$\on{Crit}(S)$
-is essentially a set of equivalence classes induced by an arbitrary symmetry. In this lecture, we will focus on the quantum physics. One canonical way to approach the quantum physics is by the {\bf Feynman path integral}:
+In this lecture, we will focus on the quantum physics. One canonical way to approach the quantum physics is by the {\bf Feynman path integral}:
 \bea
 \int_\cE e^{iS/\hbar}.
 \eea
@@ -121,8 +120,8 @@ $\int_\cE$ leads to the usual calculus that we learnt in high school.
 \ei
 
 Roughly speaking, 
-observables are functions on fields, denoted as
-$\cO(\cE)$ (or certain homology). For example, 
+observables are functions on fields (or certain homology), in which their space is denoted
+$\sO(\cE)$. For example, 
 distributions are \emph{linear observables}.
 
 The new structures come from the following fact:
@@ -146,7 +145,7 @@ where $\cO_1(f)=f(p)^m, \ \forall f\in \cE$. $\cO_1$ is an observable supported 
 \bigotimes_i \on{Obs}(U_i)\mapsto \on{Obs}(V).
 \eea
 
-\item Intuitively, if $\cE(U)$ is restricted to $\cE(U_i)$, then dually $O(\cE(U_i))\mapsto O(\cE(U))$.
+\item Intuitively, if $\cE(U)$ is restricted to $\cE(U_i)$, then dually $\sO(\cE(U_i))\mapsto \sO(\cE(U))$.
 Naively, we can \emph{multiply} those \emph{functions}, then we get
 \bea
 \bigotimes_i \on{Obs}(U_i)\mapsto \on{Obs}(V).
@@ -201,7 +200,7 @@ We find an \textbf{associative algebra}!
 \subsection*{Algebraic structure}
 Consider two operators being placed at two different points on a line. When one operator approaches closely the other, the algebraic structure of the topology of the line comes from the homology group
 \bea
-H_{\blt} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{\text{Left}} \oplus \bZ_{\text{Right}}
+H_{\blt} (\bR-\lcb 0\rcb)=H_0 (\bR-\lcb 0\rcb)= \bZ_{left} \oplus \bZ_{right}
 \eea
 which leads to left and right multiplications.
 
@@ -376,7 +375,7 @@ Observable algebras are developed in the works of:
      & & & & \bR \\
     PV^{n} \ar[r, "\Delta"]
     & PV^{n-1} \ar[r, "\Delta"]
-    & \cdots \ar[r, "\Delta"] & PV^{0} \ar[ur, "\int_{\on{BV}}"] & 
+    & \cdots \ar[r, "\Delta"] & PV^{0} \ar[ur, "\int_{BV}"] & 
     \end{tikzcd}
     \eea
 where
@@ -384,11 +383,11 @@ $\Delta: \on{PV}^k \to \on{PV}^{k-1}$ is a divergence operator with respect to $
 For example, 
 $\Delta: \on{PV}^1=\on{Vect}(M) \to \on{PV}^0=C^\infty(M)$ is the usual divergence.
 
-$\int_{\on{BV}}$ is the \textbf{BV integration}, which is a map:
-\bea \int_{\on{BV}}: \on{PV}^0 \to \bR,\qquad 
+$\int_{BV}$ is the \textbf{BV integration}, which is a map:
+\bea \int_{BV}: \on{PV}^0 \to \bR,\qquad 
 f \mapsto \int f\Omega.
 \eea
-Homologically $\int_{\on{BV}}$ can be identified with $H^0_{\on{BV}}$.
+Homologically $\int_{BV}$ can be identified with $H^0_{BV}$.
 Here ``$\on{dim} (M)$'' does not appear. The problem of integration is transferred to construct $\Delta$, which has a convenient formulation at least in perturbative QFT.
 In $\infty$-dimensions (as in QFT), renormalization helps to construct $\Delta$ which leads to \textbf{homological integration}.
 

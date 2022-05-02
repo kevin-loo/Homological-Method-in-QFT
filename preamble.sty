@@ -7,30 +7,22 @@
 %\usepackage{epic,eepic,pstricks}
 %\usepackage{calrsfs}
 %\usepackage[nottoc]{tocbibind}
-
-%\addtolength{\parskip}{1ex}
-%\setlength{\parindent}{0pt}
 %\counterwithin{equation}{enumi}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{mathtools,mathrsfs}
-\usepackage{latexsym,wasysym,bbm}
-\usepackage{graphicx,epsfig,wrapfig,epigraph,grffile}
+\usepackage{geometry,fancyhdr,parskip}
+\usepackage{graphicx,epsfig,wrapfig,epigraph,grffile,psfrag}
 \usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
-\usepackage{bbold}
-\usepackage{stmaryrd}
-\usepackage{psfrag}
+\usepackage{mathtools,mathrsfs}
+\usepackage{latexsym,wasysym,bbm,stmaryrd}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{url,hyperref}
 \usepackage{caption,subcaption}
 \usepackage{booktabs}
-\usepackage{comment,verbatim,datetime}
-\usepackage{float}
+\usepackage{float,comment,verbatim,datetime}
 \usepackage{ytableau}
 \usepackage{braket}
 \usepackage{feynmp}
@@ -85,6 +77,7 @@
 \newtheorem{cor}{Corollary}[section]
 \newtheorem{prop}{Proposition}[section]
 \newtheorem{clm}{Claim}[section]
+\newtheorem{fact}{Fact}[section]
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
@@ -97,8 +90,7 @@
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}[section]
 \newtheorem{conv}{Convention}[section]
-\newtheorem{fact}{Fact}[section]
- 
+
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \newenvironment{sproof}{%
   \renewcommand{\proofname}{Sketch proof}\proof}{\endproof}
@@ -172,6 +164,7 @@
 \def\bH{\mathbb{H}}
 \def\bI{\mathbb{I}}
 \def\bN{\mathbb{N}}
+\def\bP{\mathbb{P}}
 \def\bQ{\mathbb{Q}}
 \def\bR{\mathbb{R}}
 \def\bZ{\mathbb{Z}}
