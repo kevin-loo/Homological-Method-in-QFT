@@ -32,7 +32,7 @@ Recall that we discussed in the \nameref{subsec:heat}, the family $\lcb I[L]\rcb
 \end{tikzpicture}
 \eea
 At $L\to 0$, we use the counter-term method to reduce the ill-defined theory with UV divergence to a well-defined effective theory.
-At each $L>0$, we have a well-defined effective BV operator $\Delta_L$, which is a contraction with the smooth kernel $K_L$ representing $e^{-L\lsb Q,Q^\dagger\rsb}$. This leads to the effective DGBV, $\lb \cO(\cE), Q, \Delta_L\rb$, in which the corresponding $I[L]$ solves the QME.
+At each $L>0$, we have a well-defined effective BV operator $\Delta_L$, which is a contraction with the smooth kernel $K_L$ representing $e^{-L\lsb Q,Q^\dagger\rsb}$. This leads to the effective DGBV, $\lb \sO(\cE), Q, \Delta_L\rb$, in which the corresponding $I[L]$ solves the QME.
 
 Let $\bH=\lcb \left. \varphi\in\cE\ \right|\ \lsb Q,Q^\dagger\rsb\varphi=0\rcb\ = 
 \lcb \left. \varphi\in\cE\ \right|\  Q\varphi=Q^\dagger\varphi=0\rcb\ \simeq H^\blt\lb \cE,Q\rb$. $\bH$ is called the space of \textbf{harmonics} (or the \textbf{zero modes}), which is a finite-dimensional space (by Hodge theory).
@@ -45,7 +45,7 @@ Then we have
 \end{tikzcd}
 \eea
 
-The BV operator $\Delta_H$ associated to $\omega_H^{-1}$ is $\Delta_H=\Delta_\infty$. On the complete story of BV quantization, we have
+The BV operator $\Delta_H$ associated with $\omega_H^{-1}$ is $\Delta_H=\Delta_\infty$. On the complete story of BV quantization, as depicted in the following diagram,
 \bea
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -63,7 +63,7 @@ The BV operator $\Delta_H$ associated to $\omega_H^{-1}$ is $\Delta_H=\Delta_\in
 \draw (245.5,93.07) node [anchor=north west][inner sep=0.75pt]    {$L=\infty$};
 \end{tikzpicture}
 \eea
-where $I[\infty]$ solves the QME for $\lb \cO(\bH),\Delta_H\rb$. This is an interesting point where we will find some finite-dimensional geometric data, leading to the index theory.
+$I[\infty]$ solves the QME for $\lb \sO(\bH),\Delta_H\rb$ at $L=\infty$. This is an interesting point where we will find some finite-dimensional geometric data, leading to the index theory.
 
 Our next goal is to use the method we have discussed so far to do \emph{geometry and topology}.
 We will explain two main examples:
@@ -161,46 +161,46 @@ Then $\ast$ defines a deformation quantization.
 If $\omega^{ij}\neq$ constant, then the above formula does not work. 
 \end{rmk}
 
-For convenience, we can describe a formal version. Let $\lb V,\omega\rb$ be a linear symplectic space, where $V\cong \bR^{2n}$ and $\omega: \asym^2 V\to \bR$ is a symplectic pairing. Write 
-\bea\widehat{\cO}(V)\coloneqq \widehat{\sym}(V^\vee)=\prod_{k\geq 0} \sym^k(V^\vee),\eea
-where $V^\vee=\on{Hom}(V,\bR)$ is the linear dual of $V$. Then the Moyal-Weyl product defines an associative algebra $\lb \widehat{\cO}(V)\llb \hbar\rrb,\ast\rb$, called the (formal) Weyl algebra. On the other hand, let 
-\bea\widehat{\Omega}^{-\blt}_{V}\coloneqq \widehat{\cO}(V) \otimes \asym^{-\blt}(V^\vee).
+For convenience, we can describe a formal version. Let $\lb V,\omega\rb$ be a linear symplectic space, where $V\simeq \bR^{2n}$ and $\omega: \asym^2 V\to \bR$ is a symplectic pairing. Write 
+\bea\widehat{\sO}(V)\coloneqq \widehat{\sym}(V^\vee)=\prod_{k\geq 0} \sym^k(V^\vee),\eea
+where $V^\vee=\on{Hom}(V,\bR)$ is the linear dual of $V$. Then the Moyal-Weyl product defines an associative algebra $\lb \widehat{\sO}(V)\llb \hbar\rrb,\ast\rb$, called the (formal) Weyl algebra. On the other hand, let 
+\bea\widehat{\Omega}^{-\blt}_{V}\coloneqq \widehat{\sO}(V) \otimes \asym^{-\blt}(V^\vee).
 \eea
-Here $\widehat{\Omega}^{-p}_{V}\coloneqq \widehat{\cO}(V) \otimes \asym^{p}(V^\vee)$ are the (formal) $p$-forms sitting in degree $-p$. Let $d_V: \widehat{\Omega}^{-p}_{V} \to \widehat{\Omega}^{-(p+1)}_{V}$ be de Rham differential. Let $\pi=\omega^{-1}\in\asym^2 V$ be the Poisson tensor and $\iota_\pi: \widehat{\Omega}^{-\blt}_{V}\to \widehat{\Omega}^{-(\blt-2)}_{V}$ be the contraction with $\pi$. Let $\Delta=\cL_\pi=\lsb d_V,\iota_\pi\rsb: \widehat{\Omega}^{-\blt}_{V}\to\widehat{\Omega}^{-(\blt-1)}_{V}$ be the Lie derivative. Thus $\lb \widehat{\Omega}^{-\blt}_{V},\Delta\rb$ defines a BV algebra. Geometrically, this leads to Koszul-Brylinski complex/homology. Physically, this is the effective geometry on \emph{zero modes} of topological quantum mechanics as we will see.
+Here $\widehat{\Omega}^{-p}_{V}\coloneqq \widehat{\sO}(V) \otimes \asym^{p}(V^\vee)$ are the (formal) $p$-forms sitting in degree $-p$. Let $d_V: \widehat{\Omega}^{-p}_{V} \to \widehat{\Omega}^{-(p+1)}_{V}$ be de Rham differential. Let $\Pi=\omega^{-1}\in\asym^2 V$ be the Poisson tensor and $\iota_\Pi: \widehat{\Omega}^{-\blt}_{V}\to \widehat{\Omega}^{-(\blt-2)}_{V}$ be the contraction with $\Pi$. Let $\Delta=\cL_\Pi=\lsb d_V,\iota_\Pi\rsb: \widehat{\Omega}^{-\blt}_{V}\to\widehat{\Omega}^{-(\blt-1)}_{V}$ be the Lie derivative. Thus $\lb \widehat{\Omega}^{-\blt}_{V},\Delta\rb$ defines a BV algebra. Geometrically, this leads to Koszul-Brylinski complex/homology. Physically, this is the effective geometry on \emph{zero modes} of topological quantum mechanics as we will see.
 
 \subsection*{Fedosov quantization}
 We will focus on \emph{symplectic manifolds} now. Fedosov \cite{fedosov1994simple} gave a simple and geometric construction of deformation quantization on symplectic cases. 
 \begin{defn}
 Let $(X,\omega)$ be a symplectic manifold.
 We define the \textbf{Weyl bundle} 
-\bea W(X)\coloneqq \prod_{k\geq 0}\sym^k\lb T^\ast X\rb\llb \hbar\rrb.\eea
+\bea \cW(X)\coloneqq \prod_{k\geq 0}\sym^k\lb T^\ast X\rb\llb \hbar\rrb.\eea
 So at each point $p\in X$, its fiber is
-\bea \left. W(X)\right|_p= \widehat{\cO}\lb T_p X\rb\llb\hbar\rrb.\eea
+\bea \left. \cW(X)\right|_p= \widehat{\sO}\lb T_p X\rb\llb\hbar\rrb.\eea
 \end{defn}
-A local section of $W(X)$ is 
+A local section of $\cW(X)$ is 
 \bea \sigma(x,y)=\sum_{k,l\geq 0}\hbar^k a_{k,i_1\cdots i_l}(x) y^{i_1}\cdots y^{i_l},\eea
 where $\lcb x\rcb$ are the base coordinates and $\lcb y\rcb$ are the fiber coordinates; $a_{k,i_1\cdots i_l}(x)$ are smooth functions.
-Since $\lb T_p X, \left.\omega\right|_{T_p X}\rb$ is linear symplectic, we have a fiberwise Moyal-Weyl product, still denoted by $\ast$. Thus $\lb W(X),\ast\rb$ defines the $\infty$-dimensional bundle of algebras.
+Since $\lb T_p X, \left.\omega\right|_{T_p X}\rb$ is linear symplectic, we have a fiberwise Moyal-Weyl product, still denoted by $\ast$. Thus $\lb \cW(X),\ast\rb$ defines the $\infty$-dimensional bundle of algebras.
 
-Let $\nabla$ be a connection on $TX$ which is torsion-free and compatible with $\omega$ ($\nabla \omega=0$). Such connection is called a \textbf{symplectic connection} (which always exist and is not unique). $\nabla$ induces a connection on all tensors. In particular, it defines a connection on $W(X)$, still denoted by $\nabla$. Its curvature is
-\bea \nabla^2 \sigma=\frac{1}{\hbar}\lsb R_\nabla, \sigma\rsb_\ast, \quad \forall \sigma\in \Gamma(X,W(X))\eea
-where $R_\nabla=\frac{1}{4}R_{ijkl} y^i y^j dx^k \wedge dx^l \in \Omega^2(X,W(X))$ is a 2-form valued in the Weyl algebra; $R_{ijkl}=\omega_{im}R^m{}_{jkl}$ is a curvature form contracted with the symplectic pairing.
+Let $\nabla$ be a connection on $TX$ which is torsion-free and compatible with $\omega$ ($\nabla \omega=0$). Such connection is called a \textbf{symplectic connection} (which always exist and is not unique). $\nabla$ induces a connection on all tensors. In particular, it defines a connection on $\cW(X)$, still denoted by $\nabla$. Its curvature is
+\bea \nabla^2 \sigma=\frac{1}{\hbar}\lsb R_\nabla, \sigma\rsb_\ast, \quad \forall \sigma\in \Gamma(X,\cW(X))\eea
+where $R_\nabla=\frac{1}{4}R_{ijkl} y^i y^j dx^k \wedge dx^l \in \Omega^2(X,\cW(X))$ is a 2-form valued in the Weyl algebra; $R_{ijkl}=\omega_{im}R^m{}_{jkl}$ is a curvature form contracted with the symplectic pairing.
 
-\paragraph{Fedosov's construction.}
-Given a sequence of closed 2-forms $\lcb \omega_k\rcb_{k\geq 1}$ on $X$, there exists a unique (up to gauge) connection on $W(X)$ of the form $\nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\ast, \gamma\in\Omega^1\lb X, W(X)\rb$, satisfying some initial conditions and the equation 
+\paragraph{Fedosov connection.}
+Given a sequence of closed 2-forms $\lcb \omega_k\rcb_{k\geq 1}$ on $X$, there exists a unique (up to gauge) connection on $\cW(X)$ of the form $\nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\ast$, where $\gamma\in\Omega^1\lb X, \cW(X)\rb$, satisfying some initial conditions and the equation 
 \bea \nabla\gamma+\frac{1}{2\hbar}\lsb \gamma,\gamma\rsb_\ast+R_\nabla=\omega_\hbar\qquad \text{(Fedosov equation)}\eea
-where $\omega_\hbar=-\omega+ \sum_{k\geq 1}\hbar^k \omega_k$.
+where $\omega_\hbar=-\omega+ \sum_{k\geq 1}\hbar^k \omega_k$. $\nabla$ is called the \textbf{Fedosov connection}.
 
 Let $D= \nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\ast$. Then the Fedosov equation implies $D^2=\frac{1}{\hbar}\lsb\omega_\hbar,-\rsb_\ast=0$, where $\omega_\hbar$ is constant along each fiber, and thus a central term.
-So we obtain a flat connection $D$ on $W(X)$. Let $W_D(X)\coloneqq \lcb \left.\sigma\in\Gamma(X,W(X))\ \right|\ D\sigma=0 \rcb$ be the space of flat sections. Then $\lb W_D(X),\ast\rb$ is an associative algebra.
+So we obtain a flat connection $D$ on $\cW(X)$. Let $\cW_D(X)\coloneqq \lcb \left.\sigma\in\Gamma(X,\cW(X))\ \right|\ D\sigma=0 \rcb$ be the space of flat sections. Then $\lb \cW_D(X),\ast\rb$ is an associative algebra.
 
-Let $\sigma: W_D(X)\to C^\infty(X)\llb\hbar\rrb$ by sending $y\mapsto 0$ (\textbf{symbol map}). Then $\sigma$ is an isomorphism, and 
+Let $\sigma: \cW_D(X)\to C^\infty(X)\llb\hbar\rrb$ by sending $y\mapsto 0$ (\textbf{symbol map}). Then $\sigma$ is an isomorphism, and 
 \bea f\ast g \mapsto \sigma\lb \sigma^{-1}\lb f\rb\ast \sigma^{-1}\lb g\rb\rb\eea
 defines a deformation quantization. $\omega_\hbar$ is the corresponding \textbf{characteristic class} (or \textbf{moduli}).
 
 \subsection*{Algebraic index theorem}
 Given a deformation quantization $\lb C^\infty(X)\llb\hbar\rrb,\ast \rb$ on a symplectic manifold with characteristic class $\omega_\hbar$, there exists a unique \textbf{trace map}
-\bea \Tr: C^\infty(X)\llb\hbar\rrb \to \bR\llb \hbar\rrb\eea
+\bea \Tr: C^\infty(X)\llb\hbar\rrb \to \bR ((\hbar))\eea
 satisfying a normalization condition and the trace property:
 \bea \Tr \lb f\ast g\rb=\Tr \lb g\ast f\rb.\eea
 Then the index is obtained as the partition function of the theory, which can be formulated as 
@@ -208,72 +208,59 @@ Then the index is obtained as the partition function of the theory, which can be
 where $\widehat{A}(X)$ is the formal $\widehat{A}$-genus of $X$.
 This is the simplest version of algebraic index theorem formulated by Fedosov and Nest-Tsygan as the algebraic analogue of Atiyah-Singer index theorem. 
 
-We can similarly construct a \emph{deformation quantization} for $C^\infty\lb X,\on{End}(E)\rb\llb\hbar\rrb$ and construct the trace map, then we have $\Tr(1)=\int_X e^{\omega_\hbar/\hbar}\on{ch}(E) \widehat{A}(X)$.
+We can similarly construct a \emph{deformation quantization} for $C^\infty\lb X,\on{End}(E)\rb\llb\hbar\rrb$ and construct the trace map, then we have $\Tr(1)=\int_X e^{\omega_\hbar/\hbar}\on{ch}(E) \widehat{A}(X)$, where $\on{ch}(E)$ is the characteristic class of $\cE$.
 
 \subsection*{Relation with QFT}
-In supersymmetric (SUSY) QFT, \emph{localization} often appears:
-\bea \int_\cE e^{iS/\hbar}= \int_M \lb -\rb,\eea
-where $M\subset \cE$ is a finite-dimensional space describing some interesting moduli space.
+In supersymmetric (SUSY) QFT, \emph{localization} often appears, in which the path integral on $\cE$ is often localized effectively to an equivalent integral on a finite-dimensional space $M\subset \cE$ describing some interesting moduli space:
+\bea \int_\cE e^{iS/\hbar}= \int_M \lb -\rb.\eea
 
 In topological QM, we find
 \bea \int_{\on{Map}(S^1,X)} e^{-S/\hbar}= \int_X \lb -\rb,\eea
-where $\int_X$ indicates the localization to constant loops. The left-hand side of the equation is an analytic index; the right-hand side is a topological index.
-In the next section, we would like to present a physics \emph{derivation} of the index theorem.
-
-\begin{comment}
+where $\int_X$ indicates the localization to constant loops. 
+The LHS usually gives a physics presentation of the analytic index of certain elliptic operator; the
+RHS will end up with integrals of various curvature forms representing the topological index.
 Geometrically, a loop space (circle) is mapped to a localized neighborhood of a point in $X$, where a localized effective theory exists.
 \begin{figure}[!htpb]\centering 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
-%Shape: Ellipse [id:dp96215148925455] 
-\draw   (18.33,67.88) .. controls (18.33,54.58) and (29.11,43.8) .. (42.41,43.8) .. controls (55.71,43.8) and (66.49,54.58) .. (66.49,67.88) .. controls (66.49,81.18) and (55.71,91.96) .. (42.41,91.96) .. controls (29.11,91.96) and (18.33,81.18) .. (18.33,67.88) -- cycle ;
-%Straight Lines [id:da3304787521485182] 
-\draw    (76.04,66.75) -- (120.21,66.75) ;
-\draw [shift={(122.21,66.75)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Shape: Polygon Curved [id:ds07244034873824146] 
-\draw   (146.88,40.09) .. controls (162.8,32.13) and (167.58,38.5) .. (202.6,38.1) .. controls (237.62,37.7) and (244.39,69.54) .. (217.72,89.84) .. controls (191.06,110.13) and (158.42,106.15) .. (142.5,82.27) .. controls (126.58,58.39) and (130.96,48.05) .. (146.88,40.09) -- cycle ;
-%Shape: Ellipse [id:dp8249251345393571] 
-\draw  [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ] (146.48,61.18) .. controls (146.48,53.93) and (152.36,48.05) .. (159.62,48.05) .. controls (166.87,48.05) and (172.75,53.93) .. (172.75,61.18) .. controls (172.75,68.43) and (166.87,74.31) .. (159.62,74.31) .. controls (152.36,74.31) and (146.48,68.43) .. (146.48,61.18) -- cycle ;
-%Curve Lines [id:da6993644771515923] 
-\draw    (148.74,109.34) .. controls (144.55,100.89) and (129.84,91.03) .. (149.11,71.66) ;
-\draw [shift={(150.33,70.47)}, rotate = 136.29] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp23192014552632334] 
+\draw   (34.83,63.04) .. controls (34.83,50.68) and (44.85,40.67) .. (57.21,40.67) .. controls (69.57,40.67) and (79.59,50.68) .. (79.59,63.04) .. controls (79.59,75.4) and (69.57,85.42) .. (57.21,85.42) .. controls (44.85,85.42) and (34.83,75.4) .. (34.83,63.04) -- cycle ;
+%Straight Lines [id:da1794274167676957] 
+\draw    (86.58,66.97) -- (118.38,66.97) ;
+\draw [shift={(120.38,66.97)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Polygon Curved [id:ds4925647269289568] 
+\draw   (138.44,47.45) .. controls (149.5,38.5) and (157,37) .. (179.23,45.99) .. controls (201.46,54.98) and (210.5,71.5) .. (190.3,83.87) .. controls (170.1,96.23) and (149.5,78) .. (135.24,78.33) .. controls (120.97,78.66) and (127.38,56.39) .. (138.44,47.45) -- cycle ;
+%Shape: Ellipse [id:dp9869721752408005] 
+\draw  [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ] (138.15,62.89) .. controls (138.15,57.58) and (142.45,53.27) .. (147.76,53.27) .. controls (153.07,53.27) and (157.38,57.58) .. (157.38,62.89) .. controls (157.38,68.2) and (153.07,72.5) .. (147.76,72.5) .. controls (142.45,72.5) and (138.15,68.2) .. (138.15,62.89) -- cycle ;
+%Curve Lines [id:da32709083755427515] 
+\draw    (131,100.5) .. controls (127.97,94.38) and (114.35,86.96) .. (138.6,71.18) ;
+\draw [shift={(140.96,69.69)}, rotate = 148.53] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Shape: Ellipse [id:dp7711772783086626] 
+\draw   (280.67,60.39) .. controls (280.67,50.6) and (288.6,42.67) .. (298.39,42.67) .. controls (308.18,42.67) and (316.11,50.6) .. (316.11,60.39) .. controls (316.11,70.18) and (308.18,78.11) .. (298.39,78.11) .. controls (288.6,78.11) and (280.67,70.18) .. (280.67,60.39) -- cycle ;
+%Straight Lines [id:da8438423211152051] 
+\draw    (322.07,59.76) -- (355.03,59.76) ;
+\draw [shift={(357.03,59.76)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp2958661722082001] 
+\draw  [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ] (363.86,59.81) .. controls (363.86,49.48) and (372.24,41.1) .. (382.57,41.1) .. controls (392.91,41.1) and (401.28,49.48) .. (401.28,59.81) .. controls (401.28,70.15) and (392.91,78.52) .. (382.57,78.52) .. controls (372.24,78.52) and (363.86,70.15) .. (363.86,59.81) -- cycle ;
 
 % Text Node
-\draw (36.29,96.06) node [anchor=north west][inner sep=0.75pt]    {$S^{1}$};
+\draw (35.94,87.75) node [anchor=north west][inner sep=0.75pt]    {$S^{1}$};
 % Text Node
-\draw (78.53,110) node [anchor=north west][inner sep=0.75pt]   [align=left] {localized effective theory};
+\draw (79.29,98.35) node [anchor=north west][inner sep=0.75pt]   [align=left] {localized effective theory};
 % Text Node
-\draw (229.63,33.68) node [anchor=north west][inner sep=0.75pt]    {$X$};
+\draw (190.64,36.72) node [anchor=north west][inner sep=0.75pt]    {$X$};
+% Text Node
+\draw (276.88,80.5) node [anchor=north west][inner sep=0.75pt]    {$S^{1}$};
+% Text Node
+\draw (402.6,50.7) node [anchor=north west][inner sep=0.75pt]    {$\simeq \mathbb{R}^{2n}$};
 
 
 \end{tikzpicture}
 \end{figure}
 
-Locally, using Dolbeault coordinates, a loop space can be thought of as a standard phase space, $\bR^{2n}$. 
-\begin{figure}[!htpb]\centering
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-%Shape: Ellipse [id:dp3832555122004915] 
-\draw   (27.67,44.07) .. controls (27.67,31.85) and (37.57,21.95) .. (49.78,21.95) .. controls (62,21.95) and (71.9,31.85) .. (71.9,44.07) .. controls (71.9,56.28) and (62,66.18) .. (49.78,66.18) .. controls (37.57,66.18) and (27.67,56.28) .. (27.67,44.07) -- cycle ;
-%Straight Lines [id:da9240446990399585] 
-\draw    (79.34,43.28) -- (120.96,43.28) ;
-\draw [shift={(122.96,43.28)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Shape: Ellipse [id:dp2967020000357363] 
-\draw  [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ] (131.49,43.35) .. controls (131.49,30.45) and (141.94,20) .. (154.84,20) .. controls (167.73,20) and (178.19,30.45) .. (178.19,43.35) .. controls (178.19,56.24) and (167.73,66.7) .. (154.84,66.7) .. controls (141.94,66.7) and (131.49,56.24) .. (131.49,43.35) -- cycle ;
-
-% Text Node
-\draw (43.39,69.3) node [anchor=north west][inner sep=0.75pt]    {$S^{1}$};
-% Text Node
-\draw (178.79,32.74) node [anchor=north west][inner sep=0.75pt]    {$\simeq \mathbb{R}^{2n}$};
-
-\end{tikzpicture}
-\end{figure}
+Locally, a loop space can be thought of as a standard phase space, $\bR^{2n}$. 
 The loop spaces are then glued together on $X$ as a family of effective field theory. This can be done rigorously within the framework of effective BV quantization:
 \begin{itemize}
     \item Effective action $\leadsto \gamma$,
@@ -281,4 +268,5 @@ The loop spaces are then glued together on $X$ as a family of effective field th
     \item BV integral $\leadsto$ trace map,
     \item partition function $\leadsto$ algebraic index.
 \end{itemize}
-\end{comment}
+
+In the next section, we will present a physics \emph{derivation} of the index theorem.

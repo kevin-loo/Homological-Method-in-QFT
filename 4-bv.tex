@@ -98,7 +98,7 @@ This allows us to identify
 where $K=\omega^{-1}\in \sym^2(V)$ is the \textbf{Poisson kernel} with $\on{deg} K=1$ and $Q(K)=0$.
 We obtain a DGBV $\lb \cA,Q,\Delta_K\rb$ as follows. 
 \begin{itemize}
-    \item $\cA=\cO(V)=\widehat{\sym}(V^\vee)$ is a space of formal functions on $V$,
+    \item $\cA=\sO(V)=\widehat{\sym}(V^\vee)$ is a space of formal functions on $V$,
     \item $Q:\cA\to\cA$ is the differential induced from $Q:V\to V$,
     \item $\Delta_K: \sym^m (V^\vee)\to \sym^{m-2} (V^\vee)$ is the contraction with the Poisson kernel $K\in \sym^2(V)$. Explicitly, for $\alpha_i\in V^\vee$, 
     \bea \Delta_K(\alpha_1\otimes\cdots \otimes\alpha_m)=\sum_{i<j}\pm \lan K,\alpha_i\otimes \alpha_j\ran \alpha_1\otimes \cdots \otimes \widehat{\alpha_i} \otimes \cdots \otimes \widehat{\alpha_j} \otimes \cdots \otimes \alpha_m.\eea
@@ -106,13 +106,13 @@ We obtain a DGBV $\lb \cA,Q,\Delta_K\rb$ as follows.
 \end{itemize}
 
 \begin{prop}
-$(\cO(V),Q,\Delta_K)$ is a DGBV.
+$(\sO(V),Q,\Delta_K)$ is a DGBV.
 \end{prop}
 \begin{proof}
 Exercise.
 \end{proof}
 
-Let $S_0\in \cO(V)$ solve the CME:
+Let $S_0\in \sO(V)$ solve the CME:
 \bea \lcb S_0,S_0\rcb=0 \quad (\on{deg} S_0=0).
 \eea
 Then $\delta=\lcb S_0,-\rcb$ defines a vector field on $V$ with $\on{deg} \delta=1, \delta^2=0$. Hence $(\fg=V[-1], \delta)$ is an $L_\infty$-algebra.
@@ -137,16 +137,16 @@ To describe the quantization, we perform the \emph{toy model}, in which we defin
 \end{itemize}
 so $\sym^n(\cE^\vee)$ is defined.
 Let us form 
-\bea \cO(\cE)\coloneqq \prod_{n\geq 0}\sym^n(\cE^\vee).\eea
-Let $\cO_{\text{loc}}(\cE)\subset \cO(\cE)$ be a \textbf{space of local functionals}, which contains the set 
+\bea \sO(\cE)\coloneqq \prod_{n\geq 0}\sym^n(\cE^\vee).\eea
+Let $\sO_{loc}(\cE)\subset \sO(\cE)$ be a \textbf{space of local functionals}, which contains the set 
 \bea\lcb \left. \int_X \cL\ \right|\ \cL \text{ is the Lagrangian density} \rcb.\eea
 The Poisson kernel is $K=\omega^{-1}=$``$\lb \int_X \lan \alpha,\beta\ran\rb^{-1}$'', which is a $\delta$-function distribution as in $f(x)=\int dy \delta_{x,y} f(y) $. $K$ is a \textbf{distributional section} of $\sym^2(\cE)$.
 
-However, there is one problem. The action of $\Delta_K$ on $\cO(\cE)$ ($\Delta_K \curvearrowright\cO(\cE)$) is ill-defined since it is a pairing of two distributions, each of which is in infinite-dimensional space, leading to $\infty$. This is the famous \textbf{ultraviolet problem}.
+However, there is one problem. The action of $\Delta_K$ on $\sO(\cE)$ ($\Delta_K \curvearrowright\sO(\cE)$) is ill-defined since it is a pairing of two distributions, each of which is in infinite-dimensional space, leading to $\infty$. This is the famous \textbf{ultraviolet problem}.
 
 \begin{eg}
-In classical sense, the corresponding BV bracket $\lcb -,-\rcb$ is well-defined on local functionals $\cO_{\text{loc}}(\cE)$:
-\bea \lcb -,-\rcb: \cO_{\text{loc}}(\cE)\times \cO_{\text{loc}}(\cE)\to \cO_{\text{loc}}(\cE).\eea
+In classical sense, the corresponding BV bracket $\lcb -,-\rcb$ is well-defined on local functionals $\sO_{loc}(\cE)$:
+\bea \lcb -,-\rcb: \sO_{loc}(\cE)\times \sO_{loc}(\cE)\to \sO_{loc}(\cE).\eea
 \bea
     \begin{fmffile}{fdd}
     \begin{tabular}{c}
@@ -203,12 +203,12 @@ One way to see this is that $\Omega^\blt(X,\fg)$ is a DGLA $\RA$ CME.
 \subsection*{Costello's homotopic renormalization}
 We have seen that the action
 \bea
-\Delta_K \curvearrowright \cO(\cE)
+\Delta_K \curvearrowright \sO(\cE)
 \eea
 is ill-defined naively, in which $K=\omega^{-1}$ is singular.
 
 \paragraph{Toy model.} 
-Let $(V,Q)$ be a finite dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \cO(V)\to \cO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the \emph{chain homotopy} for BV kernel:
+Let $(V,Q)$ be a finite dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \sO(V)\to \sO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the \emph{chain homotopy} for BV kernel:
 \bea K_P=K_0+Q(P)=K_0+(Q\otimes 1+1\otimes Q)P,\eea
 then $\on{deg}(K_P)=1$, $Q(K_P)=QK_0+Q^2(P)=0$. We can consider a new BV operator
 $\Delta_P$, which is a contraction with $K_P$.
@@ -221,15 +221,15 @@ Here $\p_P$ is the second order operator of contracting with $P\in \sym^2(V)$:
 Then we have the commutative diagram
 \bea
 \begin{tikzcd}
-\cO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"] \ar[d,"Q+\hbar \Delta_0"]
-& \cO(V)\llb \hbar\rrb \ar[d,"Q+\hbar \Delta_P"] \\
-\cO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"]
-& \cO(V)\llb \hbar\rrb
+\sO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"] \ar[d,"Q+\hbar \Delta_0"]
+& \sO(V)\llb \hbar\rrb \ar[d,"Q+\hbar \Delta_P"] \\
+\sO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"]
+& \sO(V)\llb \hbar\rrb
 \end{tikzcd}
 \eea
 which implies that
-\bea \text{QME for } (\cO(V),Q,\Delta_0) \xrightarrow{e^{\hbar \p_P}}
-\text{QME for } (\cO(V),Q,\Delta_P),\eea
+\bea \text{QME for } (\sO(V),Q,\Delta_0) \xrightarrow{e^{\hbar \p_P}}
+\text{QME for } (\sO(V),Q,\Delta_P),\eea
 where $e^{\hbar \p_P}$ is the homotopy RG flow. Hence,
 \bea \lb Q+\hbar \Delta_0\rb e^{I/\hbar}=0 \LRA \lb Q+\hbar \Delta_P\rb e^{\Tilde{I}/\hbar}=0\eea
 where $e^{\Tilde{I}/\hbar}=e^{\hbar \p_P}e^{I/\hbar}$.
@@ -256,19 +256,19 @@ As we have seen before, this can be expressed by the Feynman diagrams:
 Consider the $\infty$-dimensional $(-1)$-symplectic geometry $(\cE=\Gamma(X,E^\blt),Q,\omega)$ with the $\delta$-function distribution $K_0=\omega^{-1}$ and $Q(K_0)=0$.
 
 \noindent\emph{Costello's approach}: use the elliptic regularity:
-\bea H^\blt(\text{distribution}, Q)=H^\blt(\text{smooth}, Q).\eea 
-We can write $K_0=K_r+QP_r$, where $K_r$ is smooth and $P_r$ is singular, called the \emph{parametrix}. $\Delta_r:\cO(\cE)\to \cO(\cE)$ is the BV operator contracting with $K_r$, which is well-defined since $K_r$ is smooth. Hence $\lb \cO(\cE),Q,\Delta_r\rb$ is the ``effective'' DGBV.
+\bea H^\blt(\text{distributions}, Q)=H^\blt(\text{smooth functions}, Q).\eea 
+We can write $K_0=K_r+QP_r$, where $K_r$ is smooth and $P_r$ is singular, called the \emph{parametrix}. $\Delta_r:\sO(\cE)\to \sO(\cE)$ is the BV operator contracting with $K_r$, which is well-defined since $K_r$ is smooth. Hence $\lb \sO(\cE),Q,\Delta_r\rb$ is the ``effective'' DGBV.
 
 Let $r'$ be another regularization such that
 \bea K_0=K_{r'}+QP_{r'}.\eea
 Hence we find a smooth kernel $P^{r'}_r$ from 
 \bea K_{r'}-K_r=QP^{r'}_r.\eea
-Let $\p_{P^{r'}_r}: \cO(\cE)\to \cO(\cE)$ be contracting with the smooth kernel $P^{r'}_r$. Hence, we have a homotopy RG flow:
-\bea \lb\cO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_r\rb \xrightarrow{\exp{\lb \hbar \p_{P^{r'}_r}\rb}}
-\lb\cO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_{r'}\rb.\eea
+Let $\p_{P^{r'}_r}: \sO(\cE)\to \sO(\cE)$ be contracting with the smooth kernel $P^{r'}_r$. Hence, we have a homotopy RG flow:
+\bea \lb\sO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_r\rb \xrightarrow{\exp{\lb \hbar \p_{P^{r'}_r}\rb}}
+\lb\sO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_{r'}\rb.\eea
 
 \begin{defn}[Costello]
-An effective solution of perturbative BV quantization of $I_0$ (which solves CME) is given by a family $I[r]\in \cO(\cE)\llb \hbar\rrb$ (for each choice of regularization $P_r$) such that
+An effective solution of perturbative BV quantization of $I_0$ (which solves CME) is given by a family $I[r]\in \sO(\cE)\llb \hbar\rrb$ (for each choice of regularization $P_r$) such that
 \begin{itemize}
     \item $\lb Q+\hbar \Delta_r\rb e^{I[r]/\hbar}=0$ is the effective QME,
     \item $e^{I[r']/\hbar}=\exp{\lb \hbar \p_{P^{r'}_r}\rb} e^{I[r]/\hbar}$ is the homotopy RG flow, or equivalently,
