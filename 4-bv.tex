@@ -1,4 +1,4 @@
-\section{Effective BV quantization}\label{sec:bv}
+\section{Effective BV Quantization}\label{sec:bv}
 In the \nameref{sec:hla}, we discussed that
 \bea \text{homotopy Lie algebra } (L_\infty-\text{algebra})\ \fg \LRA
 \text{vector field } \delta \text{ on } \fg\lsb 1\rsb \text{ such that } \delta^2=0.\eea
@@ -6,26 +6,27 @@ We can write $\delta= \delta_1+\delta_2+\cdots$ where
 \bea \delta_k: \fg^\vee\lsb-1\rsb \to \sym^k\lb \fg^\vee\lsb-1\rsb\rb.\eea
 For Lie algebra, $\delta=\delta_2$; for DGLA, $\delta=\delta_1+\delta_2$. 
 
-\begin{conv}
+\paragraph{Convention.}
 Given $A,B\in \on{Hom}(V,V)$, we write
 the \textbf{commutator} 
 \bea \lsb A,B\rsb\coloneqq AB-(-1)^{|A||B|}BA,\eea
 where $|A|$ is the degree of $A$. In particular, $\lsb A,B\rsb=AB+BA$ if $A,B$ are odd operators.
-\end{conv}
 
-\subsection*{BV master equation}
+\subsection{BV master equation}
 \begin{defn}
 A \textbf{differential graded Batalin-Vilkovisky (DGBV) algebra} is a triple $\lb \cA,Q,\Delta\rb$ where
 \bi[(1)]
-\item $\cA$ is a graded commutative associative algebra,
-\item $Q:\cA\to \cA$ is a derivation of $\on{deg} Q=1$ with $Q^2=0$,
-\item $\Delta: \cA \to \cA$ is the BV operator, which is a second-order operator of $\on{deg}=1$ with $\Delta^2=0$,
+\item $\cA$ is a $\bZ$-graded commutative associative unital algebra,
+\item $Q:\cA\to \cA$ is a derivation of $\on{deg}=1$ such that $Q^2=0$,
+\item $\Delta: \cA \to \cA$ is the BV operator, which is a second-order operator of $\on{deg}=1$ such that $\Delta^2=0$,
 \item $\lsb Q,\Delta\rsb=Q\Delta+\Delta Q=0.$
 \ei
 \end{defn}
-Here $\Delta$ being \emph{second-order} means the following. Define the \textbf{BV bracket}
+Here $\Delta$ being ``second-order'' means the following. Define the \emph{BV bracket}
 \bea \lcb a,b\rcb\coloneqq \Delta(ab)-(\Delta a)b-(-1)^{|a|} a\Delta b\quad \forall a,b\in \cA,\eea
-which indicates the failure of $\Delta$ being a derivation. Then $\lcb -,-\rcb: \cA\otimes \cA\to \cA$ is a $\on{deg}=1$ operator satisfying
+as the failure of $\Delta$ being a derivation. Then $\lcb -,-\rcb: \cA\otimes \cA\to \cA$ 
+defines a Lie bracket of degree 1 (Gerstenhaber algebra) such that $\Delta$ is compatible with $\lcb -,-\rcb$
+via a graded version of Leibniz rule:
 \bi[(1)]
 \item $\lcb a,b\rcb= (-1)^{|a||b|}\lcb b,a\rcb$,
 \item $\lcb a,bc\rcb=\lcb a,b\rcb c+(-1)^{\lb|a|+1\rb |b|} b\lcb a,c\rcb$,
@@ -52,12 +53,12 @@ Then $\lb \on{PV}^{-\blt,\blt}(X), \pb, \Delta\rb$ is a DGBV.
 \end{eg}
 
 \begin{rmk}
-The existence of such structure implies that the local moduli of complex structure of the Calabi-Yau manifold $X$ is smooth. This follows from the Bogomolov-Tian-Todorov (BTT) lemma.
+The existence of such structure implies that the local moduli of complex structure of the Calabi-Yau manifold $X$ is smooth. This follows from the \emph{Bogomolov-Tian-Todorov} (BTT) lemma.
 \end{rmk}
 
 \begin{defn}
 Let $\lb \cA,Q,\Delta\rb$ be a DGBV. Suppose an element $I_0\in \cA_0$, where $\on{deg}(I_0)=0$. $I_0$ is said to satisfy \textbf{classical master equation (CME)} if  
-\bea QI_0+\hf \lcb I_0,I_0\rcb=0.\eea
+\bea \boxed{QI_0+\hf \lcb I_0,I_0\rcb=0}\ .\eea
 This implies $\lb Q+\lcb I_0,-\rcb\rb^2=0$ on $\cA$.
 In good situation, we can write
 \bea  Q+\lcb I_0,-\rcb=\lcb S_0,-\rcb,\eea
@@ -68,8 +69,8 @@ Then the CME means $\lcb S_0, S_0\rcb=0$.
 The upshot here is that any classical action along with gauge symmetry leads to a solution of CME.
 
 \begin{defn}
-$I\in \cA_0\llb \hbar\rrb$ is said to satisfy the \textbf{quantum master equation (QME)} if 
-\bea QI+ \hbar \Delta I+\hf \lcb I,I\rcb =0.\eea
+$I\in \cA_0[[ \hbar]]$ is said to satisfy the \textbf{quantum master equation (QME)} if 
+\bea \boxed{QI+ \hbar \Delta I+\hf \lcb I,I\rcb =0}\ .\eea
 We can write $I=I_0+\hbar I_1+\hbar^2 I_2+\cdots$. When $\hbar\to 0$, the above equation reduces to 
 \bea QI_0+\hf \lcb I_0,I_0\rcb=0. \eea
 In good situation (in QFT), we write
@@ -84,10 +85,12 @@ QME $\LRA (Q+\hbar \Delta) e^{I/\hbar}=0$
 (or in good situation $\Delta e^{S/\hbar}=0$).
 \end{eg}
 
-\paragraph{Toy model: (-1)-shifted symplectic geometry.}
-Let $(V, Q,\omega)$ be a finite dimensional differential graded symplectic space.
+\paragraph{(-1)-shifted symplectic geometry.}
+A general class of differential BV algebras arises from odd symplectic
+geometry. Let us start with a finite-dimensional \emph{toy model}.
+Let $(V, Q,\omega)$ be a finite-dimensional differential graded symplectic space.
 \begin{itemize}
-    \item $Q: V\to V$ is the differential operator with $Q^2=0$, 
+    \item $Q: V\to V$ is the differential operator such that $Q^2=0$, 
     \item $\omega: \asym^2 V\to \bR$ or $\bC$ is a non-degenerate pairing of $\on{deg}=-1$, or explicitly $\omega(a,b)=0$ unless $|a|+|b|=1$,
     \item $Q(\omega)=0$, or explicitly  $\omega(Q(a),b)+(-1)^a\omega(a, Q(b))=0$.
 \end{itemize}
@@ -95,7 +98,7 @@ The \emph{non-degeneracy} of $\omega$ implies an isomorphism
 \bea \omega: V^\vee \xrightarrow{\ \sim\ } V\lsb 1\rsb. \eea
 This allows us to identify
 \bea \asym^2 V^\vee \xleftrightarrow{\ \sim\ } \asym^2 \lb V[1]\rb \simeq \sym^2(V)[2], \qquad \omega\in \asym^2 V^\vee \xleftrightarrow{\ \sim\ } K[2],\eea
-where $K=\omega^{-1}\in \sym^2(V)$ is the \textbf{Poisson kernel} with $\on{deg} K=1$ and $Q(K)=0$.
+where $K=\omega^{-1}\in \sym^2(V)$ is the \textbf{Poisson kernel} of $\on{deg} =1$ and $Q(K)=0$.
 We obtain a DGBV $\lb \cA,Q,\Delta_K\rb$ as follows. 
 \begin{itemize}
     \item $\cA=\sO(V)=\widehat{\sym}(V^\vee)$ is a space of formal functions on $V$,
@@ -117,7 +120,7 @@ Let $S_0\in \sO(V)$ solve the CME:
 \eea
 Then $\delta=\lcb S_0,-\rcb$ defines a vector field on $V$ with $\on{deg} \delta=1, \delta^2=0$. Hence $(\fg=V[-1], \delta)$ is an $L_\infty$-algebra.
 
-\subsection*{Field theory via BV formalism}
+\subsection{Field theory via BV formalism}
 A classical field theory can be usually organized into an $\infty$-dimensional $(-1)$-symplectic geometry $(\cE,Q,\omega)$ where
 \bi[(1)]
 \item $\cE=\Gamma\lb X,E^\blt\rb$ is the space of fields (or space of sections), where $E^\blt$ is the graded vector bundle,
@@ -200,15 +203,13 @@ $\text{CME}\LRA dI+\hf \lcb I,I\rcb=0$.
 One way to see this is that $\Omega^\blt(X,\fg)$ is a DGLA $\RA$ CME.
 \end{eg}
 
-\subsection*{Costello's homotopic renormalization}
+\subsection{Costello's homotopic renormalization}
 We have seen that the action
-\bea
-\Delta_K \curvearrowright \sO(\cE)
-\eea
+$\Delta_K \curvearrowright \sO(\cE)$
 is ill-defined naively, in which $K=\omega^{-1}$ is singular.
 
 \paragraph{Toy model.} 
-Let $(V,Q)$ be a finite dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \sO(V)\to \sO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the \emph{chain homotopy} for BV kernel:
+Let $(V,Q)$ be a finite-dimensional complex and $K_0\in \sym^2(V)$ be the Poisson kernel with $\on{deg} K_0=1$ and $Q(K_0)=0$. Then $\Delta_0: \sO(V)\to \sO(V)$ is a BV operator by contracting with $K_0$. Let $P\in \sym^2(V)$, $\on{deg} P=0$. Consider the \emph{chain homotopy} for BV kernel:
 \bea K_P=K_0+Q(P)=K_0+(Q\otimes 1+1\otimes Q)P,\eea
 then $\on{deg}(K_P)=1$, $Q(K_P)=QK_0+Q^2(P)=0$. We can consider a new BV operator
 $\Delta_P$, which is a contraction with $K_P$.
@@ -221,16 +222,16 @@ Here $\p_P$ is the second order operator of contracting with $P\in \sym^2(V)$:
 Then we have the commutative diagram
 \bea
 \begin{tikzcd}
-\sO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"] \ar[d,"Q+\hbar \Delta_0"]
-& \sO(V)\llb \hbar\rrb \ar[d,"Q+\hbar \Delta_P"] \\
-\sO(V)\llb \hbar\rrb \ar[r, "e^{\hbar\p_P}"]
-& \sO(V)\llb \hbar\rrb
+\sO(V)[[ \hbar]] \ar[r, "\exp{(\hbar\p_P)}"] \ar[d, swap, "Q+\hbar \Delta_0"]
+& \sO(V)[[ \hbar]] \ar[d,"Q+\hbar \Delta_P"] \\
+\sO(V)[[ \hbar]] \ar[r, "\exp{(\hbar\p_P)}"]
+& \sO(V)[[ \hbar]]
 \end{tikzcd}
 \eea
 which implies that
-\bea \text{QME for } (\sO(V),Q,\Delta_0) \xrightarrow{e^{\hbar \p_P}}
+\bea \text{QME for } (\sO(V),Q,\Delta_0) \xrightarrow{\exp{(\hbar\p_P)}}
 \text{QME for } (\sO(V),Q,\Delta_P),\eea
-where $e^{\hbar \p_P}$ is the homotopy RG flow. Hence,
+where $e^{\hbar \p_P}$ is the homotopic renormalization group (HRG) flow. Hence,
 \bea \lb Q+\hbar \Delta_0\rb e^{I/\hbar}=0 \LRA \lb Q+\hbar \Delta_P\rb e^{\Tilde{I}/\hbar}=0\eea
 where $e^{\Tilde{I}/\hbar}=e^{\hbar \p_P}e^{I/\hbar}$.
 As we have seen before, this can be expressed by the Feynman diagrams:
@@ -245,8 +246,8 @@ As we have seen before, this can be expressed by the Feynman diagrams:
                 \fmf{plain,tension=4}{v2,o1}
                 \fmf{plain,tension=4}{v2,o2}
                 \fmf{plain,left,label=$P$,label.side=left,tension=3}{v1,v2,v1}
-                \fmfv{label=$I$,label.angle=170,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
-                \fmfv{label=$I$,label.angle=10,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+                \fmfv{label=$I$,label.angle=180,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$I$,label.angle=0,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
         \end{tabular}
     \end{fmffile}\rb.
@@ -263,15 +264,15 @@ Let $r'$ be another regularization such that
 \bea K_0=K_{r'}+QP_{r'}.\eea
 Hence we find a smooth kernel $P^{r'}_r$ from 
 \bea K_{r'}-K_r=QP^{r'}_r.\eea
-Let $\p_{P^{r'}_r}: \sO(\cE)\to \sO(\cE)$ be contracting with the smooth kernel $P^{r'}_r$. Hence, we have a homotopy RG flow:
-\bea \lb\sO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_r\rb \xrightarrow{\exp{\lb \hbar \p_{P^{r'}_r}\rb}}
-\lb\sO(\cE)\llb \hbar\rrb,Q+\hbar\Delta_{r'}\rb.\eea
+Let $\p_{P^{r'}_r}: \sO(\cE)\to \sO(\cE)$ be contracting with the smooth kernel $P^{r'}_r$. Hence, we have an HRG flow:
+\bea \lb\sO(\cE)[[ \hbar]],Q+\hbar\Delta_r\rb \xrightarrow{\exp{\lb \hbar \p_{P^{r'}_r}\rb}}
+\lb\sO(\cE)[[ \hbar]],Q+\hbar\Delta_{r'}\rb.\eea
 
-\begin{defn}[Costello]
-An effective solution of perturbative BV quantization of $I_0$ (which solves CME) is given by a family $I[r]\in \sO(\cE)\llb \hbar\rrb$ (for each choice of regularization $P_r$) such that
+\begin{defn}[Costello \cite{costello2011renormalization}]
+An effective solution of perturbative BV quantization of $I_0$ (which solves CME) is given by a family $I[r]\in \sO(\cE)[[ \hbar]]$ (for each choice of regularization $P_r$) such that
 \begin{itemize}
     \item $\lb Q+\hbar \Delta_r\rb e^{I[r]/\hbar}=0$ is the effective QME,
-    \item $e^{I[r']/\hbar}=\exp{\lb \hbar \p_{P^{r'}_r}\rb} e^{I[r]/\hbar}$ is the homotopy RG flow, or equivalently,
+    \item $e^{I[r']/\hbar}=\exp{\lb \hbar \p_{P^{r'}_r}\rb} e^{I[r]/\hbar}$ is the HRG flow, or equivalently,
     \bea I[r']=\sum_{\text{connected graph}}\lb 
     \begin{fmffile}{fddj}
     \begin{tabular}{c}
@@ -283,8 +284,8 @@ An effective solution of perturbative BV quantization of $I_0$ (which solves CME
                 \fmf{plain,tension=4}{v2,o1}
                 \fmf{plain,tension=4}{v2,o2}
                 \fmf{plain,left,label=$P$,label.side=left,tension=3}{v1,v2,v1}
-                \fmfv{label=$I[r]\ $,label.angle=170,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
-                \fmfv{label=$I[r]$,label.angle=10,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
+                \fmfv{label=$I[r]\ $,label.angle=180,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
+                \fmfv{label=$I[r]\ $,label.angle=0,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
         \end{tabular}
     \end{fmffile}\rb,

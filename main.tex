@@ -2,36 +2,46 @@
 \usepackage{preamble}
 \usepackage{kpfonts}
 
-\geometry{tmargin=.85in, bmargin=.65in, lmargin=.75in, rmargin=.75in}
-\setlength{\headheight}{20pt}
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.8in, rmargin=.8in}
+\setlength{\headheight}{16pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\emph{\nouppercase \leftmark}}
-\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{\sc\nouppercase \leftmark}
+\fancyfoot[C]{\thepage}
 
 \setlength{\parindent}{1em}
+\setcounter{tocdepth}{1}
 
 \title{\bf HOMOLOGICAL METHOD IN QUANTUM FIELD THEORY}
-\author{SI LI \\ (\textit{Typeset by KEVIN LOO})}
-\date{Spring 2022\\ (Updated \today)}
+\author{SI LI (Typeset by KEVIN LOO)}
+\date{}
 
 \begin{document}
 \maketitle
 \thispagestyle{empty}
+
+\begin{abstract}
+This note is based on the first author's lectures for a special course of the Chinese-Russian Mathematical Center. The lectures introduce basic ideas and various recent mathematical developments about quantization that arises from quantum field theory and string theory. The focus is on homological method and its applications in geometry and topology.
+This note is addressed to senior and postgraduate students of Mathematics and Physics interested in studying the methods and ideas of modern Mathematical and Theoretical Physics and related topics in Mathematics. The prerequisites are Linear Algebra, Calculus, basic ideas from Differential Equations and Differential Geometry. Some acquaintance with Homological Algebra and Topology is advisable, but not necessary.
+\end{abstract}
+
 \tableofcontents
 
 \newpage
 \setcounter{page}{1}
-
-\include{1-intro}
-\include{2-feyn}
-\include{3-homo}
-\include{4-bv}
-\include{5-qo}
-\include{6-dqai}
-\include{7-tqm1}
+\input{1-intro}
+\input{2-feyn}
+\input{3-homo}
+\input{4-bv}
+\input{5-qo}
+\input{6-dq}
+\input{7-tqm1}
+\input{8-tqm2}
+\input{9-2d1}
+\input{10-2d2}
 
 \newpage
-\bibliographystyle{utcaps}
+\bibliographystyle{hep}
 \bibliography{ref}
 \end{document}

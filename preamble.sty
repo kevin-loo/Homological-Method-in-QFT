@@ -1,13 +1,19 @@
 
 %%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%
+%\usepackage{fontspec} %XeLaTeX/LuaLaTeX
+%\usepackage{unicode-math,MnSymbol} %XeLaTeX/LuaLaTeX
 %\usepackage{pdfrender}
 %\usepackage{pst-all}
 %\usepackage{showlabels}
-%\usepackage{dsfont}
 %\usepackage{epic,eepic,pstricks}
 %\usepackage{calrsfs}
+%\usepackage{stmaryrd}
 %\usepackage[nottoc]{tocbibind}
 %\counterwithin{equation}{enumi}
+
+%\usepackage{titlesec}
+%\titleformat*{\section}{\bfseries\sffamily\color{blue}}
+%\titleformat*{\subsection}{\bfseries\sffamily\color{blue!50!cyan}}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -16,7 +22,7 @@
 \usepackage{graphicx,epsfig,wrapfig,epigraph,grffile,psfrag}
 \usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
 \usepackage{mathtools,mathrsfs}
-\usepackage{latexsym,wasysym,bbm,stmaryrd}
+\usepackage{latexsym,wasysym,bbm}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{url,hyperref}
@@ -31,15 +37,12 @@
 \usepackage[bottom]{footmisc}
 
 \usepackage{xcolor}
-\usepackage{sectsty}
 \hypersetup{
     colorlinks,
-    linkcolor={blue!40!green},
-    citecolor={blue!60!green},
-    urlcolor={blue!80!green} 
+    linkcolor={blue!60!cyan},
+    citecolor={blue!50!green},
+    urlcolor={blue!50!red} 
 }
-\sectionfont{\color{blue}} %color of section title
-\subsectionfont{\color{blue!50!cyan}} %color of subsection title
 
 \usepackage{tikz}
 \usetikzlibrary{cd}
@@ -89,7 +92,6 @@
 
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}[section]
-\newtheorem{conv}{Convention}[section]
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \newenvironment{sproof}{%
@@ -100,7 +102,7 @@
 \newcommand{\on}{\operatorname}
 \newcommand{\wcm}[1]{\tikzmarknode{#1}{#1}}
 \newcommand{\vev}[1]{{\left< {#1} \right>}}
-\newcommand{\nord}[1]{:\mathrel{#1}:}
+\newcommand{\nord}[1]{\,:\mathrel{#1}:\,}
 \newcommand*{\hollowcolon}{\textpdfrender{
   TextRenderingMode=FillStrokeClip,
       LineWidth=.5pt,
@@ -133,77 +135,91 @@
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\Cdot}{\boldsymbol{\cdot}}
 
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddint{\Xint=}
+\def\dint{\Xint-}
+
 \def\fl#1{\left\lfloor {#1} \right \rfloor}
 \def\ceil#1{\left\lceil {#1} \right \rceil}
 \def\blt{\bullet}
 \def\red{\color{red}}
 \def\nn{\nonumber}
 \def\hf{\frac{1}{2}}
-\def\eps{\epsilon}
-\def\vep{\varepsilon}
 \def\p{\partial}
-\def\hb{{\ols h}}
-\def\wb{{\ols w}}
-\def\zb{{\ols z}}
-\def\pb{{\ols \p}}
-\def\eb{{\ols \eps}}
+\def\hb{\ols h}
+\def\wb{\ols w}
+\def\zb{\ols z}
+\def\pb{\ols \p}
+\def\eb{\ols \eps}
 \def\zzb{z, \zb}
 \def\wwb{w, \wb}
-\def\tr{\on{tr}}
-\def\Tr{\on{Tr}}
 \def\sd{\slash\hspace{-6pt}\delta}
-\def\sp{\slashed{\p}}
-\def\spp{\slashed{p}}
-\def\skk{\slashed{k}}
+\def\sld{\slashed{\p}}
+\def\slp{\slashed{p}}
+\def\slk{\slashed{k}}
 \def\sep{\slashed{\varepsilon}}
 \def\sym{\on{Sym}}
-\def\asym{\scalebox{.95}[1]{$\bigwedge$}}
+\def\asym{\scalebox{.9}[1]{$\bigwedge$}}
+\def\gso{\on{SO}}
+\def\gsu{\on{SU}}
+\def\gsp{\on{Sp}}
+\def\tr{\on{tr}}
+\def\Tr{\on{Tr}}
 
-\def\bC{\mathbb{C}}
+\def\bC{\mathbb C}
 \def\CP{\mathbb{CP}}
-\def\bH{\mathbb{H}}
-\def\bI{\mathbb{I}}
-\def\bN{\mathbb{N}}
-\def\bP{\mathbb{P}}
-\def\bQ{\mathbb{Q}}
-\def\bR{\mathbb{R}}
-\def\bZ{\mathbb{Z}}
+\def\bH{\mathbb H}
+\def\bI{\mathbb I}
+\def\bK{\mathbb K}
+\def\bN{\mathbb N}
+\def\bP{\mathbb P}
+\def\bQ{\mathbb Q}
+\def\bR{\mathbb R}
+\def\bZ{\mathbb Z}
 
-\def\bh{\mathbf{h}}
-\def\bx{\mathbf{x}}
+\def\fg{\mathfrak{g}}
+\def\fh{\mathfrak{h}}
+\def\so{\mathfrak{so}}
+\def\su{\mathfrak{su}}
+\def\sp{\mathfrak{sp}}
 
-\newcommand{\cA}{{\mathcal A}}
-\newcommand{\cB}{{\mathcal B}}
-\newcommand{\cC}{{\mathcal C}}
-\newcommand{\cD}{{\mathcal D}}
-\newcommand{\cE}{{\mathcal E}}
-\newcommand{\cH}{{\mathcal H}}
-\newcommand{\cK}{{\mathcal K}}
-\newcommand{\cL}{{\mathcal L}}
-\newcommand{\cM}{{\mathcal M}}
-\newcommand{\cN}{{\mathcal N}}
-\newcommand{\cO}{{\mathcal O}}
-\newcommand{\cP}{{\mathcal P}}
-\newcommand{\cQ}{{\mathcal Q}}
-\newcommand{\cS}{{\mathcal S}}
-\newcommand{\cT}{{\mathcal T}}
-\newcommand{\cU}{{\mathcal U}}
-\newcommand{\cW}{{\mathcal W}}
+\def\sE{\mathscr E}
+\def\scri{\mathscr I}
+\def\sO{\mathscr O}
 
-\newcommand{\sE}{{\mathscr E}}
-\newcommand{\scri}{{\mathscr I}}
-\newcommand{\sO}{{\mathscr O}}
+\def\da{\dot\alpha}
+\def\db{\dot\beta}
+\def\dc{\dot\gamma}
+\def\dd{\dot\delta}
+\def\ds{\text{dS}}
+\def\ads{\text{AdS}}
+\def\tphi{\tilde\phi}
 
-\newcommand{\fg}{{\mathfrak g}}
-\newcommand{\fh}{{\mathfrak h}}
-
-\newcommand{\da}{{\dot\alpha}}
-\newcommand{\db}{{\dot\beta}}
-\newcommand{\dc}{{\dot\gamma}}
-\newcommand{\dd}{{\dot\delta}}
-\newcommand{\tphi}{{\tilde\phi}}
-\newcommand{\ds}{\text{dS}}
-\newcommand{\ads}{\text{AdS}}
+\def\cA{\mathcal A}
+\def\cB{\mathcal B}
+\def\cC{\mathcal C}
+\def\cD{\mathcal D}
+\def\cE{\mathcal E}
+\def\cH{\mathcal H}
+\def\cK{\mathcal K}
+\def\cL{\mathcal L}
+\def\cM{\mathcal M}
+\def\cN{\mathcal N}
+\def\cO{\mathcal O}
+\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}
+\def\cS{\mathcal S}
+\def\cT{\mathcal T}
+\def\cU{\mathcal U}
+\def\cV{\mathcal V}
+\def\cW{\mathcal W}
 
 %%%%%%%%%%%%%%% TODO STUFF %%%%%%%%%%%%%%% 
 \newcommand{\todo}[1]{{\em \small \textcolor{red}{#1}}\marginpar{$\Longleftarrow$}}

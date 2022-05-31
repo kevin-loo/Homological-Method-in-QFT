@@ -1,10 +1,10 @@
-\section{Deformation quantization and algebraic index}\label{sec:dqai}
+\section{Deformation Quantization and Algebraic Index}\label{sec:dqai}
 
-Recall that we discussed in the \nameref{subsec:heat}, the family $\lcb I[L]\rcb_{L>0}$ satisfies the homotopy RG.
+Recall that we discussed in the \nameref{subsec:hker}, the family $\lcb I[L]\rcb_{L>0}$ satisfies the HRG.
 \bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\tikzset{every picture/.style={line width=0.75pt}} 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
 %Straight Lines [id:da977711475048066] 
 \draw    (10.5,100.67) -- (237.5,100.67) ;
 \draw [shift={(240.5,100.67)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
@@ -47,9 +47,9 @@ Then we have
 
 The BV operator $\Delta_H$ associated with $\omega_H^{-1}$ is $\Delta_H=\Delta_\infty$. On the complete story of BV quantization, as depicted in the following diagram,
 \bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\tikzset{every picture/.style={line width=0.75pt}} 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
 %Straight Lines [id:da977711475048066] 
 \draw    (10.5,100.67) -- (237.5,100.67) ;
 \draw [shift={(240.5,100.67)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
@@ -75,7 +75,7 @@ We will explain two main examples:
 \textsc{References}: \cite{Li:2016gcb,Gui:2021dci}.
 \ei
 
-\subsection*{Deformation quantization}
+\subsection{Deformation quantization}
 \begin{defn}
 A \textbf{Poisson manifold} is a pair $\lb X,P\rb$, where $X$ is a smooth manifold, and $P\in \Gamma(X, \asym^2 TX)$ satisfying $\lcb P,P\rcb_{\text{SN}}=0$.
 \end{defn}
@@ -102,21 +102,21 @@ invariant approach for Quantum Mechanics (QM) and Quantum Field Theory (QFT).
 \text{Poisson Lie algebra}
 \arrow[r, bend left, "\text{quantization}"] & \arrow[l, bend left, "\hbar\to 0"] \text{Associative algebra} 
 \end{tikzcd}\eea
-This is essentially the way of quantization in quantum mechanics, in which a function $f$ on the classical phase space is quantized to an operator $\widehat{f}$.
+This is essentially the quantization method in quantum mechanics, in which a function $f$ on the classical phase space is quantized to an operator $\widehat{f}$.
 
 \begin{defn}
-A \textbf{star-product} on a Poisson manifold $(X,P)$ is a $\bR\llb \hbar\rrb$-bilinear map
-\bea C^\infty(x)\llb \hbar\rrb \times C^\infty(x)\llb \hbar\rrb \to C^\infty(x)\llb \hbar\rrb, \qquad 
-f \times g \mapsto f\ast g=\sum_{k\geq 0} \hbar^k c_k\lb f,g\rb 
+A \textbf{star-product} on a Poisson manifold $(X,P)$ is a $\bR[[ \hbar]]$-bilinear map
+\bea C^\infty(x)[[ \hbar]] \times C^\infty(x)[[ \hbar]] \to C^\infty(x)[[ \hbar]], \qquad 
+f \times g \mapsto f\star g=\sum_{k\geq 0} \hbar^k c_k\lb f,g\rb 
 \eea
 such that
 \bi[(1)]
-\item $\ast$ is associative: $\lb f\ast g\rb \ast h=f\ast \lb g\ast h\rb$,
-\item $f\ast g= fg+\cO(\hbar), \quad \forall f,g\in C^\infty(x)$,
-\item $\ast$ is non-commutative: $\hf \lb f\ast g-g\ast f\rb=\hbar\lcb f,g\rcb+\cO(\hbar^2), \quad \forall f,g\in C^\infty(x)$,
+\item $\star$ is associative: $\lb f\star g\rb \star h=f\star \lb g\star h\rb$,
+\item $f\star g= fg+\cO(\hbar), \quad \forall f,g\in C^\infty(x)$,
+\item $\star$ is non-commutative: $\hf \lb f\star g-g\star f\rb=\hbar\lcb f,g\rcb+\cO(\hbar^2), \quad \forall f,g\in C^\infty(x)$,
 \item $c_k: C^\infty(x)\times C^\infty(x)\to C^\infty(x)$ is a bidifferential operator. 
 \ei
-Then $\lb C^\infty(x)\llb\hbar\rrb, \ast\rb$ is called a \textbf{deformation quantization} of $\lb X,P\rb$.
+Then $\lb C^\infty(x)[[\hbar]], \star\rb$ is called a \textbf{deformation quantization} of $\lb X,P\rb$.
 \end{defn}
 
 The deformation quantization is purely algebraic; no Hilbert space is involved.
@@ -124,9 +124,9 @@ The \emph{existence} of deformation quantization is highly nontrivial. In partic
 More generally, Kontsevich \cite{Kontsevich:1997vb} gave the complete solution for general Poisson manifold. 
 
 \begin{eg}[Moyal-Weyl product]
-Let $X$ be a phase space, $\bR^{2n}$, with a symplectic form $\omega=\hf \sum_{i,j} \omega_{ij} dx^i \wedge dx^j$ where $\omega_{ij}$ is a constant. The Poisson tensor is $P=\hf \sum_{i,j} \omega^{ij} \p_i\wedge \p_j$. Given $f(x),g(x)\in C^\infty\lb \bR^{2n}\rb$, define the Moyal-Weyl product $\ast$ by
+Let $X$ be a phase space, $\bR^{2n}$, with a symplectic form $\omega=\hf \sum_{i,j} \omega_{ij} dx^i \wedge dx^j$ where $\omega_{ij}$ is a constant. The Poisson tensor is $P=\hf \sum_{i,j} \omega^{ij} \p_i\wedge \p_j$. Given $f(x),g(x)\in C^\infty\lb \bR^{2n}\rb$, define the Moyal-Weyl product $\star$ by
 \bea
-(f\ast g)(x)=\left. \exp{\lb \frac{\hbar}{2} \sum_{i,j} \omega^{ij} \frac{\p}{\p y^i}\frac{\p}{\p z^j}\rb}\right|_{y=z=x} f(y) g(z)
+(f\star g)(x)=\left. \exp{\lb \frac{\hbar}{2} \sum_{i,j} \omega^{ij} \frac{\p}{\p y^i}\frac{\p}{\p z^j}\rb}\right|_{y=z=x} f(y) g(z)
 \eea
 or pictorially,\\
 \bea 
@@ -154,7 +154,7 @@ or pictorially,\\
         \end{tabular}
     \end{fmffile}
 \eea
-Then $\ast$ defines a deformation quantization.
+Then $\star$ defines a deformation quantization.
 \end{eg}
 
 \begin{rmk}
@@ -163,68 +163,80 @@ If $\omega^{ij}\neq$ constant, then the above formula does not work.
 
 For convenience, we can describe a formal version. Let $\lb V,\omega\rb$ be a linear symplectic space, where $V\simeq \bR^{2n}$ and $\omega: \asym^2 V\to \bR$ is a symplectic pairing. Write 
 \bea\widehat{\sO}(V)\coloneqq \widehat{\sym}(V^\vee)=\prod_{k\geq 0} \sym^k(V^\vee),\eea
-where $V^\vee=\on{Hom}(V,\bR)$ is the linear dual of $V$. Then the Moyal-Weyl product defines an associative algebra $\lb \widehat{\sO}(V)\llb \hbar\rrb,\ast\rb$, called the (formal) Weyl algebra. On the other hand, let 
+where $V^\vee=\on{Hom}(V,\bR)$ is the linear dual of $V$. Then the Moyal-Weyl product defines an associative algebra $\lb \widehat{\sO}(V)[[ \hbar]],\star\rb$, called the \textbf{(formal) Weyl algebra}. On the other hand, let 
 \bea\widehat{\Omega}^{-\blt}_{V}\coloneqq \widehat{\sO}(V) \otimes \asym^{-\blt}(V^\vee).
 \eea
-Here $\widehat{\Omega}^{-p}_{V}\coloneqq \widehat{\sO}(V) \otimes \asym^{p}(V^\vee)$ are the (formal) $p$-forms sitting in degree $-p$. Let $d_V: \widehat{\Omega}^{-p}_{V} \to \widehat{\Omega}^{-(p+1)}_{V}$ be de Rham differential. Let $\Pi=\omega^{-1}\in\asym^2 V$ be the Poisson tensor and $\iota_\Pi: \widehat{\Omega}^{-\blt}_{V}\to \widehat{\Omega}^{-(\blt-2)}_{V}$ be the contraction with $\Pi$. Let $\Delta=\cL_\Pi=\lsb d_V,\iota_\Pi\rsb: \widehat{\Omega}^{-\blt}_{V}\to\widehat{\Omega}^{-(\blt-1)}_{V}$ be the Lie derivative. Thus $\lb \widehat{\Omega}^{-\blt}_{V},\Delta\rb$ defines a BV algebra. Geometrically, this leads to Koszul-Brylinski complex/homology. Physically, this is the effective geometry on \emph{zero modes} of topological quantum mechanics as we will see.
+Here $\widehat{\Omega}^{-p}_{V}\coloneqq \widehat{\sO}(V) \otimes \asym^{p}(V^\vee)$ are the (formal) $p$-forms sitting in degree $-p$. Let $d_V: \widehat{\Omega}^{-p}_{V} \to \widehat{\Omega}^{-(p+1)}_{V}$ be de Rham differential. Let $\Pi=\omega^{-1}\in\asym^2 V$ be the Poisson tensor and $\iota_\Pi: \widehat{\Omega}^{-\blt}_{V}\to \widehat{\Omega}^{-(\blt-2)}_{V}$ be the contraction with $\Pi$. Let 
+\bea\Delta=\cL_\Pi=\lsb d_V,\iota_\Pi\rsb: \widehat{\Omega}^{-\blt}_{V}\to\widehat{\Omega}^{-(\blt-1)}_{V}\eea
+be the Lie derivative. Thus $\lb \widehat{\Omega}^{-\blt}_{V},\Delta\rb$ defines a BV algebra. Geometrically, this leads to Koszul-Brylinski complex/homology. Physically, this is the effective geometry on \emph{zero modes} of topological quantum mechanics as we will see.
 
-\subsection*{Fedosov quantization}
+\subsection{Fedosov quantization}
 We will focus on \emph{symplectic manifolds} now. Fedosov \cite{fedosov1994simple} gave a simple and geometric construction of deformation quantization on symplectic cases. 
+On a symplectic manifold $(X,\omega)$, the tangent plane $T_p X$ at each point $p \in X$ 
+is a linear symplectic space. Quantum fluctuations deform the algebra of functions on $T_p X$ to the
+associated \emph{Weyl algebra}. These pointwise Weyl algebras form a vector bundle --- the \emph{Weyl bundle} $\cW(X)$ on $X$.
 \begin{defn}
 Let $(X,\omega)$ be a symplectic manifold.
 We define the \textbf{Weyl bundle} 
-\bea \cW(X)\coloneqq \prod_{k\geq 0}\sym^k\lb T^\ast X\rb\llb \hbar\rrb.\eea
+\bea \cW(X)\coloneqq \prod_{k\geq 0}\sym^k\lb T^\ast X\rb[[ \hbar]].\eea
 So at each point $p\in X$, its fiber is
-\bea \left. \cW(X)\right|_p= \widehat{\sO}\lb T_p X\rb\llb\hbar\rrb.\eea
+\bea \left. \cW(X)\right|_p= \widehat{\sO}\lb T_p X\rb[[\hbar]].\eea
 \end{defn}
 A local section of $\cW(X)$ is 
 \bea \sigma(x,y)=\sum_{k,l\geq 0}\hbar^k a_{k,i_1\cdots i_l}(x) y^{i_1}\cdots y^{i_l},\eea
 where $\lcb x\rcb$ are the base coordinates and $\lcb y\rcb$ are the fiber coordinates; $a_{k,i_1\cdots i_l}(x)$ are smooth functions.
-Since $\lb T_p X, \left.\omega\right|_{T_p X}\rb$ is linear symplectic, we have a fiberwise Moyal-Weyl product, still denoted by $\ast$. Thus $\lb \cW(X),\ast\rb$ defines the $\infty$-dimensional bundle of algebras.
+Since $\lb T_p X, \left.\omega\right|_{T_p X}\rb$ is linear symplectic, we have a fiberwise Moyal-Weyl product, still denoted by $\star$. Thus $\lb \cW(X),\star\rb$ defines the $\infty$-dimensional bundle of algebras.
 
-Let $\nabla$ be a connection on $TX$ which is torsion-free and compatible with $\omega$ ($\nabla \omega=0$). Such connection is called a \textbf{symplectic connection} (which always exist and is not unique). $\nabla$ induces a connection on all tensors. In particular, it defines a connection on $\cW(X)$, still denoted by $\nabla$. Its curvature is
-\bea \nabla^2 \sigma=\frac{1}{\hbar}\lsb R_\nabla, \sigma\rsb_\ast, \quad \forall \sigma\in \Gamma(X,\cW(X))\eea
-where $R_\nabla=\frac{1}{4}R_{ijkl} y^i y^j dx^k \wedge dx^l \in \Omega^2(X,\cW(X))$ is a 2-form valued in the Weyl algebra; $R_{ijkl}=\omega_{im}R^m{}_{jkl}$ is a curvature form contracted with the symplectic pairing.
+Let $\nabla$ be a connection on $TX$ which is torsion-free and compatible with $\omega$ (i.e. $\nabla \omega=0$). Such connection is called a \textbf{symplectic connection} (which always exist and is not unique). $\nabla$ induces a connection on all tensors. In particular, it defines a connection on $\cW(X)$, still denoted by $\nabla$. Its curvature is
+\bea \nabla^2 \sigma=\frac{1}{\hbar}\lsb R_\nabla, \sigma\rsb_\star, \quad \forall \sigma\in \Gamma(X,\cW(X))\eea
+where $R_\nabla=\frac{1}{4}R_{ijkl} y^i y^j dx^k \wedge dx^l \in \Omega^2(X,\cW(X))$ is a 2-form valued in the Weyl bundle $\cW(X)$; $R_{ijkl}=\omega_{im}R^m{}_{jkl}$ is a curvature form contracted with the symplectic pairing.
 
 \paragraph{Fedosov connection.}
-Given a sequence of closed 2-forms $\lcb \omega_k\rcb_{k\geq 1}$ on $X$, there exists a unique (up to gauge) connection on $\cW(X)$ of the form $\nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\ast$, where $\gamma\in\Omega^1\lb X, \cW(X)\rb$, satisfying some initial conditions and the equation 
-\bea \nabla\gamma+\frac{1}{2\hbar}\lsb \gamma,\gamma\rsb_\ast+R_\nabla=\omega_\hbar\qquad \text{(Fedosov equation)}\eea
-where $\omega_\hbar=-\omega+ \sum_{k\geq 1}\hbar^k \omega_k$. $\nabla$ is called the \textbf{Fedosov connection}.
+Given a sequence of closed 2-forms $\lcb \omega_k\rcb_{k\geq 1}$ on $X$, there exists a unique (up to gauge) connection on $\cW(X)$ of the form $\nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\star$, where $\gamma\in\Omega^1\lb X, \cW(X)\rb$ is a $\cW(X)$-valued 1-form, satisfying some initial conditions and the equation 
+\bea \nabla\gamma+\frac{1}{2\hbar}\lsb \gamma,\gamma\rsb_\star+R_\nabla=\omega_\hbar\qquad \text{(Fedosov equation)}\eea
+where $\omega_{\hbar}= -\omega+ \sum_{k\geq 1}\hbar^k \omega_k$. 
+Let 
+\bea D= \nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\star\eea
+be the \textbf{Fedosov connection}. Then the Fedosov equation implies $D^2=\frac{1}{\hbar}\lsb\omega_\hbar,-\rsb_\star=0$, where $\omega_\hbar$ is constant along each fiber, and thus a central term.
+So we obtain a flat connection $D$ on $\cW(X)$. 
+Fedosov connection is the geometric
+interpretation of the QME \cite{Grady:2015ica}.
 
-Let $D= \nabla+\frac{1}{\hbar}\lsb \gamma,-\rsb_\ast$. Then the Fedosov equation implies $D^2=\frac{1}{\hbar}\lsb\omega_\hbar,-\rsb_\ast=0$, where $\omega_\hbar$ is constant along each fiber, and thus a central term.
-So we obtain a flat connection $D$ on $\cW(X)$. Let $\cW_D(X)\coloneqq \lcb \left.\sigma\in\Gamma(X,\cW(X))\ \right|\ D\sigma=0 \rcb$ be the space of flat sections. Then $\lb \cW_D(X),\ast\rb$ is an associative algebra.
+Let $\cW_D(X)\coloneqq \lcb \left.\sigma\in\Gamma(X,\cW(X))\ \right|\ D\sigma=0 \rcb$ be the space of flat sections. Then $\lb \cW_D(X),\star\rb$ is an associative algebra.
+Let 
+\bea\sigma: \cW_D(X)\to C^\infty(X)[[\hbar]]\eea
+be a \textbf{symbol map} by sending $y\mapsto 0$. Then $\sigma$ is an isomorphism, and 
+\bea f\star g \mapsto \sigma\lb \sigma^{-1}\lb f\rb\star \sigma^{-1}\lb g\rb\rb\eea
+defines a \textbf{deformation quantization}. $\omega_\hbar$ is the corresponding \textbf{characteristic class} (or \textbf{moduli}).
 
-Let $\sigma: \cW_D(X)\to C^\infty(X)\llb\hbar\rrb$ by sending $y\mapsto 0$ (\textbf{symbol map}). Then $\sigma$ is an isomorphism, and 
-\bea f\ast g \mapsto \sigma\lb \sigma^{-1}\lb f\rb\ast \sigma^{-1}\lb g\rb\rb\eea
-defines a deformation quantization. $\omega_\hbar$ is the corresponding \textbf{characteristic class} (or \textbf{moduli}).
-
-\subsection*{Algebraic index theorem}
-Given a deformation quantization $\lb C^\infty(X)\llb\hbar\rrb,\ast \rb$ on a symplectic manifold with characteristic class $\omega_\hbar$, there exists a unique \textbf{trace map}
-\bea \Tr: C^\infty(X)\llb\hbar\rrb \to \bR ((\hbar))\eea
+\subsection{Algebraic index theorem}
+Given a deformation quantization $\lb C^\infty(X)[[\hbar]],\star \rb$ on a symplectic manifold with characteristic class $\omega_\hbar$, there exists a unique \textbf{trace map}
+\bea \Tr: C^\infty(X)[[\hbar]] \to \bR ((\hbar))\eea
 satisfying a normalization condition and the trace property:
-\bea \Tr \lb f\ast g\rb=\Tr \lb g\ast f\rb.\eea
+\bea \Tr \lb f\star g\rb=\Tr \lb g\star f\rb.\eea
 Then the index is obtained as the partition function of the theory, which can be formulated as 
 \bea \on{Index}=\Tr(1)=\int_X e^{\omega_\hbar/\hbar} \widehat{A}(X),\eea
-where $\widehat{A}(X)$ is the formal $\widehat{A}$-genus of $X$.
-This is the simplest version of algebraic index theorem formulated by Fedosov and Nest-Tsygan as the algebraic analogue of Atiyah-Singer index theorem. 
+where $\widehat{A}(X)$ is the \emph{(formal) $\widehat{A}$-genus} of $X$.
+This is the simplest version of \textbf{algebraic index theorem} formulated by Fedosov and Nest-Tsygan as the algebraic analogue of \emph{Atiyah-Singer index theorem}. 
 
-We can similarly construct a \emph{deformation quantization} for $C^\infty\lb X,\on{End}(E)\rb\llb\hbar\rrb$ and construct the trace map, then we have $\Tr(1)=\int_X e^{\omega_\hbar/\hbar}\on{ch}(E) \widehat{A}(X)$, where $\on{ch}(E)$ is the characteristic class of $\cE$.
+We can similarly construct a \emph{deformation quantization} for $C^\infty\lb X,\on{End}(E)\rb[[\hbar]]$ and construct the trace map, then we have $\Tr(1)=\int_X e^{\omega_\hbar/\hbar}\on{Ch}(E) \widehat{A}(X)$, where $\on{Ch}(E)$ is the Chern character of the vector bundle $E$ over $X$.
 
-\subsection*{Relation with QFT}
+\subsection{Relation with QFT}
 In supersymmetric (SUSY) QFT, \emph{localization} often appears, in which the path integral on $\cE$ is often localized effectively to an equivalent integral on a finite-dimensional space $M\subset \cE$ describing some interesting moduli space:
 \bea \int_\cE e^{iS/\hbar}= \int_M \lb -\rb.\eea
 
 In topological QM, we find
-\bea \int_{\on{Map}(S^1,X)} e^{-S/\hbar}= \int_X \lb -\rb,\eea
-where $\int_X$ indicates the localization to constant loops. 
-The LHS usually gives a physics presentation of the analytic index of certain elliptic operator; the
-RHS will end up with integrals of various curvature forms representing the topological index.
-Geometrically, a loop space (circle) is mapped to a localized neighborhood of a point in $X$, where a localized effective theory exists.
-\begin{figure}[!htpb]\centering 
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+\bea \int_{\on{Map}(S^1,X)} e^{-S/\hbar}\overset{\hbar\to 0}{=} \int_X \lb -\rb,\eea
+where $\on{Map}(S^1,X)$ is a loop space, and $\int_X$ indicates the localization to a \emph{constant map}.
+The path integral will be captured exactly by an effective theory in the formal neighborhood of
+constant maps inside the full mapping space. Exact semi-classical approximation in $\hbar\to 0$ allows
+us to reduce the path integral into a meaningful integral on the moduli space of constant maps, i.e., $X$.
+The left-hand side usually gives a physics presentation of the analytic index of certain elliptic operator; the
+right-hand side will end up with integrals of various curvature forms representing the topological index.
 
+\begin{figure}[!htpb]\centering 
+\tikzset{every picture/.style={line width=0.75pt}}         
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %Shape: Ellipse [id:dp23192014552632334] 
 \draw   (34.83,63.04) .. controls (34.83,50.68) and (44.85,40.67) .. (57.21,40.67) .. controls (69.57,40.67) and (79.59,50.68) .. (79.59,63.04) .. controls (79.59,75.4) and (69.57,85.42) .. (57.21,85.42) .. controls (44.85,85.42) and (34.83,75.4) .. (34.83,63.04) -- cycle ;
 %Straight Lines [id:da1794274167676957] 
@@ -255,18 +267,16 @@ Geometrically, a loop space (circle) is mapped to a localized neighborhood of a 
 \draw (276.88,80.5) node [anchor=north west][inner sep=0.75pt]    {$S^{1}$};
 % Text Node
 \draw (402.6,50.7) node [anchor=north west][inner sep=0.75pt]    {$\simeq \mathbb{R}^{2n}$};
-
-
 \end{tikzpicture}
 \end{figure}
 
-Locally, a loop space can be thought of as a standard phase space, $\bR^{2n}$. 
+Geometrically, a loop space is mapped to a localized neighborhood of a point in $X$ (specified by the constant map), where a localized effective theory exists.
+Locally, by the choice of Darboux coordinates, $X$ can be thought of as a standard phase space, $\bR^{2n}$. 
 The loop spaces are then glued together on $X$ as a family of effective field theory. This can be done rigorously within the framework of effective BV quantization:
 \begin{itemize}
-    \item Effective action $\leadsto \gamma$,
+    \item effective action $\leadsto \gamma$,
     \item QME $\leadsto$ Fedosov equation,
     \item BV integral $\leadsto$ trace map,
     \item partition function $\leadsto$ algebraic index.
 \end{itemize}
-
-In the next section, we will present a physics \emph{derivation} of the index theorem.
+In the next section, we will present a physics ``derivation'' of the index theorem.

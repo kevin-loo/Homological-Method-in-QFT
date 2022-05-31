@@ -1,4 +1,4 @@
-\section{Perturbative theory and Feynman diagram}\label{sec:ptfd}
+\section{Perturbative Theory and Feynman Diagram}\label{sec:ptfd}
 Understanding the path integral $\int e^{-S/\hbar}$ on the full space of fields is difficult. We can, however, have a well understanding of the behavior of a theory around the critical points of the action functional $S$. We will work on the asymptotic $\hbar$-expansion around the minima of $S$. This perturbative theory has a very nice combinatorial expression --- Feynman diagrams, which also has physical interpretations. We present this result via the \emph{BV idea}. This idea is different from the usual approach to Feynman diagrams, but it has an advantage that its homological interpretation can be used in formulating index theory.
 
 As discussed in the \nameref{sec:intro}, given a volume form
@@ -23,7 +23,7 @@ Explicitly,
 It vanishes after the integration by part is performed.
 \end{eg}
 
-\subsection*{Gaussian integral}
+\subsection{Gaussian integral}
 Consider the simplest example: a one-dimensional real space $\bR$ and a Gaussian-type volume form
 \bea \Omega= \frac{1}{\sqrt{2\pi}} e^{-\hf x^2} dx.\eea
 We study the integration map on polynomial functions:
@@ -59,7 +59,7 @@ We also have the normalization of the Gaussian integral:
 (2k-1)!!.\eea
 \end{eg}
 
-\subsection*{Conjugation}
+\subsection{Conjugation}
 To organize the data, consider the following operator
 \bea \cU=e^{\hf \frac{\partial}{\partial x} \frac{\partial}{\partial x}}: \bR\lsb x,\theta\rsb \to \bR\lsb x,\theta\rsb.\eea
 Explicitly, $\cU\lb g(x)+h(x)\theta\rb= 
@@ -77,10 +77,10 @@ Exercise.
 \end{proof}
 
 
-As a result, we find a \emph{cochain isomorphism} of complexes
+As a result, we find a \textbf{cochain isomorphism} of complexes
 \bea \cU: \lb \bR\lsb x,\theta\rsb,\Delta\rb \to \lb \bR\lsb x,\theta\rsb,-x\frac{\partial}{\partial\theta}\rb, \qquad 1\mapsto 1.
 \eea
-Cochain map means that
+\emph{Cochain map} means that
 \bea \cU \circ \Delta(\varphi)= \lb -x\frac{\partial}{\partial\theta}\rb\circ \cU(\varphi) \eea
 i.e. $\cU$ intertwines $\Delta$ with $-x\frac{\partial}{\partial\theta}$.
 
@@ -97,8 +97,8 @@ for an arbitrary polynomial $h(x)$. All higher power terms beyond the constant t
 Now for any $g(x)\in \bR\lsb x\rsb$,
 \bea
 \begin{tikzcd}
-\lsb g(x)\rsb_{\Delta} \ar[r, "\cU"] \ar[equal]{d}
-& \lsb \cU( g(x))\rsb_{-x\partial_{\theta}} \ar[equal]{d} \\
+\lsb g(x)\rsb_{\Delta} \ar[r, "\cU"] \ar[d, equal]
+& \lsb \cU( g(x))\rsb_{-x\partial_{\theta}} \ar[d, equal] \\
 \cU(g)(0)\lsb 1\rsb_{\Delta} 
 & \lsb \cU(g(0))\rsb_{-x\partial_{\theta}} \ar[l]
 \end{tikzcd}
@@ -124,44 +124,43 @@ This integral is in fact divergent since $x^3$ blows up quickly at $\infty$. The
 \bi[(1)]
     \item Treat $x$ as a complex variable and change the integration cycle from $\bR$ (i.e. $\Re(x)$) to some integration cycles $\Gamma_i\in \bC$:
     \bea \int_{\Gamma_i}\frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf x^2+\frac{\lambda}{3!}x^3\rb /\hbar}, \quad x\in\bC,\ \lambda\in\bR.\eea
-    
-\bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt    
+\bea 
+\tikzset{every picture/.style={line width=0.75pt}}         
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
-%Straight Lines [id:da772733815126962] 
-\draw    (127.35,195) -- (127.35,53.29) ;
-\draw [shift={(127.35,51.29)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da03837733772961949] 
-\draw    (42,125.32) -- (215.94,125.32) ;
-\draw [shift={(217.94,125.32)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Curve Lines [id:da1873702300348834] 
-\draw    (177.87,75.68) .. controls (153.48,98.32) and (164.81,164.52) .. (182.23,174.97) ;
-%Curve Lines [id:da9465928462718054] 
-\draw    (143.03,72.19) .. controls (126.48,101.81) and (73.35,103.55) .. (48.1,108.77) ;
-%Curve Lines [id:da48991182789985976] 
-\draw    (144.77,181.94) .. controls (138.68,157.55) and (75.97,137.52) .. (50.71,142.74) ;
+
+%Straight Lines [id:da3910937581279239] 
+\draw    (530.39,290) -- (530.39,148.29) ;
+\draw [shift={(530.39,146.29)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da12993081404822693] 
+\draw    (445.03,220.32) -- (618.97,220.32) ;
+\draw [shift={(620.97,220.32)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4908894565729862] 
+\draw    (580.9,170.68) .. controls (556.52,193.32) and (560.03,247.49) .. (585.26,269.97) ;
+%Curve Lines [id:da12255840945067997] 
+\draw    (546.06,167.19) .. controls (536.03,194.15) and (476.03,204.82) .. (451.13,203.77) ;
+%Curve Lines [id:da8983783715640103] 
+\draw    (546.7,274.15) .. controls (537.37,243.49) and (484.03,234.15) .. (453.74,237.74) ;
 
 % Text Node
-\draw (179.26,67.95) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{1}$};
+\draw (582.29,162.95) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{1}$};
 % Text Node
-\draw (59.06,84.5) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{2}$};
+\draw (462.1,179.5) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{2}$};
 % Text Node
-\draw (55.58,145.46) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{3}$};
+\draw (458.61,240.46) node [anchor=north west][inner sep=0.75pt]    {$\Gamma _{3}$};
 % Text Node
-\draw (220.97,115.11) node [anchor=north west][inner sep=0.75pt]    {$\Re(x)$};
+\draw (624,210.11) node [anchor=north west][inner sep=0.75pt]    {$\Re ( x)$};
 % Text Node
-\draw (113.9,34.11) node [anchor=north west][inner sep=0.75pt]    {$\Im(x)$};
+\draw (516.94,129.11) node [anchor=north west][inner sep=0.75pt]    {$\Im ( x)$};
 \end{tikzpicture}
 \eea
-    This becomes the Airy integral. 
+    This becomes the \emph{Airy integral}. 
     
     \item Treat the integral as an asymptotic series in $\lambda$ via
-    \bea e^{\frac{\lambda}{3!\hbar}x^3}= \sum_{n\geq 0} \frac{\lb \frac{\lambda}{3!\hbar}x^3\rb^n}{n!}.\eea
+    $ \exp{\lb\frac{\lambda}{3!\hbar}x^3\rb}= \sum_{n\geq 0} \frac{\lb \frac{\lambda}{3!\hbar}x^3\rb^n}{n!}$.
 \ei
 
-\subsection*{Perturbative theory}
+\subsection{Perturbative theory}
 Let's focus on method (2). This is known as the \emph{perturbative theory}. We will also add the background parameter $a$ in our integral.
 \bea \int_\bR \frac{dx}{\sqrt{2\pi\hbar}}\ e^{\lb -\hf x^2+\frac{\lambda}{3!}(x+a)^3\rb /\hbar}
 \ =\ e^{\frac{\hbar}{2}\partial_a^2} e^{\frac{\lambda}{3!\hbar}a^3}
@@ -230,7 +229,7 @@ For a connected graph $\Gamma$, we have
 \bea V-E= \chi(\Gamma)=1-\ell,\eea
 where $\chi$ is the Euler characteristic of the graph $\Gamma$ and $\ell$ is the number of loops. Then
 \bea
-W_{\Gamma}(a)=a^D \lambda^V \hbar^{\ell-1}.\eea
+\boxed{W_{\Gamma}(a)=a^D \lambda^V \hbar^{\ell-1}}\ .\eea
 
 \begin{eg}
 \bea
@@ -329,8 +328,8 @@ In general, $I(x)$ involves higher power interaction terms. For example, we have
 
 \begin{prop}
 $W(P,-)$ defines a transformation on
-\bea W(P,-): \bR\llb x,\hbar\rrb^+ \to \bR\llb x,\hbar\rrb^+,\eea
-where $\bR\llb  x,\hbar\rrb ^+\coloneqq x^3 \bR\llb x\rrb \oplus \hbar \bR\llb x,\hbar\rrb $ are the \emph{terms at least cubic modulo $\hbar$}. $W(P,-)$ is also the renormalization group (RG) flow operator with respect to the propagator $P$.
+\bea W(P,-): \bR[[ x,\hbar]]^+ \to \bR[[ x,\hbar]]^+,\eea
+where $\bR[[  x,\hbar]] ^+\coloneqq x^3 \bR[[ x]] \oplus \hbar \bR[[ x,\hbar]] $ are the \emph{terms at least cubic modulo $\hbar$}. $W(P,-)$ is also the renormalization group (RG) flow operator with respect to the propagator $P$.
 \end{prop}
 
 \noindent \textsc{References}:

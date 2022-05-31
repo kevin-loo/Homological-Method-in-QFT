@@ -1,56 +1,49 @@
-\section{Quantization and obstruction}\label{sec:qo}
+\section{Quantization and Obstruction}\label{sec:qo}
 In the \nameref{sec:bv}, we had the data of an $\infty$-dimensional $(-1)$-symplectic geometry $(\cE,Q,\omega)$ that describe the QFT.
-Recall the classical data: the space of \textbf{local functionals}, $\sO_{loc}(\cE)\subset \sO(\cE)$, in which the classical interaction $I_0=\int_X \cL$ is an element of $\sO_{loc}(\cE)$. $I_0$ solves the CME: $QI_0+\hf \lcb I_0,I_0\rcb_0=0$. Here $\lcb -,-\rcb_0$ is the BV bracket with respect to the BV kernel $K_0=\omega^{-1}$ and is well-defined on $\sO_{loc}(\cE)$. However the BV operator $\Delta_0$ is ill-defined on $\sO_{loc}(\cE)$ and $\sO(\cE)$, implying that the naive QME $QI_0+\hbar \Delta_0 I_0+\hf \lcb I_0,I_0\rcb=0$ does not make sense.
+Recall the classical data: the space of \textbf{local functionals}, $\sO_{loc}(\cE)\subset \sO(\cE)$, in which the classical interaction $I_0=\int_X \cL$ is an element of $\sO_{loc}(\cE)$. $I_0$ solves the CME, $QI_0+\hf \lcb I_0,I_0\rcb_0=0$. Here $\lcb -,-\rcb_0$ is the BV bracket with respect to the BV kernel $K_0=\omega^{-1}$ and is well-defined on $\sO_{loc}(\cE)$. However the BV operator $\Delta_0$ is ill-defined on $\sO_{loc}(\cE)$ and $\sO(\cE)$, implying that the naive QME $QI_0+\hbar \Delta_0 I_0+\hf \lcb I_0,I_0\rcb=0$ does not make sense.
 
-One way out of this problem is to use regularization to define an effective QME. We defined the Poisson kernel $K_0=K_r+QP_r$, where $K_r$ is smooth, leading to a well-defined BV operator $\Delta_r$ on $\sO(\cE)$. For each $r$, we have constructed $I[r]\in \sO(\cE)$ solving the effective QME:
+One way out of this problem is to use regularization to define an effective QME. We defined the Poisson kernel $K_0=K_r+QP_r$, where $K_r$ is smooth, leading to a well-defined BV operator $\Delta_r$ on $\sO(\cE)$. For each $r$, we have constructed $I[r]\in \sO(\cE)$ solving the effective QME
 \bea \lb Q+\hbar\Delta_r\rb e^{I[r]/\hbar}=0.\eea
-Different regularizations are related by the homotopy RG (HRG) flow:
+Different regularizations are related by the HRG flow:
 \bea e^{I[r']/\hbar}=\exp{\lb \hbar \p_{P^{r'}_r}\rb} e^{I[r]/\hbar}.\eea
 We have seen that the effective QME and the HRG are compatible.
-\bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt    
+\bea 
+\tikzset{every picture/.style={line width=0.75pt}}         
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
-%Shape: Circle [id:dp6926154379932559] 
-\draw   (50,84.5) .. controls (50,50.53) and (77.53,23) .. (111.5,23) .. controls (145.47,23) and (173,50.53) .. (173,84.5) .. controls (173,118.47) and (145.47,146) .. (111.5,146) .. controls (77.53,146) and (50,118.47) .. (50,84.5) -- cycle ;
-%Straight Lines [id:da2262569241568375] 
-\draw    (75.98,78.77) -- (82.47,86.03) ;
-%Straight Lines [id:da9042410789635242] 
-\draw    (75.59,86.03) -- (82.85,78.77) ;
 
-%Straight Lines [id:da7965197666945929] 
-\draw    (143.59,77.24) -- (150.08,84.5) ;
-%Straight Lines [id:da23412451653488264] 
-\draw    (143.2,84.5) -- (150.46,77.24) ;
-
-%Straight Lines [id:da694164688117211] 
-\draw    (109.97,113.53) -- (116.47,120.79) ;
-%Straight Lines [id:da27199650302361067] 
-\draw    (109.59,120.79) -- (116.85,113.53) ;
-
-%Curve Lines [id:da21026083909699889] 
-\draw [color={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=1 ] (78.71,53.37) .. controls (106.69,33.96) and (129.65,42.23) .. (147.47,52.37) ;
-\draw [shift={(149.95,53.81)}, rotate = 210.62] [fill={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=0][line width=0.08] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
-\draw [shift={(75.98,55.34)}, rotate = 323.13] [fill={rgb, 255:red, 144; green, 19; blue, 254 },draw opacity=0][line width=0.08] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Curve Lines [id:da944062929767304] 
+\draw [color={rgb, 255:red, 144; green, 19; blue, 254 }  ,draw opacity=1 ]   (230.27,95.93) .. controls (262.54,80.07) and (341.87,80.98) .. (370.8,92.41) ;
+\draw [shift={(373.33,93.5)}, rotate = 205.15] [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+\draw [shift={(227.33,97.5)}, rotate = 329.86] [fill={rgb, 255:red, 144; green, 19; blue, 254 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Shape: Circle [id:dp36250985174485173] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (221,126.17) .. controls (221,124.69) and (222.19,123.5) .. (223.67,123.5) .. controls (225.14,123.5) and (226.33,124.69) .. (226.33,126.17) .. controls (226.33,127.64) and (225.14,128.83) .. (223.67,128.83) .. controls (222.19,128.83) and (221,127.64) .. (221,126.17) -- cycle ;
+%Shape: Circle [id:dp6932568334360127] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (369,121.67) .. controls (369,120.19) and (370.19,119) .. (371.67,119) .. controls (373.14,119) and (374.33,120.19) .. (374.33,121.67) .. controls (374.33,123.14) and (373.14,124.33) .. (371.67,124.33) .. controls (370.19,124.33) and (369,123.14) .. (369,121.67) -- cycle ;
+%Shape: Circle [id:dp7842852672394907] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (290.5,153.17) .. controls (290.5,151.69) and (291.69,150.5) .. (293.17,150.5) .. controls (294.64,150.5) and (295.83,151.69) .. (295.83,153.17) .. controls (295.83,154.64) and (294.64,155.83) .. (293.17,155.83) .. controls (291.69,155.83) and (290.5,154.64) .. (290.5,153.17) -- cycle ;
+%Shape: Ellipse [id:dp3283980465228562] 
+\draw   (184,132.38) .. controls (184,95.17) and (236.79,65) .. (301.92,65) .. controls (367.04,65) and (419.83,95.17) .. (419.83,132.38) .. controls (419.83,169.59) and (367.04,199.76) .. (301.92,199.76) .. controls (236.79,199.76) and (184,169.59) .. (184,132.38) -- cycle ;
 
 % Text Node
-\draw (68.07,86.16) node [anchor=north west][inner sep=0.75pt]    {$r_{1}$};
+\draw (225.67,126.9) node [anchor=north west][inner sep=0.75pt]    {$r_{1}$};
 % Text Node
-\draw (145.59,86.16) node [anchor=north west][inner sep=0.75pt]    {$r_{2}$};
+\draw (373.67,122.4) node [anchor=north west][inner sep=0.75pt]    {$r_{2}$};
 % Text Node
-\draw (95.02,120.54) node [anchor=north west][inner sep=0.75pt]    {$r=0$};
+\draw (292.5,156.57) node [anchor=north west][inner sep=0.75pt]    {$r=0$};
 % Text Node
-\draw (60.62,58.71) node [anchor=north west][inner sep=0.75pt]    {\textcolor{blue}{$I[r_{1}]$}};
+\draw (210.87,100.18) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 255 }  ,opacity=1 ]  {$I[ r_{1}]$};
 % Text Node
-\draw (131.67,58.33) node [anchor=north west][inner sep=0.75pt]    {\textcolor{blue}{$I[r_{2}]$}};
+\draw (356.42,96.3) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 255 }  ,opacity=1 ]  {$I[ r_{2}]$};
 % Text Node
-\draw (95.53,27.36) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{rgb, 255:red, 144; green, 19; blue, 254 }{HRG}};
+\draw (282.77,69.83) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 144; green, 19; blue, 254 }  ,opacity=1 ] [align=left] {HRG};
+% Text Node
+\draw (249,171.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {(unrenormalized)};
 \end{tikzpicture}
 \eea
 
 
-\subsection*{Heat kernel regularization}\label{subsec:heat}
+\subsection{Heat kernel regularization}\label{subsec:hker}
 In physics, there are many ways of regularizations. One regularization method that connects to geometry is the heat kernel regularization. Typically, fixing a choice of metric, we have 
 \begin{itemize}
     \item the adjoint of the elliptic operator $Q:\cE\to \cE$, denoted as $Q^\dagger: \cE\to \cE$,
@@ -78,21 +71,21 @@ or simply written as
 \bea K_0-K_L=Q \lb P_L\rb.\eea
 We can use $K_L$ to define the effective QME. 
 
-For $0<\vep<L$, similarly the operator equation is 
-\bea \lsb Q, \int_\vep^L dt\ Q^\dagger e^{-t\lsb Q,Q^\dagger\rsb} \rsb 
-=e^{-\vep\lsb Q,Q^\dagger\rsb}-e^{-L\lsb Q,Q^\dagger\rsb}\eea
+For $0<\varepsilon<L$, similarly the operator equation is 
+\bea \lsb Q, \int_\varepsilon^L dt\ Q^\dagger e^{-t\lsb Q,Q^\dagger\rsb} \rsb 
+=e^{-\varepsilon\lsb Q,Q^\dagger\rsb}-e^{-L\lsb Q,Q^\dagger\rsb}\eea
 or 
-\bea K_\vep-K_L=(Q\otimes 1+1\otimes Q)P_\vep^L,\eea
-where $P^L_\vep= \int_\vep^L dt \lb Q^\dagger \otimes 1\rb K_t$ is called the \emph{regularized propagator}. 
-Now we can use $P^L_\vep$ to connect the effective QME at $\vep$ with the effective QME at $L$ via the homotopy RG, $\exp{\lb \hbar\p_{P_\vep^L}\rb}$.
+\bea K_\varepsilon-K_L=(Q\otimes 1+1\otimes Q)P_\varepsilon^L,\eea
+where $P^L_\varepsilon= \int_\varepsilon^L dt \lb Q^\dagger \otimes 1\rb K_t$ is called the \emph{regularized propagator}. 
+Now we can use $P^L_\varepsilon$ to connect the effective QME at $\varepsilon$ with the effective QME at $L$ via the HRG, $\exp{\lb \hbar\p_{P_\varepsilon^L}\rb}$.
 \begin{rmk}
 $P_0^\infty= \int_0^\infty dt \lb Q^\dagger \otimes 1\rb K_t$ is the \emph{full propagator}. At $t=0$, one will encounter ultraviolet (UV) divergence since there exists a singularity for the full propagator. On a non-compact manifold, one will encounter infrared (IR) divergence at $t=\infty$.
 \end{rmk}
 
 
-\subsection*{Constructing effective BV quantization using heat kernel regularization}
+\subsection{Constructing effective BV quantization using heat kernel regularization}
 \paragraph{Step 1: The method of counter-term.}
-Let $I_0\in \sO_{loc}(\cE)$ be the classical interaction. Since $P_0^L$ is singular, the limit $\lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{I_0/\hbar}$ does not exist. Pictorially, all the loop diagrams:
+Let $I_0\in \sO_{loc}(\cE)$ be the classical interaction. Since $P_0^L$ is singular, the limit $\lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^L}\rb} e^{I_0/\hbar}$ does not exist. Pictorially, all the loop diagrams:
 \bea 
     \begin{fmffile}{fddlim}
     \begin{tabular}{c}
@@ -104,34 +97,34 @@ Let $I_0\in \sO_{loc}(\cE)$ be the classical interaction. Since $P_0^L$ is singu
                 \fmf{plain,tension=4}{v2,o1}
                 \fmf{plain,tension=4}{v2,o2}
 
-                \fmf{plain,left=1,tension=0.4,label=$P_\vep^L$,label.side=left}{v1,v2}
+                \fmf{plain,left=1,tension=0.4,label=$P_\varepsilon^L$,label.side=left}{v1,v2}
                 \fmf{plain,left=0.5,tension=0.8}{v1,v2}
                 \fmf{phantom,right=0.2,tension=2,label=$\cdot$,label.side=left}{v1,v2}
                 \fmf{phantom,right=0.5,tension=0.8,label=$\cdot$,label.side=left}{v1,v2}
                 \fmf{phantom,right=0.8,tension=0.6,label=$\cdot$,label.side=left}{v1,v2}
-                \fmf{plain,right=1,tension=0.4,label=$P_\vep^L$,label.side=right}{v1,v2}
+                \fmf{plain,right=1,tension=0.4,label=$P_\varepsilon^L$,label.side=right}{v1,v2}
                 \fmfv{label=$I_0$,label.angle=170,decor.shape=circle,decor.filled=full,decor.size=2thick}{v1}
                 \fmfv{label=$I_0$,label.angle=10,decor.shape=circle,decor.filled=full,decor.size=2thick}{v2}
         \end{fmfgraph*}
         \end{tabular}
     \end{fmffile}\\
 \eea
-are divergent as $\vep\to 0$.
+are divergent as $\varepsilon\to 0$.
 
-To cancel the divergences, one can find the \emph{counter-terms}, $I^\eps\in \hbar \sO_{loc}(\cE)\llb \hbar\rrb$, which are $\vep$-dependent and singular as $\vep\to 0$ such that
-\bea \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^L}\rb} e^{\lb I_0+I^\eps\rb/\hbar}\coloneqq e^{I[L]^{naive}/\hbar}\eea exists. 
+To cancel the divergences, one can find the \emph{counter-terms}, $I^\epsilon\in \hbar \sO_{loc}(\cE)[[ \hbar]]$, which are $\varepsilon$-dependent and singular as $\varepsilon\to 0$ such that
+\bea \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^L}\rb} e^{\lb I_0+I^\epsilon\rb/\hbar}\coloneqq e^{I[L]^{naive}/\hbar}\eea exists. 
 Such defined $I[L]^{naive}$ has the following advantage: for $0<L_1<L_2$, 
 \bea e^{I[L_2]^{naive}/\hbar}
-&= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L_2}}\rb} e^{\lb I_0+I^\eps\rb/\hbar}\\
-&= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \exp{\lb \hbar\p_{P_\vep^{L_1}}\rb} e^{\lb I_0+I^\eps\rb/\hbar} \quad \text{using } P_\vep^{L_2}=P_{L_1}^{L_2}+P_\vep^{L_1}\\
-&= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L_1}}\rb} e^{\lb I_0+I^\eps\rb/\hbar} \quad \text{since } P_{L_1}^{L_2} \text{ is smooth}\\
+&= \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^{L_2}}\rb} e^{\lb I_0+I^\epsilon\rb/\hbar}\\
+&= \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \exp{\lb \hbar\p_{P_\varepsilon^{L_1}}\rb} e^{\lb I_0+I^\epsilon\rb/\hbar} \quad \text{using } P_\varepsilon^{L_2}=P_{L_1}^{L_2}+P_\varepsilon^{L_1}\\
+&= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^{L_1}}\rb} e^{\lb I_0+I^\epsilon\rb/\hbar} \quad \text{since } P_{L_1}^{L_2} \text{ is smooth}\\
 &= \exp{\lb \hbar\p_{P_{L_1}^{L_2}}\rb} e^{I[L_1]^{naive}/\hbar}.
 \eea
-In other words, the family $\lcb I[L]^{naive}\rcb_{L>0}$ satisfies the homotopy RG (HRG) flow.
+In other words, the family $\lcb I[L]^{naive}\rcb_{L>0}$ satisfies the HRG flow.
 \bea
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\tikzset{every picture/.style={line width=0.75pt}} 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
 %Straight Lines [id:da977711475048066] 
 \draw    (10.5,100.67) -- (237.5,100.67) ;
 \draw [shift={(240.5,100.67)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
@@ -161,9 +154,9 @@ In other words, the family $\lcb I[L]^{naive}\rcb_{L>0}$ satisfies the homotopy 
 However, $\lcb I[L]^{naive}\rcb_{L>0}$ may NOT satisfy the QME!
 
 \paragraph{Step 2: Further corrections.}
-Adjust $I^\eps$ to $\Tilde{I}^\eps$ by finding further corrections such that
+Adjust $I^\epsilon$ to $\Tilde{I}^\epsilon$ by finding further corrections such that
 \bea e^{I[L]/\hbar}
-&= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L}}\rb} e^{\lb I_0+\Tilde{I}^\eps\rb/\hbar}\eea
+&= \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^{L}}\rb} e^{\lb I_0+\Tilde{I}^\epsilon\rb/\hbar}\eea
 and the defined limit $I[L]$ satisfies the QME.
 
 \begin{rmk}
@@ -172,27 +165,29 @@ Step 2 is NOT always possible; it might have \emph{obstructions}, in physics thi
 \end{rmk}
 
 \begin{rmk}
-There are cases where $\vep$-dependent counter-terms are not required in the sense that the limit 
+There are cases where $\varepsilon$-dependent counter-terms are not required in the sense that the limit 
 \bea e^{I[L]/\hbar}
-&= \lim_{\vep\to 0} \exp{\lb \hbar\p_{P_\vep^{L}}\rb} e^{I/\hbar}\eea
-exists for a large class of local functionals $I\in \sO_{loc}(\cE)\llb\hbar\rrb$. Such a theory is called \textbf{ultraviolet (UV)-finite}. Then we can explore the meaning of the effective QME: $\lb Q=\hbar \Delta_L\rb e^{I[L]/\hbar}=0$ or $QI[L]+\hbar \Delta_L I[L]+\hf \lcb I[L],I[L]\rcb_L=0$. The upshot is that $L\to 0$ has a meaning in which the effective QME is reduced to $QI+\hf \lsb I,I\rsb=0$, where $\lsb-,-\rsb$ is the \emph{quantum deformed bracket}.
+&= \lim_{\varepsilon\to 0} \exp{\lb \hbar\p_{P_\varepsilon^{L}}\rb} e^{I/\hbar}\eea
+exists for a large class of local functionals $I\in \sO_{loc}(\cE)[[\hbar]]$. Such a theory is called \textbf{ultraviolet (UV)-finite}. Then we can explore the meaning of the effective QME, 
+\bea \lb Q+\hbar \Delta_L\rb e^{I[L]/\hbar}=0 \quad \text{or }\quad QI[L]+\hbar \Delta_L I[L]+\hf \lcb I[L],I[L]\rcb_L=0.\eea
+The upshot is that $L\to 0$ has a meaning in which the effective QME is reduced to $QI+\hf \lsb I,I\rsb=0$, where $\lsb-,-\rsb$ is the \emph{quantum deformed bracket}.
 \end{rmk}
 
-We will explain two main UV-finite examples:
+In the following sections, we will explain two main UV-finite examples:
 \bi[(1)]
 \item Chern-Simons type topological theory. In particular, we will discuss the topological quantum mechanics.
 \item 2d chiral theory.
 \ei
 
-\subsection*{Deformation-Obstruction theory}
-Let's first consider the quantization problem CME $\leadsto$ QME in a DGBV $\lb \cA,Q,\Delta\rb$. Let $I_0\in \cA_0$ solve the CME: $QI_0+\hf \lcb I_0,I_0\rcb=0$. Our goal is to find 
-\bea I=I_0+I_1\hbar+I_2\hbar^2+\cdots \in \cA_0 \llb \hbar\rrb\eea
-solving the QME: $QI+\hbar\Delta I+\hf \lcb I,I \rcb=0$.
+\subsection{Deformation-Obstruction theory}
+Let's first consider the quantization problem CME $\leadsto$ QME in a DGBV $\lb \cA,Q,\Delta\rb$. Let $I_0\in \cA_0$ solve the CME, $QI_0+\hf \lcb I_0,I_0\rcb=0$. Our goal is to find 
+\bea I=I_0+I_1\hbar+I_2\hbar^2+\cdots \in \cA_0 [[ \hbar]]\eea
+solving the QME, $QI+\hbar\Delta I+\hf \lcb I,I \rcb=0$.
 
 \paragraph{Strategy:} find $I_1,I_2,\cdots$ in order of $\hbar$ via
 \bea QI+\hbar\Delta I+\hf \lcb I,I \rcb=\cO(\hbar^{n+1})\quad (n\geq 0).\eea 
 \begin{itemize}
-    \item $n=0$: this is the initial data of CME: $QI_0+\hf \lcb I_0,I_0\rcb=0$.
+    \item $n=0$: this is the initial data of CME, $QI_0+\hf \lcb I_0,I_0\rcb=0$.
     \item $n=1$: $\hbar$-term gives $QI_1+\Delta I_0+\lcb I_0,I_1 \rcb=0$. We need to find $I_1$ solving this equation. Let us write it as 
     \bea QI_1+\lcb I_0,I_1 \rcb= -\Delta I_0. \eea
     For convenience, let us denote $\delta=Q+\lcb I_0,-\rcb$. The CME implies that $\delta^2=0$. We need to solve 
@@ -249,11 +244,11 @@ solving the QME: $QI+\hbar\Delta I+\hf \lcb I,I \rcb=0$.
     \end{rmk}
     In particular, we have proved
     \begin{thm}
-    If $H^1\lb\cA, Q+\lcb I_0,-\rcb\rb=0$, then there exists a quantization $I=I_0+\hbar I_1+\cdots$ solving the QME: $QI+\hbar\Delta I+\hf \lcb I,I\rcb=0$.
+    If $H^1\lb\cA, Q+\lcb I_0,-\rcb\rb=0$, then there exists a quantization $I=I_0+\hbar I_1+\cdots$ solving the QME, $QI+\hbar\Delta I+\hf \lcb I,I\rcb=0$.
     \end{thm}
 \end{itemize}
 
-\subsection*{Effective QME}
+\subsection{Effective QME}
 In the QFT case, things are more complicated since we need to deal with regularization. However, the good thing is that the analogue of deformation-obstruction theory still exists. The relevant complex is $\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$. Note that $Q+\lcb I_0,-\rcb$ is well-defined on local functionals and CME implies that $\lb \sO_{loc}\lb \cE\rb, Q+\lcb I_0,-\rcb\rb$ indeed forms a complex.
 
 Similar to the above discussion, we have 
@@ -265,9 +260,9 @@ The tangent space (deformation space) is
 \end{thm}
 
 \begin{rmk}
-The locality is important and allows the computation of the above cohomologies via $D$-module methods.
+The locality is important and allows the computation of the above cohomologies via $\cD$-module methods.
 \end{rmk}
 
 \noindent \textsc{Reference}:
 Theorem \ref{thm5.2} has many different setups and versions in the literature. The discussion we follow here is 
-\cite{costello2011renormalization}, which also contains the references for classical works.
+\cite{costello2011renormalization}, which also contains references for classical works therein.
